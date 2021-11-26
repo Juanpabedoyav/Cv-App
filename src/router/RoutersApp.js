@@ -7,20 +7,21 @@ import FormCv1 from '../components/FormCv1'
 import FormCv2 from '../components/FormCv2'
 import Tutoriales from '../components/Tutoriales'
 import VistaPreviaCv from '../components/VistaPreviaCv'
+import PlantillasCv from '../components/PlantillasCv'
 
 const RoutersApp = () => {
     return (
         <div>
             <Routes>
-            <Route to="/" element={<Home/>} />
-                <Route to="/home" element={<Home/>} />
-                <Route to="/perfil" element={<Perfil/>} />
-                <Route to="/descargas" element={<Descargas/>} />
-                <Route to="/formcv1" element={<FormCv1/>} />
-                <Route to="/formcv2" element={<FormCv2/>} />
-                <Route to="/plantillascv" element={<PlantillasCv/>} />
-                <Route to="/tutoriales" element={<Tutoriales/>} />
-                <Route to="/vistaprevia" element={<VistaPreviaCv/>} />
+                <Route path="/" element={<Home/>} />
+                <Route path="/home" element={<Home/>} />
+                <Route path="/perfil" element={<Perfil/>} />
+                <Route path="/descargas" element={<Descargas/>} />
+                <Route path="/formcv1" element={<FormCv1/>} />
+                <Route path="/formcv2" element={<FormCv2/>} />
+                <Route path="/plantillascv" element={<PlantillasCv/>} />
+                <Route path="/tutoriales" element={<Tutoriales/>} />
+                <Route path="/vistaprevia" element={<VistaPreviaCv/>} />
 
             </Routes>
         </div>

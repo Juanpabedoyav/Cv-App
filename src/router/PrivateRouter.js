@@ -1,6 +1,6 @@
 import React from 'react'
 
-const PrivateRouter = () => {
+const PrivateRouter = ({children}) => {
     return (
         <div>
             
