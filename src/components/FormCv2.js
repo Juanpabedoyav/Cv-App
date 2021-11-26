@@ -1,11 +1,11 @@
 import React from 'react'
 
-const NavBar = () => {
+const FormCv2 = () => {
     return (
         <div>
-            <h1>NavBar</h1>
+            <h1>FormCv2</h1>
         </div>
     )
 }
 
-export default NavBar
+export default FormCv2

@@ -1,11 +1,11 @@
 import React from 'react'
 
-const NavBar = () => {
+const PrivateRouter = () => {
     return (
         <div>
-            <h1>NavBar</h1>
+            
         </div>
     )
 }
 
-export default NavBar
+export default PrivateRouter
