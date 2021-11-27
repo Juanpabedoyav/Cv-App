@@ -3,7 +3,7 @@ import FacebookLogin from "react-facebook-login";
 import { Button } from "@chakra-ui/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhoneAlt } from "@fortawesome/free-solid-svg-icons";
-import { Link, NavLink } from "react-router-dom";
+import { Link as LinkReact, NavLink } from "react-router-dom";
 import {
   ButtonContainer,
   ImgContainer,
@@ -30,7 +30,7 @@ const Inicio = () => {
       <TextH4>Creando perfiles profesionales</TextH4>
 
       <ButtonContainer>
-        <Link to="/login" className="link">
+        <LinkReact to="/login" className="link">
           <Button
             leftIcon={<FontAwesomeIcon icon={faPhoneAlt} />}
             variant="solid"
@@ -38,7 +38,7 @@ const Inicio = () => {
           >
             INGRESAR CON CELULAR
           </Button>
-        </Link>
+        </LinkReact>
 
         <FacebookLogin
           appId="924317245136822"
@@ -51,7 +51,7 @@ const Inicio = () => {
         />
       </ButtonContainer>
 
-      <p>Si no tienes cuenta {<Link to="/registro">Registrate Aquí</Link>}</p>
+      <p>Si no tienes cuenta {<LinkReact to="/registro">Registrate Aquí</LinkReact>}</p>
     </div>
   );
 };

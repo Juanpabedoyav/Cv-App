@@ -16,6 +16,7 @@ const AppRouter = () => {
   return (
     <div>
       <BrowserRouter>
+      
         <Routes>
           <Route path="/" element={<InicioApp />} />
           <Route path="/home" element={<Home />} />
