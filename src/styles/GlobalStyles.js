@@ -3,10 +3,9 @@ import { createGlobalStyle } from "styled-components";
 export const GlobalStyles = createGlobalStyle`
   :root{
       
-      --color-background: #EEF5F6;
-      --color-buttonPhone: #4B777E;
-      /* --color-buttonfacebook: #2D4A4F; */
-      --color-blanco: #fff;      
+      --color-background: #EEF5F6;      
+      --color-blanco: #fff;
+      --color-principal: #4B777E;
 
   }
 

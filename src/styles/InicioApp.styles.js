@@ -36,7 +36,7 @@ export const ButtonContainer = styled.div`
     height: 49px;
     width: 100%;
     border-width: 0;
-    background-color: var(--color-buttonPhone);
+    background-color: var(--color-principal);
     color: var(--color-blanco);
     border-radius: 1px;
     font-weight: bold;

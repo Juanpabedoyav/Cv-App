@@ -1,11 +1,11 @@
-import React from 'react'
+import React from "react";
 
 const Tutoriales = () => {
-    return (
-        <div>
-            <h1>Tutoriales</h1>
-        </div>
-    )
-}
+  return (
+    <div>
+      <h1>Tutoriales</h1>
+    </div>
+  );
+};
 
-export default Tutoriales
+export default Tutoriales;
