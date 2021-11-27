@@ -39,6 +39,7 @@ export const ButtonContainer = styled.div`
     background-color: var(--color-buttonPhone);
     color: var(--color-blanco);
     border-radius: 1px;
+    font-weight: bold;
   }
 
   .link {
