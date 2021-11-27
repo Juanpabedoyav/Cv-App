@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const ImgContainer = styled.div`
   /* border: 2px solid red; */
-  width: 40%;
+  width: 150px;
   margin: 0 auto;
 `;
 
