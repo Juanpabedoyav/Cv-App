@@ -5,7 +5,7 @@ export const GlobalStyles = createGlobalStyle`
       
       --color-background: #EEF5F6;      
       --color-blanco: #fff;
-      --color-principal: #4B777E;
+      --color-principal: #629197;
 
   }
 
@@ -21,5 +21,8 @@ export const GlobalStyles = createGlobalStyle`
       background-color: var(---color-background);
       text-align: center;
       height: 100vh;
+  }
+  .registrate{
+    color: #629197;
   }
 `;
