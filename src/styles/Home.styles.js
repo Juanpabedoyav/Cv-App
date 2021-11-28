@@ -54,10 +54,10 @@ export const HomeContainer = styled.div`
   .box {
     padding-top: 5px;
   }
-  .other-container {
+  .recomendaciones-container {
     border-bottom: 1px solid var(--color-principal);
     display: flex;
-    justify-content: space-between;
+    justify-content: left;
     width: 80vw;
     margin-top: 50px;
     margin-left: auto;

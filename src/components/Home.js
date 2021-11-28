@@ -33,11 +33,8 @@ const Home = () => {
         </LinkReact>
       </div>
 
-      <div className="other-container">
+      <div className="recomendaciones-container">
         <h3 className="recomendaciones">Recomendaciones</h3>
-        <Link to="/tutoriales">
-          <h5>Ver todo</h5>
-        </Link>
       </div>
 
       <p className="text-p">

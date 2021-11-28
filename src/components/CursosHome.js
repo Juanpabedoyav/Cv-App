@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import React from "react";
 import { CursosContainer } from "../styles/CursosHome.styles";
 
@@ -14,7 +15,6 @@ const CursosHome = () => {
           allowfullscreen
         ></iframe>
       </div>
-
       <div className="curso-card">
         <iframe
           className="frame"
@@ -25,7 +25,6 @@ const CursosHome = () => {
           allowfullscreen
         ></iframe>
       </div>
-
       <div className="curso-card">
         <iframe
           className="frame"
@@ -37,6 +36,9 @@ const CursosHome = () => {
         ></iframe>
       </div>
 
+      <Link to="/tutoriales">
+        <h5>Ver todo</h5>
+      </Link>
       <div className="curso-hidden">Hola mundo</div>
     </CursosContainer>
   );
