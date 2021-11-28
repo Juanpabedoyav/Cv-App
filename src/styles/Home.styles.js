@@ -82,7 +82,7 @@ export const HomeContainer = styled.div`
     display: flex;
     justify-content: right;
     font-size: 32px;
-    margin-top: 20px;
+    margin-top: 5px;
     margin-left: auto;
     margin-right: auto;
     animation: ${Movearrow} 1.5s ease infinite;
