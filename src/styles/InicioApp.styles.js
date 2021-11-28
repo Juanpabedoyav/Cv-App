@@ -10,13 +10,16 @@ export const ImgLogo = styled.img`
   width: 100%;
   height: auto;
   margin-top: 80px;
+  border-radius: 5px;
 `;
 
 export const TextH1 = styled.h1`
+  font-size: 28px;
   margin-top: 30px;
 `;
 
 export const TextH4 = styled.h4`
+  font-size: 16px;
   margin-top: 10px;
 `;
 
@@ -39,7 +42,6 @@ export const ButtonContainer = styled.div`
     background-color: var(--color-principal);
     color: var(--color-blanco);
     border-radius: 1px;
-    font-weight: bold;
   }
 
   .link {

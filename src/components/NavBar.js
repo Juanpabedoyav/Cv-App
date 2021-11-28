@@ -41,7 +41,7 @@ const NavBar = () => {
           <LinkReact to="/perfil" className="nav-item">
             <Box className="box">
               <FontAwesomeIcon icon={faUser} />
-              <Text className="nav-titulo">Perfi</Text>
+              <Text className="nav-titulo">Perfil</Text>
             </Box>
           </LinkReact>
         </Flex>

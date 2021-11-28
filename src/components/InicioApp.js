@@ -3,7 +3,7 @@ import FacebookLogin from "react-facebook-login";
 import { Button } from "@chakra-ui/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhoneAlt } from "@fortawesome/free-solid-svg-icons";
-import { Link as LinkReact, NavLink } from "react-router-dom";
+import { Link as LinkReact } from "react-router-dom";
 import {
   ButtonContainer,
   ImgContainer,
@@ -51,7 +51,12 @@ const Inicio = () => {
         />
       </ButtonContainer>
 
-      <p>Si no tienes cuenta {<LinkReact to="/registro">Registrate Aquí</LinkReact>}</p>
+      <p>
+        Si no tienes cuenta{" "}
+        <LinkReact to="/registro" className="registrate">
+          Registrate Aquí
+        </LinkReact>
+      </p>
     </div>
   );
 };
