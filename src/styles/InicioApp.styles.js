@@ -56,4 +56,7 @@ export const ButtonContainer = styled.div`
     color: var(--color-blanco);
     border-radius: 1px;
   }
+  .phone:hover {
+    background-color: var(--color-principal);
+  }
 `;
