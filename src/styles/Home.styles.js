@@ -42,6 +42,7 @@ export const HomeContainer = styled.div`
   .icon {
     color: var(--color-blanco);
     font-size: 100px;
+    margin-top: 15px;
     margin-bottom: 20px;
   }
   .text-create {
