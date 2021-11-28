@@ -13,8 +13,8 @@ import { faReply } from "@fortawesome/free-solid-svg-icons";
 const Registro = () => {
   return (
     <StyleRegistro>
-      <LinkReact className="back" to="/">
-        <FontAwesomeIcon icon={faReply} />
+      <LinkReact to="/" className="back-container">
+        <FontAwesomeIcon icon={faReply} className="back" />
       </LinkReact>
 
       <ImgRegistro>
@@ -46,9 +46,9 @@ const Registro = () => {
       </form>
 
       <p>
-        Si ya tines una cuenta
+        Si ya tienes una cuenta{" "}
         <LinkReact to="/" className="styles-link-react">
-          INGRESAR
+          Ingresar
         </LinkReact>
       </p>
     </StyleRegistro>

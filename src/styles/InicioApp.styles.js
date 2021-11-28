@@ -1,5 +1,18 @@
 import styled from "styled-components";
 
+export const StylesContainer = styled.div`
+  background-color: #eef5f6;
+  height: 100vh;
+  color: var(--color-principal);
+  p {
+    font-weight: 600;
+    .registrate {
+      color: #629197;
+      text-decoration-line: underline;
+    }
+  }
+`;
+
 export const ImgContainer = styled.div`
   /* border: 2px solid red; */
   width: 150px;
@@ -42,9 +55,5 @@ export const ButtonContainer = styled.div`
     background-color: var(--color-principal);
     color: var(--color-blanco);
     border-radius: 1px;
-  }
-
-  .link {
-    text-decoration-line: none;
   }
 `;

@@ -3,10 +3,14 @@ import { createGlobalStyle } from "styled-components";
 export const GlobalStyles = createGlobalStyle`
   :root{
       
-      --color-background: #EEF5F6;      
+      --color-background: #eef5f6;      
       --color-blanco: #fff;
       --color-principal: #629197;
 
+  }
+
+  html{
+    background-color: #eef5f6;
   }
 
   *{
@@ -18,11 +22,8 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   body{
-      background-color: var(---color-background);
+      background-color: #eef5f6;
       text-align: center;
       height: 100vh;
-  }
-  .registrate{
-    color: #629197;
-  }
+  }  
 `;
