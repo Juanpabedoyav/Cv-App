@@ -27,6 +27,7 @@ const Movearrow = keyframes`
 export const HomeContainer = styled.div`
   height: 100vh;
   margin-top: 40px;
+  background-color: #eef5f6;
   color: var(--color-principal);
   .text-h2 {
     margin-bottom: 20px;
