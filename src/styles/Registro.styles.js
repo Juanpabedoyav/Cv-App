@@ -22,6 +22,11 @@ color:#47525E;
 `
 export const StyleRegistro = styled.div`
 height: 100vh;
+background-color:#EEF5F6;
+width:100%;
+.input::placeholder{
+    font-weight: 600;
+}
 .formulario{
     margin-top: 10px;
     padding: 0px 20px;

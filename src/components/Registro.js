@@ -21,21 +21,21 @@ const Registro = () => {
         <img src="https://res.cloudinary.com/dv08oqgvx/image/upload/v1637968857/mk3ocdc7zaenmvrmaskc.jpg" alt="logo" />
 
         </ImgRegistro>
-        <TitleRegistro>Crear tu cuenta</TitleRegistro>
+        <TitleRegistro>Crea tu cuenta</TitleRegistro>
 <form className='formulario' >
           <FormControl  id="first-name" isRequired>
-              <FormLabel className='label'>Telefono celular </FormLabel>
-              <Input placeholder="Telefono celular " />
+              <FormLabel className='label'>Teléfono celular </FormLabel>
+              <Input className='input' placeholder="Telefono celular " />
           </FormControl>
 
           <FormControl id="password" isRequired>
               <FormLabel className='label'>Contraseña</FormLabel>
-              <Input placeholder="Contraseña " />
+              <Input className='input' placeholder="Contraseña " />
           </FormControl>
 
           <FormControl id="password" isRequired>
               <FormLabel className='label'>Confirmar contraseña</FormLabel>
-              <Input placeholder="Confirmar contraseña " />
+              <Input className='input' placeholder="Confirmar contraseña " />
           </FormControl>
 
           <Button className='botton-submit' colorScheme="teal" size="lg">

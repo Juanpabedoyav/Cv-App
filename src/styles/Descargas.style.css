@@ -1,0 +1,24 @@
+.card{
+    /* border:1px solid red; */
+    margin-bottom: 4px;
+    text-align: left;
+
+}
+.header-descargas{
+    display: flex;
+    justify-content: space-between;
+    font-weight:800;
+    color:#47525E;
+    border-bottom: 1px solid #47525e49;
+}
+.body-descargas{
+margin: top 10px;
+    padding: 0;
+    overflow-y: scroll;
+}
+.header-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;  
+    font-size:1rem; 
+}
