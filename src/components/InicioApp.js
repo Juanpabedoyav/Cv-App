@@ -8,6 +8,7 @@ import {
   ButtonContainer,
   ImgContainer,
   ImgLogo,
+  StylesContainer,
   TextH1,
   TextH4,
 } from "../styles/InicioApp.styles";
@@ -17,7 +18,7 @@ const Inicio = () => {
     console.log(response);
   };
   return (
-    <div>
+    <StylesContainer>
       <ImgContainer>
         <ImgLogo
           src="https://res.cloudinary.com/dv08oqgvx/image/upload/v1637968857/mk3ocdc7zaenmvrmaskc.jpg"
@@ -30,7 +31,7 @@ const Inicio = () => {
       <TextH4>Creando perfiles profesionales</TextH4>
 
       <ButtonContainer>
-        <LinkReact to="/login" className="link">
+        <LinkReact to="/login">
           <Button
             leftIcon={<FontAwesomeIcon icon={faPhoneAlt} />}
             variant="solid"
@@ -57,7 +58,7 @@ const Inicio = () => {
           Registrate Aquí
         </LinkReact>
       </p>
-    </div>
+    </StylesContainer>
   );
 };
 

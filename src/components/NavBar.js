@@ -14,7 +14,6 @@ import { NavContainer } from "../styles/NavBar.style";
 const NavBar = () => {
   return (
     <div>
-      <h1>NavBar</h1>
       <NavContainer>
         <Flex className="nav">
           <LinkReact to="/home" className="nav-item active">
