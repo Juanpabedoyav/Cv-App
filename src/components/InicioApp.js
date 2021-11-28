@@ -47,12 +47,12 @@ const Inicio = () => {
           fields="name,email,picture"
           // onClick={componentClicked}
           callback={responseFacebook}
-          icon="fa-facebook"
+          icon=" fa-facebook"
           textButton="Ingresar con Facebook"
         />
       </ButtonContainer>
 
-      <p>
+      <p className='registro'>
         Si no tienes cuenta{" "}
         <LinkReact to="/registro" className="registrate">
           Registrate Aquí

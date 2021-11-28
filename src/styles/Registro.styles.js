@@ -56,7 +56,7 @@ export const StyleRegistro = styled.div`
   p {
     font-weight: 600;
     color: var(--color-principal);
-    margin-top: 50px;
+    margin-top: 10px;
     a {
       text-decoration-line: underline;
     }
