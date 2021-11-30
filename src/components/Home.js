@@ -1,11 +1,11 @@
-import { Box, Heading, HStack, Grid, GridItem } from "@chakra-ui/layout";
+import { Box, Heading } from "@chakra-ui/layout";
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faPlusCircle,
   faAngleDoubleDown,
 } from "@fortawesome/free-solid-svg-icons";
-import { Link, Link as LinkReact } from "react-router-dom";
+import { Link as LinkReact } from "react-router-dom";
 import NavBar from "./NavBar";
 import { HomeContainer } from "../styles/Home.styles";
 import CursosHome from "./CursosHome";

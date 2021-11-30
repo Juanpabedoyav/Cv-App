@@ -1,109 +1,88 @@
 import styled from "styled-components";
 
-
 export const GridGranp = styled.div`
-    /* border: 2px solid fuchsia; */
-    display: grid;
-    grid-template-columns: repeat(14, 1fr);
-    grid-template-rows: repeat(14, 1fr);
-    grid-template-rows: 20px 167px 10px 250px 10px 43px 70px;
-    background-color: #EEF5F6;
-    
-    
-  
+  /* border: 2px solid fuchsia; */
+  display: grid;
+  grid-template-columns: repeat(14, 1fr);
+  grid-template-rows: repeat(14, 1fr);
+  grid-template-rows: 20px 167px 10px 250px 10px 43px 70px;
+  background-color: #eef5f6;
+  height: 100vh;
 `;
 
 export const GridUncleVideo = styled.iframe`
-    /* border: 2px solid red; */
-    grid-column: 2/14;
-    grid-row: 2/2;
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-    
-    
+  /* border: 2px solid red; */
+  grid-column: 2/14;
+  grid-row: 2/2;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
 `;
 
 export const GridUncleList = styled.div`
-    /* border: 2px solid blue; */
-    display: grid;
-    grid-template-columns: repeat(10, 1fr);
-    grid-template-rows: repeat(14, 1fr);
-    grid-column: 2/14;
-    grid-row: 4/4;
-    .tutorials-styles{
-        font-weight: 600;
-        text-align : start ;
-        padding: 0px 10px;
-        color: #47525E;
-        border: 1px solid #47525e30;
-        border-radius: 7px;
-        background-color: #dafdf739 ;
-        box-shadow: 0px 1px 5px  ;
-    &:hover{
-        color: #27c9e2;
-        
+  /* border: 2px solid blue; */
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(14, 1fr);
+  grid-column: 2/14;
+  grid-row: 4/4;
+  .tutorials-styles {
+    font-weight: 600;
+    text-align: start;
+    padding: 0px 10px;
+    color: #47525e;
+    border: 1px solid #47525e30;
+    border-radius: 7px;
+    background-color: #dafdf739;
+    box-shadow: 0px 1px 5px;
+    &:hover {
+      color: var(--color-principal);
     }
-
-    } 
+  }
 `;
 export const Tutorial1 = styled.div`
-    /* border: 2px solid green; */
-    grid-column: 1/12;
-    grid-row: 2/2;
-    
-  
+  /* border: 2px solid green; */
+  grid-column: 1/12;
+  grid-row: 2/2;
 `;
 export const Tutorial2 = styled.div`
-    /* border: 2px solid green; */
-    grid-column: 1/13;
-    grid-row: 4/4; 
-    
-    
+  /* border: 2px solid green; */
+  grid-column: 1/13;
+  grid-row: 4/4;
 `;
 export const Tutorial3 = styled.div`
-    /* border: 2px solid green; */
-    grid-column: 1/13;
-    grid-row: 6/6; 
-    
-    
+  /* border: 2px solid green; */
+  grid-column: 1/13;
+  grid-row: 6/6;
 `;
 export const Tutorial4 = styled.div`
-    /* border: 2px solid green; */
-    grid-column: 1/13;
-    grid-row: 8/8; 
-    
-    
+  /* border: 2px solid green; */
+  grid-column: 1/13;
+  grid-row: 8/8;
 `;
 export const Tutorial5 = styled.div`
-    /* border: 2px solid green; */
-    grid-column: 1/13;
-    grid-row: 10/10; 
-    
-    
+  /* border: 2px solid green; */
+  grid-column: 1/13;
+  grid-row: 10/10;
 `;
 export const Tutorial6 = styled.div`
-    /* border: 2px solid green; */
-    grid-column: 1/13;
-    grid-row: 12/12; 
-    
-    
+  /* border: 2px solid green; */
+  grid-column: 1/13;
+  grid-row: 12/12;
 `;
 export const Tutorial7 = styled.div`
-    /* border: 2px solid green; */
-    grid-column: 1/13;
-    grid-row: 14/14; 
-    
-    
+  /* border: 2px solid green; */
+  grid-column: 1/13;
+  grid-row: 14/14;
 `;
 export const ButtonBack = styled.div`
-    /* border: 2px solid green; */
-    grid-column: 10/14;
-    grid-row: 6/6; 
-    
+  /* border: 2px solid green; */
+  grid-column: 10/14;
+  grid-row: 6/6;
+  .regresar {
+    background-color: var(--color-principal);
+  }
+  .regresar:hover {
+    background-color: var(--color-principal);
+  }
 `;
-
-
-
-
-

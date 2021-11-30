@@ -13,13 +13,17 @@ export const NavContainer = styled.nav`
     color: var(--color-principal);
     width: 100%;
     padding-top: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   .nav {
     justify-content: space-between;
   }
   .nav-titulo {
     font-size: 1rem;
-    color: #33393f;
+    color: var(--color-principal);
   }
   .nav-item {
     width: 25%;
