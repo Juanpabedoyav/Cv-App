@@ -6,8 +6,9 @@ export const GridGranp = styled.div`
     display: grid;
     grid-template-columns: repeat(14, 1fr);
     grid-template-rows: repeat(14, 1fr);
-    grid-template-rows: 20px 167px 40px 250px 40px 43px 22px;
+    grid-template-rows: 20px 167px 10px 250px 10px 43px 70px;
     background-color: #EEF5F6;
+    
     
   
 `;
@@ -99,6 +100,7 @@ export const ButtonBack = styled.div`
     /* border: 2px solid green; */
     grid-column: 10/14;
     grid-row: 6/6; 
+    
 `;
 
 
