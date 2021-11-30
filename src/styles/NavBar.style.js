@@ -5,13 +5,14 @@ export const NavContainer = styled.nav`
   position: fixed;
   bottom: 0;
   width: 100%;
-
+  background-color: var(--color-blanco);
   .box {
     /* border-top: 1px solid var(--color-principal); */
     display: inline-block;
     font-size: 26px;
     color: var(--color-principal);
     width: 100%;
+    padding-top: 5px;
   }
   .nav {
     justify-content: space-between;
