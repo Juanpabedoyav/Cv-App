@@ -1,4 +1,5 @@
 import React from "react";
+import { Link as LinkReact } from "react-router-dom";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay } from "@fortawesome/free-solid-svg-icons";
@@ -11,12 +12,11 @@ const Tutoriales = () => {
   return (
     <div>
       
-      <GridGranp>{/* Grid Abuelo  */}
+      <GridGranp>
       
         <GridUncleVideo src="https://www.youtube.com/embed/N_xqd0_GqmQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></GridUncleVideo>{/* Grid tio sin hijo  */}
 
-
-          <GridUncleList>{/* Grid tio sin hijo  */}
+          <GridUncleList>
 
           {/* la idea es que cada vez que presionemos sobre uno
            de los tutoriales cabien el ultimo componente de la url 
@@ -36,17 +36,14 @@ const Tutoriales = () => {
 
 
           <ButtonBack>
-            <Button colorScheme="teal" size="md">
-               Regresar
-            </Button>
-          </ButtonBack>{/* Grid tio sin hijo  */}
+              <LinkReact to="/home">
+                  <Button colorScheme="teal" size="md">
+                    Regresar
+                  </Button>
+              </LinkReact>
+          </ButtonBack>
 
-
-
-          <div></div>{/* Grid tio sin hijo  */}
-          <div></div>{/* Grid tio sin hijo  */}
-          <div></div>{/* Grid tio sin hijo  */}
-          </GridGranp>
+      </GridGranp>
           <NavBar/>
 
       
