@@ -7,6 +7,7 @@ export const GridGranp = styled.div`
     grid-template-columns: repeat(14, 1fr);
     grid-template-rows: repeat(14, 1fr);
     grid-template-rows: 20px 167px 40px 250px 40px 43px 22px;
+    background-color: #EEF5F6;
     
   
 `;
@@ -30,11 +31,17 @@ export const GridUncleList = styled.div`
     grid-column: 2/14;
     grid-row: 4/4;
     .tutorials-styles{
+        font-weight: 600;
         text-align : start ;
         padding: 0px 10px;
         color: #47525E;
+        border: 1px solid #47525e30;
+        border-radius: 7px;
+        background-color: #dafdf739 ;
+        box-shadow: 0px 1px 5px  ;
     &:hover{
-        color: #19b6ce;
+        color: #27c9e2;
+        
     }
 
     } 
@@ -43,6 +50,7 @@ export const Tutorial1 = styled.div`
     /* border: 2px solid green; */
     grid-column: 1/12;
     grid-row: 2/2;
+    
   
 `;
 export const Tutorial2 = styled.div`

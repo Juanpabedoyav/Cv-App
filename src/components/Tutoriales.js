@@ -13,8 +13,8 @@ const Tutoriales = () => {
     <div>
       
       <GridGranp>
-      
-        <GridUncleVideo src="https://www.youtube.com/embed/N_xqd0_GqmQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></GridUncleVideo>{/* Grid tio sin hijo  */}
+    
+        <GridUncleVideo src="https://www.youtube.com/embed/gpl8MLZyYDo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></GridUncleVideo>{/* Grid tio sin hijo  */}
 
           <GridUncleList>
 
