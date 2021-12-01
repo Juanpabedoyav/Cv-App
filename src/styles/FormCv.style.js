@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 
-
 export const TituloForm = styled.h1`
     font-size: 1.5rem;
     margin-top: 2rem;
@@ -15,7 +14,7 @@ export const InputForm = styled.input`
 `
 
 export const BotonDesplazar = styled.button`
-    padding: 1rem 2rem;
+    padding: ${props => props.padding || '1rem 2rem'};
     background-color: ${props => props.backgroundColor};
     border: ${props => props.border};
     border-radius: 20px;

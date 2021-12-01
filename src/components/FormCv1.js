@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { BotonDesplazar, ContenedorBotones, ContenedorInputs, ContenedorModalForm, InputForm, TituloForm } from '../styles/FormCv.style'
+import { BotonDesplazar, ContenedorBotones, ContenedorInputs, InputForm, TituloForm } from '../styles/FormCv.style'
 
 const FormCv1 = () => {
     return (
