@@ -20,13 +20,13 @@ const Login = () => {
 
       <FormControl id="first-name" isRequired>
               
-      <Label><FormLabel >Telefono celular </FormLabel></Label>
-              <Input bg = ' #62919936 ' w={250} placeholder="Telefono celular " />
+      {/* <Label><FormLabel >Telefono celular </FormLabel></Label> */}
+              <Input bg = ' #62919936 ' w={250} mt={10} placeholder="Telefono celular " />
           </FormControl>
 
           <FormControl id="password" isRequired>
-              <Label1 ><FormLabel  >Contraseña</FormLabel></Label1 >
-              <Input bg = ' #62919936 ' w={250}  placeholder="Contraseña " />
+              {/* <Label1 ><FormLabel  >Contraseña</FormLabel></Label1 > */}
+              <Input  bg = ' #62919936 ' w={250} mt={10} placeholder="Contraseña " />
           </FormControl>
 
          <ForgotPassword><p><i>¿Olvidaste la contraseña?</i></p></ForgotPassword>
