@@ -30,6 +30,12 @@ export const NavContainer = styled.nav`
   }
   .active {
     background-color: var(--color-principal);
+    div {
+      color: white;
+      p {
+        color: white;
+      }
+    }
   }
   .box-active {
     color: var(--color-blanco);
