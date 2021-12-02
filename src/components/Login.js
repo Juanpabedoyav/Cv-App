@@ -6,7 +6,7 @@ import { ImgContainer, ImgLogo } from "../styles/InicioApp.styles";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faReply } from "@fortawesome/free-solid-svg-icons";
 import {Link as LinkReact } from 'react-router-dom'
-import { ContainerLogin, ForgotPassword, IconUbi, Label, Label1  } from "../styles/login.styles";
+import { ContainerLogin, ForgotPassword, H1, IconUbi, Label, Label1  } from "../styles/login.styles";
 
 
 const Login = () => {
@@ -16,7 +16,7 @@ const Login = () => {
     <IconUbi ><LinkReact to="/"><FontAwesomeIcon icon={faReply} /></LinkReact> </IconUbi >
     <div>
       <ImgContainer><ImgLogo src="https://res.cloudinary.com/dv08oqgvx/image/upload/v1637968857/mk3ocdc7zaenmvrmaskc.jpg" alt="" /></ImgContainer>
-      <h1>Ingresar</h1>
+      <H1>Ingresar</H1>
 
       <FormControl id="first-name" isRequired>
               
