@@ -2,8 +2,12 @@ import React from "react";
 import { Button } from "@chakra-ui/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import btnGoogle from '../assets/btnGoogle.png'
-import { faPhoneAlt, fabFacebook} from "@fortawesome/free-solid-svg-icons";
+import { faPhoneAlt} from "@fortawesome/free-solid-svg-icons";
 import { Link as LinkReact } from "react-router-dom";
+// import { fab } from '@fortawesome/free-brands-svg-icons'
+import { faFacebook } from "@fortawesome/free-brands-svg-icons"
+
+
 import {
   ButtonContainer,
   ImgContainer,
@@ -38,8 +42,11 @@ const Inicio = () => {
             Iniciar sesion
           </Button>
         </LinkReact>
+        {/* <FontAwesomeIcon icon={fabFacebook}/> */}
+        {/* <FontAwesomeIcon icon={['fab', 'facebook-f']} /> */}
+
         <Button
-            // leftIcon={<FontAwesomeIcon icon={fabFacebook} />}
+            leftIcon={<FontAwesomeIcon className="icon-facebook"icon={faFacebook} /> }
             variant="solid"
             className="button-facebook"
           >

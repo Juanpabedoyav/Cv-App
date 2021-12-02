@@ -12,6 +12,14 @@ export const StylesContainer = styled.div`
       text-decoration-line: underline;
     }
   }
+  .icon-facebook{
+  font-size:1.5rem;
+  margin-right:15px;
+}
+.bfGwSY .css-taj3dd:hover{
+  background-color: #5890FF;
+
+}
 `;
 
 export const ImgContainer = styled.div`
@@ -95,4 +103,5 @@ export const ButtonContainer = styled.div`
   .phone:hover {
     background-color: var(--color-principal);
   }
-`;
+`
+
