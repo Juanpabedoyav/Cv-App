@@ -40,24 +40,22 @@ const Inicio = () => {
           </Button>
         </LinkReact>
         <Button
-            leftIcon={<FontAwesomeIcon icon={faPhoneAlt} />}
-            variant="solid"
-            className="phone"
-          >
-            Facebook
-          </Button>
-          <Button
-            leftIcon={<FontAwesomeIcon icon={faPhoneAlt} />}
-            variant="solid"
-            className="phone"
-          >
-            Google
-          </Button>
-       
-        
+          leftIcon={<FontAwesomeIcon icon={faPhoneAlt} />}
+          variant="solid"
+          className="phone"
+        >
+          Facebook
+        </Button>
+        <Button
+          leftIcon={<FontAwesomeIcon icon={faPhoneAlt} />}
+          variant="solid"
+          className="phone"
+        >
+          Google
+        </Button>
       </ButtonContainer>
 
-      <p className='registro'>
+      <p className="registro">
         Si no quieres registrarte{" "}
         <LinkReact to="/registro" className="registrate">
           Registrate Aquí

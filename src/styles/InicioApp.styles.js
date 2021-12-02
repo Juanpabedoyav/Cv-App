@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const StylesContainer = styled.div`
   background-color: #eef5f6;
-  height: 100vh ;
+  height: 100vh;
   color: var(--color-principal);
   overflow: hidden;
   p {
@@ -37,7 +37,6 @@ export const TextH4 = styled.h4`
   font-size: 16px;
   margin-top: 10px;
   font-weight: 400;
-
 `;
 
 export const ButtonContainer = styled.div`
@@ -60,10 +59,9 @@ export const ButtonContainer = styled.div`
     color: var(--color-blanco);
     border-radius: 2px;
   }
- .kep-login-facebook{
+  .kep-login-facebook {
     width: 100%;
     border-radius: 2px;
-  
   }
   .phone:hover {
     background-color: var(--color-principal);
