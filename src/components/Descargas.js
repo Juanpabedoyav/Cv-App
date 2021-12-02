@@ -13,20 +13,16 @@ import { Button } from "@chakra-ui/button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
 import "../styles/Descargas.style.css";
+import { DescargasContainer } from "../styles/Descargas.styles";
 
 const Descargas = () => {
   const { onOpen, onClose } = useDisclosure();
   const [placement] = useState("left");
 
   return (
-    <div>
-      <Drawer
-        className="drawer"
-        placement={placement}
-        onClose={onClose}
-        isOpen={onOpen}
-      >
-        <DrawerContent className="container-descargas">
+    <DescargasContainer>
+      <Drawer placement={placement} onClose={onClose} isOpen={onOpen}>
+        <DrawerContent>
           <DrawerHeader className="header-descargas" borderBottomWidth="2px">
             <h1 className="color">Descargas</h1>
             <LinkReact to="/home" className="color">
@@ -80,12 +76,13 @@ const Descargas = () => {
               </Box>
             </LinkReact>
           </DrawerBody>
-          <DrawerFooter>
-            <LinkReact className="back" to="/home">
+          <DrawerFooter className="footer">
+            <LinkReact to="/home">
               <Button
-                className="volver"
-                variant="outline"
-                colorScheme="teal"
+                style={{
+                  backgroundColor: "var(--color-principal)",
+                  color: "var(--color-blanco)",
+                }}
                 mb={4}
                 mr={3}
                 onClick={onClose}
@@ -96,7 +93,7 @@ const Descargas = () => {
           </DrawerFooter>
         </DrawerContent>
       </Drawer>
-    </div>
+    </DescargasContainer>
   );
 };
 

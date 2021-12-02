@@ -1,12 +1,11 @@
 import React from "react";
 import { Button } from "@chakra-ui/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import btnGoogle from '../assets/btnGoogle.png'
-import { faPhoneAlt} from "@fortawesome/free-solid-svg-icons";
+import btnGoogle from "../assets/btnGoogle.png";
+import { faPhoneAlt } from "@fortawesome/free-solid-svg-icons";
 import { Link as LinkReact } from "react-router-dom";
 // import { fab } from '@fortawesome/free-brands-svg-icons'
-import { faFacebook } from "@fortawesome/free-brands-svg-icons"
-
+import { faFacebook } from "@fortawesome/free-brands-svg-icons";
 
 import {
   ButtonContainer,
@@ -18,7 +17,6 @@ import {
 } from "../styles/InicioApp.styles";
 
 const Inicio = () => {
- 
   return (
     <StylesContainer>
       <ImgContainer>
@@ -47,7 +45,7 @@ const Inicio = () => {
 
         <Button
           style={{backgroundColor:'#5890FF'}}
-            leftIcon={<FontAwesomeIcon id="icon-facebook"icon={faFacebook} /> }
+            leftIcon={<FontAwesomeIcon className="icon-facebook"icon={faFacebook} /> }
             variant="solid"
             className="button-facebook"
           >
@@ -65,7 +63,7 @@ const Inicio = () => {
         
       </ButtonContainer>
 
-      <p className='registro'>
+      <p className="registro">
         Si no quieres registrarte{" "}
         <LinkReact to="/registro" className="registrate">
           Registrate Aquí
