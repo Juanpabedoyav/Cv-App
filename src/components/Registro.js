@@ -1,5 +1,5 @@
 import React from "react";
-import { FormControl, FormLabel, Input, Button } from "@chakra-ui/react";
+import { FormControl, Input, Button, FormLabel } from "@chakra-ui/react";
 // import {Form} from 'formik'
 import { Link as LinkReact } from "react-router-dom";
 import {
@@ -45,12 +45,10 @@ const Registro = () => {
 
         <FormControl id="ConfirmPassword" isRequired>
           <FormLabel className="label">Confirmar contraseña</FormLabel>
-          <Input 
-          className="input" 
-          placeholder="Confirmar contraseña " />
+          <Input className="input" placeholder="Confirmar contraseña " />
         </FormControl>
 
-        <Button className="botton-submit" colorScheme="teal" size="lg">
+        <Button className="botton-submit button" size="lg">
           Crear cuenta
         </Button>
       </form>

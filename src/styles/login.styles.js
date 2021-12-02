@@ -1,5 +1,32 @@
 import styled from "styled-components";
 
+<<<<<<< HEAD
+export const LoginContainer = styled.div`
+  background-color: #eef5f6;
+  height: 100vh;
+  color: var(--color-principal);
+  overflow: hidden;
+  .button {
+    background-color: var(--color-principal);
+    color: var(--color-blanco);
+  }
+  .button:hover {
+    background-color: var(--color-principal);
+    color: var(--color-blanco);
+  }
+  .input {
+    border: 1px solid var(--color-principal);
+  }
+  .pass {
+    border: 1px solid var(--color-principal);
+    margin-top: 15px;
+  }
+  .input::placeholder,
+  .pass::placeholder {
+    color: var(--color-principal);
+  }
+`;
+=======
 export const ContainerLogin = styled.div`
     background-color: #eef5f6;
     height: 710px;
@@ -45,3 +72,4 @@ export const ForgotPassword = styled.div`
 
 
 `;
+>>>>>>> 4ffe4eecf512fa83ff2730b332105997189c1c41
