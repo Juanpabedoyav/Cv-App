@@ -100,11 +100,7 @@ export const ButtonContainer = styled.div`
   .phone:hover {
     background-color: var(--color-principal);
   }
-  .bfGwSY .css-taj3dd:hover{
-  background-color: #5890FF;
-}
-.css-taj3dd:hover, .css-taj3dd[data-hover] {
-  background-color: #5890FF;
-}
+
+
 `
 

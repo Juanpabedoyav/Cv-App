@@ -46,7 +46,8 @@ const Inicio = () => {
         {/* <FontAwesomeIcon icon={['fab', 'facebook-f']} /> */}
 
         <Button
-            leftIcon={<FontAwesomeIcon className="icon-facebook"icon={faFacebook} /> }
+          style={{backgroundColor:'#5890FF'}}
+            leftIcon={<FontAwesomeIcon id="icon-facebook"icon={faFacebook} /> }
             variant="solid"
             className="button-facebook"
           >
