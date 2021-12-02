@@ -37,23 +37,29 @@ const Inicio = () => {
             variant="solid"
             className="phone"
           >
-            INGRESAR CON CELULAR
+            Iniciar sesion
           </Button>
         </LinkReact>
-
-        <FacebookLogin
-          appId="924317245136822"
-          autoLoad={false}
-          fields="name,email,picture"
-          // onClick={componentClicked}
-          callback={responseFacebook}
-          icon=" fa-facebook"
-          textButton="Ingresar con Facebook"
-        />
+        <Button
+            leftIcon={<FontAwesomeIcon icon={faPhoneAlt} />}
+            variant="solid"
+            className="phone"
+          >
+            Facebook
+          </Button>
+          <Button
+            leftIcon={<FontAwesomeIcon icon={faPhoneAlt} />}
+            variant="solid"
+            className="phone"
+          >
+            Google
+          </Button>
+       
+        
       </ButtonContainer>
 
       <p className='registro'>
-        Si no tienes cuenta{" "}
+        Si no quieres registrarte{" "}
         <LinkReact to="/registro" className="registrate">
           Registrate Aquí
         </LinkReact>

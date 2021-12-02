@@ -17,12 +17,13 @@ const Login = () => {
       <h1>Ingresar</h1>
 
       <FormControl id="first-name" isRequired>
-              <FormLabel>Telefono celular </FormLabel>
+              
+          <div className="labe-styles"> <FormLabel>Telefono celular </FormLabel></div>
               <Input placeholder="Telefono celular " />
           </FormControl>
 
           <FormControl id="password" isRequired>
-              <FormLabel>Contraseña</FormLabel>
+              <FormLabel  >Contraseña</FormLabel>
               <Input placeholder="Contraseña " />
           </FormControl>
 
