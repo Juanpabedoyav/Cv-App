@@ -32,7 +32,7 @@ export const GridAbuperf = styled.div`
 export const GridPaperf1 = styled.div`
   grid-column: 2/8;
   grid-row: 2/2;
-  padding: 15px 0px;
+  padding: 0px 0px;
   /* border: 2px solid fuchsia; */
 `;
 
@@ -43,7 +43,7 @@ export const GridPaperf2 = styled.div`
   font-size: 11px;
   font-weight: bold;
   color: #47525e;
-  padding: 35px 0px;
+  padding: 20px 0px;
 `;
 
 export const GridPaperf3 = styled.div`
