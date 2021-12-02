@@ -52,6 +52,7 @@ export const IconUbi = styled.div`
     position: relative;
     top: 30px;
     right: 140px;
+    font-size: 1.4rem;
 `;
 export const ForgotPassword = styled.div`
     padding-top: 20px;
