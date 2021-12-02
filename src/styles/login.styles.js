@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-<<<<<<< HEAD
 export const LoginContainer = styled.div`
   background-color: #eef5f6;
   height: 100vh;
@@ -26,7 +25,6 @@ export const LoginContainer = styled.div`
     color: var(--color-principal);
   }
 `;
-=======
 export const ContainerLogin = styled.div`
     background-color: #eef5f6;
     height: 710px;
@@ -72,4 +70,3 @@ export const ForgotPassword = styled.div`
 
 
 `;
->>>>>>> 4ffe4eecf512fa83ff2730b332105997189c1c41
