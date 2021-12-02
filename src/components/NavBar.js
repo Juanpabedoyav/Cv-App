@@ -1,6 +1,6 @@
 import { Box, Flex, Text } from "@chakra-ui/layout";
 import React from "react";
-import { Link as LinkReact } from "react-router-dom";
+import { Link as LinkReact, NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHome,
@@ -10,41 +10,35 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { NavContainer } from "../styles/NavBar.style";
 
+
 const NavBar = () => {
+  const links = [
+    { name: "Home", to: "/home", ico: faHome },
+    { name: "Descargas", to: "/descargas", ico: faFileDownload  },
+    { name: "Tutoriales", to: "/tutoriales", ico: faChalkboardTeacher },
+    { name: "Perfil", to: "/perfil", ico: faUser }
+  ];
+
   return (
-    <div>
+    <>
       <NavContainer>
         <Flex className="nav">
-          <LinkReact to="/home" className="nav-item active">
-            <Box className="box box-active">
-              <FontAwesomeIcon icon={faHome} />
-              <Text className="nav-titulo box-active">Incio</Text>
-            </Box>
-          </LinkReact>
-
-          <LinkReact to="/descargas" className="nav-item">
-            <Box className="box">
-              <FontAwesomeIcon icon={faFileDownload} />
-              <Text className="nav-titulo">Descargas</Text>
-            </Box>
-          </LinkReact>
-
-          <LinkReact to="/tutoriales" className="nav-item">
-            <Box className="box">
-              <FontAwesomeIcon icon={faChalkboardTeacher} />
-              <Text className="nav-titulo">Tutoriales</Text>
-            </Box>
-          </LinkReact>
-
-          <LinkReact to="/perfil" className="nav-item">
-            <Box className="box">
-              <FontAwesomeIcon icon={faUser} />
-              <Text className="nav-titulo">Perfil</Text>
-            </Box>
-          </LinkReact>
+        {
+          links.map((el, i) => {
+            return(
+              <NavLink to={el.to} activeClassName='active'
+                key={el.name+i}
+                className='nav-item'>
+                <Box className="box" activeClassName="box-active">
+                <FontAwesomeIcon icon={el.ico} />
+                  <Text className="nav-titulo" activeClassName="box-active">{el.name}</Text>
+              </Box>
+            </NavLink>)
+          })
+        }
         </Flex>
       </NavContainer>
-    </div>
+    </>
   );
 };
 
