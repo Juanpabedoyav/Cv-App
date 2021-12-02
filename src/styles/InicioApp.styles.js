@@ -12,6 +12,11 @@ export const StylesContainer = styled.div`
       text-decoration-line: underline;
     }
   }
+  .icon-facebook{
+  font-size:1.5rem;
+  margin-right:15px;
+}
+
 `;
 
 export const ImgContainer = styled.div`
@@ -40,12 +45,13 @@ export const TextH4 = styled.h4`
 `;
 
 export const ButtonContainer = styled.div`
+    /* border: 1px solid red; */
   margin-top: 60px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /* border: 2px solid red; */
-  height: 110px;
+
+  height: 180px;
   width: 245px;
   margin-left: auto;
   margin-right: auto;
@@ -59,11 +65,53 @@ export const ButtonContainer = styled.div`
     color: var(--color-blanco);
     border-radius: 2px;
   }
+<<<<<<< HEAD
   .kep-login-facebook {
+=======
+ .button-facebook{
+  height: 49px;
+>>>>>>> 4ffe4eecf512fa83ff2730b332105997189c1c41
     width: 100%;
+    border-width: 0;
+    background-color: #5890FF;
+    color: var(--color-blanco);
     border-radius: 2px;
+<<<<<<< HEAD
   }
+=======
+ }
+ .button-google{
+  height: 49px;
+    width: 100%;
+    border-width: 0;
+    /* background-color: #4285F4; */
+    background-color:#FFFFFF;
+    color: black;
+    border-radius: 2px;
+    box-shadow: 0px 0px 1px .2px rgb(0, 0, 0, .9);
+    padding: 0;
+    img{
+      position: absolute; 
+      left:2px; 
+    }
+    span{
+      /* border:1px solid red; */
+      margin-left: 30px;
+    }
+ }
+ .css-taj3dd:hover{
+   background-color: #ffffff92;
+ }
+
+>>>>>>> 4ffe4eecf512fa83ff2730b332105997189c1c41
   .phone:hover {
     background-color: var(--color-principal);
   }
-`;
+  .bfGwSY .css-taj3dd:hover{
+  background-color: #5890FF;
+}
+.css-taj3dd:hover, .css-taj3dd[data-hover] {
+  background-color: #5890FF;
+}
+`
+

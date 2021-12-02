@@ -9,10 +9,11 @@ import { Link as LinkReact } from "react-router-dom";
 import {
   ContainerLogin,
   ForgotPassword,
+  H1,
   IconUbi,
   Label,
   Label1,
-} from "../styles/Login.styles";
+} from "../styles/login.styles";
 
 const Login = () => {
   return (
@@ -30,20 +31,21 @@ const Login = () => {
               alt=""
             />
           </ImgContainer>
-          <h1>Ingresar</h1>
+          <H1>Ingresar</H1>
 
           <FormControl id="first-name" isRequired>
-            <Label>
-              <FormLabel>Telefono celular </FormLabel>
-            </Label>
-            <Input bg=" #62919936 " w={250} placeholder="Telefono celular " />
+            {/* <Label><FormLabel >Telefono celular </FormLabel></Label> */}
+            <Input
+              bg=" #62919936 "
+              w={250}
+              mt={10}
+              placeholder="Telefono celular "
+            />
           </FormControl>
 
           <FormControl id="password" isRequired>
-            <Label1>
-              <FormLabel>Contraseña</FormLabel>
-            </Label1>
-            <Input bg=" #62919936 " w={250} placeholder="Contraseña " />
+            {/* <Label1 ><FormLabel  >Contraseña</FormLabel></Label1 > */}
+            <Input bg=" #62919936 " w={250} mt={10} placeholder="Contraseña " />
           </FormControl>
 
           <ForgotPassword>

@@ -1,11 +1,22 @@
 import React from "react";
-import { VistaPreviaContainer } from "../styles/VistaPrevia.styles";
+import { Link } from "react-router-dom";
+import { ContainerVistaPrevia } from "../styles/vistaPrevia.style";
 
 const VistaPreviaCv = () => {
   return (
-    <VistaPreviaContainer>
-      <h1>Vista Previa</h1>
-    </VistaPreviaContainer>
+    <ContainerVistaPrevia>
+      <header className="cabecera">
+        <Link to="/home">X</Link>
+      </header>
+      <h1 className=" title">Vista Previa</h1>
+
+      <section className="contenido">
+        <img
+          src="https://res.cloudinary.com/workshop-principe/image/upload/v1638332668/Demo%20day/template_1_bin4sh.jpg"
+          alt=""
+        />
+      </section>
+    </ContainerVistaPrevia>
   );
 };
 
