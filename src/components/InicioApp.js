@@ -47,7 +47,7 @@ const Inicio = () => {
 
         <Button
           style={{backgroundColor:'#5890FF'}}
-            leftIcon={<FontAwesomeIcon id="icon-facebook"icon={faFacebook} /> }
+            leftIcon={<FontAwesomeIcon className="icon-facebook"icon={faFacebook} /> }
             variant="solid"
             className="button-facebook"
           >
