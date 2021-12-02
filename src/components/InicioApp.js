@@ -1,5 +1,4 @@
 import React from "react";
-import FacebookLogin from "react-facebook-login";
 import { Button } from "@chakra-ui/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhoneAlt } from "@fortawesome/free-solid-svg-icons";
