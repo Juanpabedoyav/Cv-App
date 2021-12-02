@@ -35,6 +35,8 @@ export const IconUbi = styled.div`
     position: relative;
     top: 30px;
     right: 140px;
+    color: #629197;
+    font-size: 1.4rem;
 
 `;
 export const ForgotPassword = styled.div`
