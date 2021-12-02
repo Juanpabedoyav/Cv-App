@@ -13,7 +13,7 @@ import {
   IconUbi,
   Label,
   Label1,
-} from "../styles/login.styles";
+} from "../styles/Login.style";
 
 const Login = () => {
   return (
