@@ -6,6 +6,7 @@ import { ImgContainer, ImgLogo } from "../styles/InicioApp.styles";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faReply } from "@fortawesome/free-solid-svg-icons";
 import {Link as LinkReact } from 'react-router-dom'
+import { Label } from "../styles/login.styles";
 
 
 const Login = () => {
@@ -18,12 +19,12 @@ const Login = () => {
 
       <FormControl id="first-name" isRequired>
               
-          <div className="labe-styles"> <FormLabel>Telefono celular </FormLabel></div>
+          <Label> <FormLabel >Telefono celular </FormLabel></Label>
               <Input placeholder="Telefono celular " />
           </FormControl>
 
           <FormControl id="password" isRequired>
-              <FormLabel  >Contraseña</FormLabel>
+              <Label><FormLabel  >Contraseña</FormLabel></Label>
               <Input placeholder="Contraseña " />
           </FormControl>
 
