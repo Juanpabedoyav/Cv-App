@@ -65,20 +65,13 @@ export const ButtonContainer = styled.div`
     color: var(--color-blanco);
     border-radius: 2px;
   }
-<<<<<<< HEAD
-  .kep-login-facebook {
-=======
  .button-facebook{
   height: 49px;
->>>>>>> 4ffe4eecf512fa83ff2730b332105997189c1c41
     width: 100%;
     border-width: 0;
     background-color: #5890FF;
     color: var(--color-blanco);
     border-radius: 2px;
-<<<<<<< HEAD
-  }
-=======
  }
  .button-google{
   height: 49px;
@@ -103,7 +96,6 @@ export const ButtonContainer = styled.div`
    background-color: #ffffff92;
  }
 
->>>>>>> 4ffe4eecf512fa83ff2730b332105997189c1c41
   .phone:hover {
     background-color: var(--color-principal);
   }

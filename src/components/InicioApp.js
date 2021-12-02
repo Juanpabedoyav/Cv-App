@@ -44,17 +44,23 @@ const Inicio = () => {
         {/* <FontAwesomeIcon icon={['fab', 'facebook-f']} /> */}
 
         <Button
-          style={{ backgroundColor: "#5890FF" }}
-          leftIcon={<FontAwesomeIcon id="icon-facebook" icon={faFacebook} />}
-          variant="solid"
-          className="button-facebook"
-        >
-          Iniciar Con Facebook
-        </Button>
-        <Button variant="solid" className="button-google">
-          <img src={btnGoogle} alt="" />
-          <span> Iniciar con Google</span>
-        </Button>
+          style={{backgroundColor:'#5890FF'}}
+            leftIcon={<FontAwesomeIcon className="icon-facebook"icon={faFacebook} /> }
+            variant="solid"
+            className="button-facebook"
+          >
+            Iniciar Con Facebook
+          </Button>
+          <Button
+            variant="solid"
+            className="button-google"
+          >
+<img src={btnGoogle} alt="" />
+<span> Iniciar con Google</span>
+           
+          </Button>
+       
+        
       </ButtonContainer>
 
       <p className="registro">

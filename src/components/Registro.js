@@ -25,19 +25,22 @@ const Registro = () => {
       </ImgRegistro>
       <TitleRegistro>Crea tu cuenta</TitleRegistro>
       <form className="formulario">
-        <FormControl id="names" isRequired>
-          <FormLabel className="label">Nombre Completo </FormLabel>
-          <Input className="input" placeholder="Nombre y Apellidos " />
+      <FormControl id="names" isRequired>
+          <Input 
+          className="input" 
+          placeholder="Nombre y Apellidos " />
         </FormControl>
 
         <FormControl id="telephoneNumber" isRequired>
-          <FormLabel className="label">Teléfono celular </FormLabel>
-          <Input className="input" placeholder="Telefono celular " />
+          <Input 
+          className="input" 
+          placeholder="Telefono celular " />
         </FormControl>
 
         <FormControl id="password" isRequired>
-          <FormLabel className="label">Contraseña</FormLabel>
-          <Input className="input" placeholder="Contraseña " />
+          <Input 
+          className="input" 
+          placeholder="Contraseña " />
         </FormControl>
 
         <FormControl id="ConfirmPassword" isRequired>
