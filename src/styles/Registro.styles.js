@@ -25,6 +25,18 @@ export const StyleRegistro = styled.div`
   width: 100%;
   .input::placeholder {
     font-weight: 600;
+    color: var(--color-principal);
+  }
+  .button {
+    background-color: var(--color-principal);
+    color: var(--color-blanco);
+  }
+  .button:hover {
+    background-color: var(--color-principal);
+    color: var(--color-blanco);
+  }
+  .input:focus {
+    border: 1px solid var(--color-principal);
   }
   .formulario {
     margin-top: 10px;

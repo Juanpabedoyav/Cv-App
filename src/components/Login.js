@@ -26,22 +26,19 @@ const Login = () => {
         <h1>Ingresar</h1>
 
         <FormControl id="first-name" isRequired>
-          <div className="labe-styles">
-            {" "}
-            <FormLabel>Telefono celular </FormLabel>
-          </div>
-          <Input placeholder="Telefono celular " />
+          <Input placeholder="Telefono celular" className="input" />
         </FormControl>
 
         <FormControl id="password" isRequired>
-          <FormLabel>Contraseña</FormLabel>
-          <Input placeholder="Contraseña " />
+          <Input placeholder="Contraseña " className="pass" />
         </FormControl>
 
         <p>¿Olvidaste la contraseña?</p>
 
         <LinkReact to="/home">
-          <Button className="button">Ingresar</Button>
+          <Button className="botton-submit button" size="lg">
+            Ingresar
+          </Button>
         </LinkReact>
       </div>
     </LoginContainer>

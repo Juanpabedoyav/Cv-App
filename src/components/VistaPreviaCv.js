@@ -1,12 +1,12 @@
-import React from 'react'
+import React from "react";
+import { VistaPreviaContainer } from "../styles/VistaPrevia.styles";
 
 const VistaPreviaCv = () => {
-    return (
-        <div>
-            
-            <h1>Vista Previa</h1>
-        </div>
-    )
-}
+  return (
+    <VistaPreviaContainer>
+      <h1>Vista Previa</h1>
+    </VistaPreviaContainer>
+  );
+};
 
-export default VistaPreviaCv
+export default VistaPreviaCv;
