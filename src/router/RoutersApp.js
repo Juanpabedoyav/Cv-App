@@ -13,7 +13,6 @@ const RoutersApp = () => {
   return (
     <div>
       <Routes>
-        <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
         <Route path="/perfil" element={<Perfil />} />
         <Route path="/descargas" element={<Descargas />} />
@@ -22,7 +21,7 @@ const RoutersApp = () => {
         <Route path="/plantillascv" element={<PlantillasCv />} />
         <Route path="/tutoriales" element={<Tutoriales />} />
         <Route path="/vistaprevia" element={<VistaPreviaCv />} />
-        <Route path="*" element={<Navigate to="/" />} />
+        <Route path="/login" element={<Navigate to="/home" />} />
       </Routes>
     </div>
   );
