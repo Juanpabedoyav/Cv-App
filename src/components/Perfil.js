@@ -16,11 +16,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faPhone,
   faPowerOff,
-  faQuestion,
   faSignOutAlt,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link as LinkReact } from "react-router-dom";
-import { Button } from "@chakra-ui/react";
 
 const Perfil = () => {
   return (

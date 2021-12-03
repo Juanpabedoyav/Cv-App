@@ -1,6 +1,6 @@
 import { Box, Flex, Text } from "@chakra-ui/layout";
 import React from "react";
-import { Link as LinkReact, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHome,
