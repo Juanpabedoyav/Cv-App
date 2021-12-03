@@ -61,9 +61,9 @@ export const Label1 = styled.div`
     color: #629197;
 `;
 export const IconUbi = styled.div`
-    position: relative;
-    top: 30px;
-    right: 140px;
+    text-align: initial;
+    padding-left: 15px;
+    padding-top: 15px;
     font-size: 1.4rem;
 `;
 export const ForgotPassword = styled.div`
