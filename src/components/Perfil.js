@@ -1,18 +1,32 @@
 import React from "react";
-import {GridAbuperf,GridButtonDelete,GridCerrar,GridPaperf1,GridPaperf2,
-  GridPaperf3,GridPaperf4,GridPaperf5,GridPaperf6, GridPhone,GridTerminos,} from "../styles/Perfil.styles";
+import {
+  GridAbuperf,
+  GridCerrar,
+  GridEliminar,
+  GridPaperf1,
+  GridPaperf2,
+  GridPaperf3,
+  GridPaperf4,
+  GridPaperf5,
+  GridPaperf6,
+  GridPhone,
+} from "../styles/Perfil.styles";
 import NavBar from "./NavBar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {faPhone,faQuestion,faSignOutAlt,} from "@fortawesome/free-solid-svg-icons";
+import {
+  faPhone,
+  faPowerOff,
+  faQuestion,
+  faSignOutAlt,
+} from "@fortawesome/free-solid-svg-icons";
 import { Link as LinkReact } from "react-router-dom";
-import {Button} from '@chakra-ui/react'
+import { Button } from "@chakra-ui/react";
 
 const Perfil = () => {
   return (
     <div>
       <GridAbuperf>
         <GridPaperf1 className="styles-font-name">
-        
           Nombre Usuario
           <br />
         </GridPaperf1>
@@ -38,25 +52,24 @@ const Perfil = () => {
         <GridPaperf5 className="styles-font-perfil">
           <LinkReact to="/login"> Cerrar sesión </LinkReact>{" "}
         </GridPaperf5>
-        <GridTerminos>
-          <FontAwesomeIcon icon={faQuestion} />{" "}
-        </GridTerminos>
+        <GridEliminar>
+          <LinkReact to="/">
+            <FontAwesomeIcon icon={faPowerOff} />
+          </LinkReact>{" "}
+        </GridEliminar>
         <GridPaperf6 className="styles-font-perfil">
-          {" "}
-          Terminos y condiciones{" "}
-         
+          <LinkReact to="/">Eliminar cuenta </LinkReact>{" "}
         </GridPaperf6>
-        <GridButtonDelete>
+        {/*  <GridButtonDelete>
           <LinkReact to="/">
         <Button bg= '#4b777e'  size='md'>
         Eliminar cuenta
         </Button>
         </LinkReact>
 
-        </GridButtonDelete>
-        
+        </GridButtonDelete> */}
       </GridAbuperf>
-  
+
       <NavBar />
     </div>
   );

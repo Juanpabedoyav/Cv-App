@@ -10,32 +10,35 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { NavContainer } from "../styles/NavBar.style";
 
-
 const NavBar = () => {
   const links = [
-    { name: "Home", to: "/home", ico: faHome },
-    { name: "Descargas", to: "/descargas", ico: faFileDownload  },
+    { name: "Inicio", to: "/home", ico: faHome },
+    { name: "Descargas", to: "/descargas", ico: faFileDownload },
     { name: "Tutoriales", to: "/tutoriales", ico: faChalkboardTeacher },
-    { name: "Perfil", to: "/perfil", ico: faUser }
+    { name: "Perfil", to: "/perfil", ico: faUser },
   ];
 
   return (
     <>
       <NavContainer>
         <Flex className="nav">
-        {
-          links.map((el, i) => {
-            return(
-              <NavLink to={el.to} activeClassName='active'
-                key={el.name+i}
-                className='nav-item'>
+          {links.map((el, i) => {
+            return (
+              <NavLink
+                to={el.to}
+                activeClassName="active"
+                key={el.name + i}
+                className="nav-item"
+              >
                 <Box className="box" activeClassName="box-active">
-                <FontAwesomeIcon icon={el.ico} />
-                  <Text className="nav-titulo" activeClassName="box-active">{el.name}</Text>
-              </Box>
-            </NavLink>)
-          })
-        }
+                  <FontAwesomeIcon icon={el.ico} />
+                  <Text className="nav-titulo" activeClassName="box-active">
+                    {el.name}
+                  </Text>
+                </Box>
+              </NavLink>
+            );
+          })}
         </Flex>
       </NavContainer>
     </>

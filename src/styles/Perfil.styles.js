@@ -6,7 +6,6 @@ export const GridAbuperf = styled.div`
   grid-template-rows: repeat(10, 1fr);
   background-color: #eef5f6;
   margin-top: -40px;
-
   height: 100vh;
   .styles-font-perfil {
     font-size: 15px;
@@ -30,97 +29,72 @@ export const GridAbuperf = styled.div`
     border-radius: 100%;
     width: 100%;
   }
-
 `;
 
 export const GridPaperf1 = styled.div`
-
   grid-column: 2/8;
   grid-row: 2/2;
- 
 `;
 
 export const GridPaperf2 = styled.div`
-  
   grid-column: 2/8;
   grid-row: 3/3;
   font-size: 11px;
   font-weight: bold;
   color: #47525e;
-
 `;
 
 export const GridPaperf3 = styled.div`
-
   grid-column: 9/14;
   grid-row: 2/4;
   border-radius: 100%;
   width: 100px;
   height: 100px;
-  
-
 `;
 
 export const GridPaperf4 = styled.div`
- 
   grid-column: 4/12;
   grid-row: 4/4;
   text-align: start;
-  padding-top: 22px ;
-  
+  padding-top: 22px;
 `;
 
 export const GridPaperf5 = styled.div`
- 
   grid-column: 4/12;
   grid-row: 6/6;
   text-align: start;
-  padding-top: 22px ;
-  &:hover {
-      background-color: var(--color-blanco);
-      border: 2px solid var(--color-principal);
-      color: var(--color-principal);
-      border-radius: 20px;
-      box-shadow: 10px 10px 20px #fff;
-      width: 120px;
-      text-align: center;
-      padding-top: 20px;
-    }
+  padding-top: 22px;
 `;
 
 export const GridPaperf6 = styled.div`
- 
   grid-column: 4/12;
   grid-row: 8/8;
   text-align: start;
-  padding-top: 22px ;
+  padding-top: 22px;
 `;
 
 export const GridPhone = styled.div`
-
   grid-column: 2/4;
   grid-row: 4/4;
   font-size: 25px;
   color: #4b777e;
-  padding-top: 12px ;
+  padding-top: 12px;
 `;
 
 export const GridCerrar = styled.div`
-
   grid-column: 2/4;
   grid-row: 6/6;
   font-size: 25px;
   color: #4b777e;
-  padding-top: 16px ;
+  padding-top: 16px;
 `;
 
-export const GridTerminos = styled.div`
-
+export const GridEliminar = styled.div`
   grid-column: 2/4;
   grid-row: 8/8;
   font-size: 25px;
   color: #4b777e;
-  padding-top: 12px ;
+  padding-top: 12px;
 `;
 export const GridButtonDelete = styled.div`
   grid-column: 5/11;
@@ -128,6 +102,6 @@ export const GridButtonDelete = styled.div`
   margin: auto;
   color: #fff;
   &:hover {
-      color: red;
-    }
+    color: red;
+  }
 `;

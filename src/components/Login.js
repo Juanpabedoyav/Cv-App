@@ -1,8 +1,6 @@
 import { Button } from "@chakra-ui/button";
-import { FormControl, FormLabel } from "@chakra-ui/form-control";
-import { Input } from "@chakra-ui/input";
+import { FormControl } from "@chakra-ui/form-control";
 import React from "react";
-import { ImgContainer, ImgLogo } from "../styles/InicioApp.styles";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faReply } from "@fortawesome/free-solid-svg-icons";
 import { Link as LinkReact } from "react-router-dom";
@@ -11,53 +9,50 @@ import {
   ForgotPassword,
   H1,
   IconUbi,
+  ImgLogin,
   Label,
   Label1,
 } from "../styles/Login.style";
-import {InputForm,ContenedorInputs, TitleRegistro} from "../styles/Login.style";
+import {
+  InputForm,
+  ContenedorInputs,
+  TitleRegistro,
+} from "../styles/Login.style";
 
 const Login = () => {
   return (
     <>
       <ContainerLogin>
-        <IconUbi>
-          <LinkReact to="/">
-            <FontAwesomeIcon icon={faReply} />
-          </LinkReact>{" "}
-        </IconUbi>
+        <LinkReact to="/" className="back-container">
+          <FontAwesomeIcon icon={faReply} className="back" />
+        </LinkReact>{" "}
         <div>
-          <ImgContainer>
-            <ImgLogo
+          <ImgLogin>
+            <img
               src="https://res.cloudinary.com/dv08oqgvx/image/upload/v1637968857/mk3ocdc7zaenmvrmaskc.jpg"
-              alt=""
+              alt="logo"
             />
-          </ImgContainer>
+          </ImgLogin>
           <TitleRegistro>Ingresar</TitleRegistro>
 
           <ContenedorInputs>
-          <FormControl id="first-name" isRequired>
-            <InputForm
-            
-              placeholder="Telefono celular "
-            />
-          </FormControl>
+            <FormControl id="first-name" isRequired>
+              <InputForm placeholder="Teléfono celular " />
+            </FormControl>
 
-          <FormControl id="password" isRequired>
-            {/* <Label1 ><FormLabel  >Contraseña</FormLabel></Label1 > */}
-            <InputForm 
-            placeholder="Contraseña " />
-          </FormControl>
+            <FormControl id="password" isRequired>
+              {/* <Label1 ><FormLabel  >Contraseña</FormLabel></Label1 > */}
+              <InputForm type="password" placeholder="Contraseña" />
+            </FormControl>
 
-          <ForgotPassword>
-            <p>
-              <i>¿Olvidaste la contraseña?</i>
-            </p>
-          </ForgotPassword>
+            <ForgotPassword>
+              <p>
+                <i>¿Olvidaste la contraseña?</i>
+              </p>
+            </ForgotPassword>
           </ContenedorInputs>
           <LinkReact to="/home">
-            <Button className='botton-login' >
-              Ingresar
-            </Button>
+            <Button className="botton-login">Ingresar</Button>
           </LinkReact>
         </div>
       </ContainerLogin>

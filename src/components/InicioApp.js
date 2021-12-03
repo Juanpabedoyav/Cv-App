@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import btnGoogle from "../assets/btnGoogle.png";
 import { faPhoneAlt } from "@fortawesome/free-solid-svg-icons";
 import { Link as LinkReact } from "react-router-dom";
-// import { fab } from '@fortawesome/free-brands-svg-icons'
 import { faFacebook } from "@fortawesome/free-brands-svg-icons";
 
 import {
@@ -37,34 +36,28 @@ const Inicio = () => {
             variant="solid"
             className="phone "
           >
-            Iniciar sesion
+            Iniciar con Celular
           </Button>
         </LinkReact>
-        {/* <FontAwesomeIcon icon={fabFacebook}/> */}
-        {/* <FontAwesomeIcon icon={['fab', 'facebook-f']} /> */}
 
         <Button
-          style={{backgroundColor:'#5890FF'}}
-            leftIcon={<FontAwesomeIcon className="icon-facebook"icon={faFacebook} /> }
-            variant="solid"
-            className="button-facebook"
-          >
-            Iniciar Con Facebook
-          </Button>
-          <Button
-            variant="solid"
-            className="button-google"
-          >
-<img src={btnGoogle} alt="" />
-<span> Iniciar con Google</span>
-           
-          </Button>
-       
-        
+          style={{ backgroundColor: "#5890FF" }}
+          leftIcon={
+            <FontAwesomeIcon className="icon-facebook" icon={faFacebook} />
+          }
+          variant="solid"
+          className="button-facebook"
+        >
+          Iniciar con Facebook
+        </Button>
+        <Button variant="solid" className="button-google">
+          <img src={btnGoogle} alt="" />
+          <span> Iniciar con Google</span>
+        </Button>
       </ButtonContainer>
 
       <p className="registro">
-        Si no quieres registrarte{" "}
+        Si no tienes cuenta{" "}
         <LinkReact to="/registro" className="registrate">
           Registrate Aquí
         </LinkReact>

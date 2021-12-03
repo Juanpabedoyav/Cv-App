@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { ContainerVistaPrevia } from "../styles/vistaPrevia.style";
+import { ContainerVistaPrevia } from "../styles/VistaPrevia.style";
 
 const VistaPreviaCv = () => {
   return (

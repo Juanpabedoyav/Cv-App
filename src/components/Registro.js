@@ -7,12 +7,14 @@ import {
   TitleRegistro,
   StyleRegistro,
   InputForm,
-  ContenedorInputs
+  ContenedorInputs,
 } from "../styles/Registro.styles";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faReply } from "@fortawesome/free-solid-svg-icons";
+import { faReply, faUpload } from "@fortawesome/free-solid-svg-icons";
 // import {ContenedorInputs., } from '../styles/FormCv.style'
 const Registro = () => {
+  const elegirImagen = () => document.getElementById("image").click();
+
   return (
     <StyleRegistro>
       <LinkReact to="/" className="back-container">
@@ -27,31 +29,45 @@ const Registro = () => {
       </ImgRegistro>
       <TitleRegistro>Crea tu cuenta</TitleRegistro>
       <form className="formulario">
-      <ContenedorInputs>
-      <FormControl id="names" isRequired>
-          <InputForm 
-          className="input" 
-          placeholder="Nombre y Apellidos " />
-        </FormControl>
+        <ContenedorInputs>
+          <FormControl id="names" isRequired>
+            <InputForm className="input" placeholder="Nombre y Apellidos " />
+          </FormControl>
 
-        <FormControl id="telephoneNumber" isRequired>
-          <InputForm 
-          className="input" 
-          placeholder="Telefono celular " />
-        </FormControl>
+          <FormControl id="telephoneNumber" isRequired>
+            <InputForm className="input" placeholder="Telefono celular " />
+          </FormControl>
 
-        <FormControl id="password" isRequired>
-          <InputForm 
-          className="input" 
-          placeholder="Contraseña " />
-        </FormControl>
+          <FormControl id="image" isRequired style={{ display: "none" }}>
+            <Input type="file" />
+          </FormControl>
 
-        <FormControl id="ConfirmPassword" isRequired>
-          <InputForm 
-          className="input" 
-          placeholder="Confirmar contraseña " />
-        </FormControl>
+          <FormControl id="password" isRequired>
+            <InputForm
+              type="password"
+              className="input"
+              placeholder="Contraseña "
+            />
+          </FormControl>
+
+          <FormControl id="ConfirmPassword" isRequired>
+            <InputForm
+              type="password"
+              className="input"
+              placeholder="Confirmar contraseña "
+            />
+          </FormControl>
         </ContenedorInputs>
+
+        <Button
+          leftIcon={
+            <FontAwesomeIcon icon={faUpload} className="icono-upload" />
+          }
+          className="elegir-imagen"
+          onClick={elegirImagen}
+        >
+          Elegir imagen
+        </Button>
 
         <Button className="botton-submit button" size="lg">
           Crear cuenta

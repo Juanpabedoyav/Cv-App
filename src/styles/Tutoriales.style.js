@@ -45,56 +45,45 @@ export const Tutorial1 = styled.div`
   /* border: 2px solid green; */
   grid-column: 1/12;
   grid-row: 2/2;
-  
 `;
 export const Tutorial2 = styled.div`
   /* border: 2px solid green; */
   grid-column: 1/13;
   grid-row: 4/4;
- 
-  
-  
 `;
 export const Tutorial3 = styled.div`
   /* border: 2px solid green; */
   grid-column: 1/13;
   grid-row: 6/6;
-  
 `;
 export const Tutorial4 = styled.div`
   /* border: 2px solid green; */
   grid-column: 1/13;
   grid-row: 8/8;
-  
 `;
 export const Tutorial5 = styled.div`
   /* border: 2px solid green; */
   grid-column: 1/13;
   grid-row: 10/10;
- 
 `;
 export const Tutorial6 = styled.div`
   /* border: 2px solid green; */
   grid-column: 1/13;
   grid-row: 12/12;
- 
 `;
 export const Tutorial7 = styled.div`
   /* border: 2px solid green; */
   grid-column: 1/13;
   grid-row: 14/14;
-  
 `;
 export const ButtonBack = styled.div`
   /* border: 2px solid green; */
   grid-column: 13/14;
-    grid-row: 7/7;
+  grid-row: 7/7;
   .regresar {
     background-color: var(--color-principal);
   }
   .regresar:hover {
-    background-color: var(--color-blanco);
-    border: 2px solid var(--color-principal);
-    color: var(--color-principal);
+    background-color: var(--color-principal);
   }
 `;
