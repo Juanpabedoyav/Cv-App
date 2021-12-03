@@ -19,10 +19,9 @@ import NavBar from '../components/NavBar'
 const Descargas = () => {
   const { onOpen, onClose } = useDisclosure();
   const [placement] = useState("left");
-
   return (
-    <DescargasContainer onClose={onClose} >
-      <Drawer placement={placement}   isOpen={onOpen}>
+    <DescargasContainer  >
+      <Drawer placement={placement}  onClose={onClose} isOpen={onOpen}>
       
       <DrawerContent className='contaniner'>
 
