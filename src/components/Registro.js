@@ -11,58 +11,55 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faReply, faUpload } from "@fortawesome/free-solid-svg-icons";
 import { useDispatch } from "react-redux";
-// import {useFormik} from 'formik'
+import {fileUpload} from '../helpers/fileUpload'
 import { register, registerAction } from "../redux/actions/registerAction";
 import { useForm } from "../hooks/useForm";
 
 const Registro = () => {
+
   const elegirImagen = () => document.getElementById("image").click();
 
 
-const dispatch = useDispatch();
-// uso de formik no funciona
-// const formik = useFormik({
-//     initialValues:{
+  const dispatch = useDispatch();
 
-//         name: "",
-//         number:"",
-//         password:"",
-//         password2: ""
-       
-//     },
-//     onSubmit: () => {
-
-//       console.log("Ejecuto")
-//       console.log(formik.initialValues)
-     
-//       dispatch(register(formik.initialValues.name,
-//         formik.initialValues.number,
-//         formik.initialValues.password
-//         ))
-      
-//     }
-
-// });
 
   const [form, handleInputChange, reset] = useForm({
     name: "",
     phone:"",
     password:"",
-    password2: ""
+    password2: "",
+    image: "santiago"
   })
 
-  const {name, phone, password, password2 }= form  
+  const {name, phone, password, password2, image } = form
+
+  const handleFileChangeImg = ({target})=>{
+
+  const file = target.files[0];
+
+    fileUpload(file)
+    .then(url => {
+      //console.log(url);
+      form.image = url;
+    })
+    .catch((err) => console.log(err.message));
+  }  
 
   const handleSubmit = e =>{
     e.preventDefault()
     // console.log(e)
   if(password === password2){
-    dispatch(registerAction({name, phone, password}))
+
+    //console.log(form);
+
+    dispatch(registerAction({name, phone, password, image}))
   
   } else {
     alert('Las contraseñas no son iguales.')
   }
 }
+
+  
 
 
   return (
@@ -99,10 +96,14 @@ const dispatch = useDispatch();
             value={phone} />
             
           </FormControl>
-
+          {/* input de imagen  */}
           <FormControl  style={{ display: "none" }}>
             <Input
-            type="file"/>
+            id="image"
+            type="file"
+            onChange={handleFileChangeImg}
+            />
+            
           </FormControl>
 
           <FormControl isRequired>
