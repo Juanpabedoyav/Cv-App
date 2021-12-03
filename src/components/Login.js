@@ -7,11 +7,7 @@ import { Link as LinkReact } from "react-router-dom";
 import {
   ContainerLogin,
   ForgotPassword,
-  H1,
-  IconUbi,
   ImgLogin,
-  Label,
-  Label1,
 } from "../styles/Login.style";
 import {
   InputForm,

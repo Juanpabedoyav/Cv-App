@@ -1,6 +1,5 @@
 import React from "react";
-import { FormControl, Input, Button, FormLabel } from "@chakra-ui/react";
-// import {Form} from 'formik'
+import { FormControl, Input, Button } from "@chakra-ui/react";
 import { Link as LinkReact } from "react-router-dom";
 import {
   ImgRegistro,
@@ -11,7 +10,6 @@ import {
 } from "../styles/Registro.styles";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faReply, faUpload } from "@fortawesome/free-solid-svg-icons";
-// import {ContenedorInputs., } from '../styles/FormCv.style'
 const Registro = () => {
   const elegirImagen = () => document.getElementById("image").click();
 
