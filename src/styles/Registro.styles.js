@@ -48,7 +48,7 @@ export const StyleRegistro = styled.div`
       color: var(--color-principal);
     }
     .botton-submit {
-      width: 100%;
+      width: 92%;
       margin: 20px 0;
       background-color: var(--color-principal);
     }
@@ -73,4 +73,28 @@ export const StyleRegistro = styled.div`
       text-decoration-line: underline;
     }
   }
+`;
+
+export const InputForm = styled.input`
+/* border:1px solid red; */
+  outline: 1px solid var(--color-principal);
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  width: 92%;
+
+  &::placeholder {
+    color: var(--color-principal);
+  }
+`;
+
+export const ContenedorInputs = styled.article`
+/* border:1px solid red; */
+
+  display: flex;
+  
+  flex-direction: column;
+  width: 100%;
+  /* margin: 2rem 2rem 1rem 2rem; */
+
 `;

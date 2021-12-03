@@ -6,10 +6,12 @@ import {
   ImgRegistro,
   TitleRegistro,
   StyleRegistro,
+  InputForm,
+  ContenedorInputs
 } from "../styles/Registro.styles";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faReply } from "@fortawesome/free-solid-svg-icons";
-
+// import {ContenedorInputs., } from '../styles/FormCv.style'
 const Registro = () => {
   return (
     <StyleRegistro>
@@ -25,28 +27,31 @@ const Registro = () => {
       </ImgRegistro>
       <TitleRegistro>Crea tu cuenta</TitleRegistro>
       <form className="formulario">
+      <ContenedorInputs>
       <FormControl id="names" isRequired>
-          <Input 
+          <InputForm 
           className="input" 
           placeholder="Nombre y Apellidos " />
         </FormControl>
 
         <FormControl id="telephoneNumber" isRequired>
-          <Input 
+          <InputForm 
           className="input" 
           placeholder="Telefono celular " />
         </FormControl>
 
         <FormControl id="password" isRequired>
-          <Input 
+          <InputForm 
           className="input" 
           placeholder="Contraseña " />
         </FormControl>
 
         <FormControl id="ConfirmPassword" isRequired>
-          <FormLabel className="label">Confirmar contraseña</FormLabel>
-          <Input className="input" placeholder="Confirmar contraseña " />
+          <InputForm 
+          className="input" 
+          placeholder="Confirmar contraseña " />
         </FormControl>
+        </ContenedorInputs>
 
         <Button className="botton-submit button" size="lg">
           Crear cuenta

@@ -27,7 +27,19 @@ export const ContainerLogin = styled.div`
   .pass::placeholder {
     color: var(--color-principal);
   }
-`;
+.botton-login {
+  width: 82%;
+  margin: 20px 0;
+  background-color: var(--color-principal);
+  color: var(--color-blanco);
+  height:48px;
+}
+.botton-login:hover {
+  background-color: var(--color-principal);
+  color: var(--color-blanco);
+}
+
+`
 export const H1 = styled.h1`
 color: #629197;
 font-weight: bold;
@@ -59,3 +71,34 @@ export const ForgotPassword = styled.div`
     padding-bottom: 10px;
     color: #629197;
 `;
+export const InputForm = styled.input`
+/* border:1px solid red; */
+  outline: 1px solid var(--color-principal);
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  width: 92%;
+
+  &::placeholder {
+    color: var(--color-principal);
+  }
+`;
+
+export const ContenedorInputs = styled.article`
+/* border:1px solid red; */
+
+  display: flex;
+  
+  flex-direction: column;
+  width: 90%;
+  margin: 0 auto;
+  /* margin: 2rem 2rem 1rem 2rem; */
+
+`;
+export const TitleRegistro = styled.h1`
+  margin-bottom: 20px;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: var(--color-principal);
+`;
+

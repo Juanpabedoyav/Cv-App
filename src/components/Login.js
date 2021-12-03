@@ -14,6 +14,7 @@ import {
   Label,
   Label1,
 } from "../styles/Login.style";
+import {InputForm,ContenedorInputs, TitleRegistro} from "../styles/Login.style";
 
 const Login = () => {
   return (
@@ -31,21 +32,20 @@ const Login = () => {
               alt=""
             />
           </ImgContainer>
-          <H1>Ingresar</H1>
+          <TitleRegistro>Ingresar</TitleRegistro>
 
+          <ContenedorInputs>
           <FormControl id="first-name" isRequired>
-            {/* <Label><FormLabel >Telefono celular </FormLabel></Label> */}
-            <Input
-              bg=" #62919936 "
-              w={250}
-              mt={10}
+            <InputForm
+            
               placeholder="Telefono celular "
             />
           </FormControl>
 
           <FormControl id="password" isRequired>
             {/* <Label1 ><FormLabel  >Contraseña</FormLabel></Label1 > */}
-            <Input bg=" #62919936 " w={250} mt={10} placeholder="Contraseña " />
+            <InputForm 
+            placeholder="Contraseña " />
           </FormControl>
 
           <ForgotPassword>
@@ -53,9 +53,9 @@ const Login = () => {
               <i>¿Olvidaste la contraseña?</i>
             </p>
           </ForgotPassword>
-
+          </ContenedorInputs>
           <LinkReact to="/home">
-            <Button colorScheme="teal" size="lg">
+            <Button className='botton-login' >
               Ingresar
             </Button>
           </LinkReact>
