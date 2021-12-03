@@ -3,7 +3,7 @@ import { FormControl } from "@chakra-ui/form-control";
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faReply } from "@fortawesome/free-solid-svg-icons";
-import { Link as LinkReact } from "react-router-dom";
+import { Link as LinkReact, useNavigate } from "react-router-dom";
 import {
   ContainerLogin,
   ForgotPassword,
@@ -16,44 +16,43 @@ import {
 } from "../styles/Login.style";
 import { useDispatch } from "react-redux";
 /* import {useFormik} from 'formik' */
-import { registerAction } from "../redux/actions/registerAction";
 import { loginPhoneAndPassword } from "../redux/actions/loginAction";
-import {useForm} from  '../hooks/useForm'
+import { useForm } from "../hooks/useForm";
 
 const Login = () => {
+  const navigate = useNavigate();
 
   const [form, handleInputChange, reset] = useForm({
     phone: "",
-    password: ""
-  })
+    password: "",
+  });
 
-  const {phone, password}= form
-  
+  const { phone, password } = form;
+
   const dispatch = useDispatch();
 
-  const handleSubmit = (e)=>{
-    e.preventDefault();    
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    // if (doc.data().phone == phone && doc.data().password ==password)
+    const resp = await dispatch(loginPhoneAndPassword(phone, password));
+    console.log(resp);
+  };
+  // };
 
-    dispatch(loginPhoneAndPassword())
-  }
-  
   // const formik = useFormik({
   //     initialValues:{
-  
+
   //         phone:"",
   //         password:""
-         
+
   //     },
   //     onSubmit: () => {
   //         /* (login(registerAction(data)) */
   //         dispatch(loginPhoneAndPassword())
-            
-  
-  //     }
-  
-  // });
 
- 
+  //     }
+
+  // });
 
   return (
     <>
@@ -73,23 +72,23 @@ const Login = () => {
           <form onSubmit={handleSubmit}>
             <ContenedorInputs>
               <FormControl id="first-name" isRequired>
-                <InputForm 
-                value={phone}
-                placeholder="Teléfono celular"
-                name="phone"
-                onChange={handleInputChange}
+                <InputForm
+                  value={phone}
+                  placeholder="Teléfono celular"
+                  name="phone"
+                  onChange={handleInputChange}
                 />
               </FormControl>
 
               <FormControl id="password" isRequired>
                 {/* <Label1 ><FormLabel  >Contraseña</FormLabel></Label1 > */}
-                <InputForm 
-                value={password}
-                type="password" 
-                placeholder="Contraseña"
-                name="password"
-                onChange={handleInputChange}
-                 />
+                <InputForm
+                  value={password}
+                  type="password"
+                  placeholder="Contraseña"
+                  name="password"
+                  onChange={handleInputChange}
+                />
               </FormControl>
 
               <ForgotPassword>
@@ -99,13 +98,12 @@ const Login = () => {
               </ForgotPassword>
             </ContenedorInputs>
             {/* <LinkReact to="/home">  */}
-              <Button type="submit" className="botton-login">Ingresar</Button>
-           {/* </LinkReact> */}
-           
+            <Button type="submit" className="botton-login">
+              Ingresar
+            </Button>
+            {/* </LinkReact> */}
           </form>
-          
         </div>
-        
       </ContainerLogin>
     </>
   );

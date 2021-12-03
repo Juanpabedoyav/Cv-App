@@ -11,56 +11,48 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faReply, faUpload } from "@fortawesome/free-solid-svg-icons";
 import { useDispatch } from "react-redux";
-import {fileUpload} from '../helpers/fileUpload'
-import { register, registerAction } from "../redux/actions/registerAction";
+import { fileUpload } from "../helpers/fileUpload";
+import { registerAction } from "../redux/actions/registerAction";
 import { useForm } from "../hooks/useForm";
 
 const Registro = () => {
-
   const elegirImagen = () => document.getElementById("image").click();
-
 
   const dispatch = useDispatch();
 
-
   const [form, handleInputChange, reset] = useForm({
     name: "",
-    phone:"",
-    password:"",
+    phone: "",
+    password: "",
     password2: "",
-    image: ""
-  })
+    image: "",
+  });
 
-  const {name, phone, password, password2, image } = form
+  const { name, phone, password, password2, image } = form;
 
-  const handleFileChangeImg = ({target})=>{
-
-  const file = target.files[0];
+  const handleFileChangeImg = ({ target }) => {
+    const file = target.files[0];
 
     fileUpload(file)
-    .then(url => {
-      //console.log(url);
-      form.image = url;
-    })
-    .catch((err) => console.log(err.message));
-  }  
+      .then((url) => {
+        //console.log(url);
+        form.image = url;
+      })
+      .catch((err) => console.log(err.message));
+  };
 
-  const handleSubmit = e =>{
-    e.preventDefault()
+  const handleSubmit = (e) => {
+    e.preventDefault();
     // console.log(e)
-  if(password === password2){
 
-    //console.log(form);
-
-    dispatch(registerAction({name, phone, password, image}))
-  
-  } else {
-    alert('Las contraseñas no son iguales.')
-  }
-}
-
-  
-
+    console.log(form);
+    if (password === password2) {
+      dispatch(registerAction({ name, phone, password, image }));
+      alert("Registro Exitoso");
+    } else {
+      alert("Las contraseñas no son iguales.");
+    }
+  };
 
   return (
     <StyleRegistro>
@@ -79,31 +71,26 @@ const Registro = () => {
         <ContenedorInputs>
           <FormControl isRequired>
             <InputForm
-            name="name"
-            onChange={handleInputChange}
-            className="input" 
-            placeholder="Nombre y Apellidos "
-            value={name} />
-            
+              name="name"
+              onChange={handleInputChange}
+              className="input"
+              placeholder="Nombre y Apellidos "
+              value={name}
+            />
           </FormControl>
 
-          <FormControl  isRequired>
-            <InputForm 
-            name="phone"
-            onChange={handleInputChange}
-            className="input" 
-            placeholder="Telefono celular "
-            value={phone} />
-            
+          <FormControl isRequired>
+            <InputForm
+              name="phone"
+              onChange={handleInputChange}
+              className="input"
+              placeholder="Telefono celular "
+              value={phone}
+            />
           </FormControl>
           {/* input de imagen  */}
-          <FormControl  style={{ display: "none" }}>
-            <Input
-            id="image"
-            type="file"
-            onChange={handleFileChangeImg}
-            />
-            
+          <FormControl style={{ display: "none" }}>
+            <Input id="image" type="file" onChange={handleFileChangeImg} />
           </FormControl>
 
           <FormControl isRequired>
@@ -112,9 +99,8 @@ const Registro = () => {
               type="password"
               className="input"
               placeholder="Contraseña "
-              name='password'
+              name="password"
               value={password}
-
             />
           </FormControl>
 
@@ -126,7 +112,6 @@ const Registro = () => {
               placeholder="Confirmar contraseña"
               name="password2"
               value={password2}
-
             />
           </FormControl>
         </ContenedorInputs>
@@ -141,10 +126,7 @@ const Registro = () => {
           Elegir imagen
         </Button>
 
-        <Button
-          type='submit'
-          className="botton-submit button" 
-          size="lg">
+        <Button type="submit" className="botton-submit button" size="lg">
           Crear cuenta
         </Button>
       </form>

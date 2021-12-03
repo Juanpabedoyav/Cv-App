@@ -1,21 +1,17 @@
-import {types} from '../types/types'
+import { types } from "../types/types";
 
-const initialState={
-
-  users:[]
-
-}
+const initialState = {
+  users: [],
+};
 export const registerReducer = (state = initialState, action) => {
-
   switch (action.type) {
     case types.registro:
-      return{
-        users: [action.payload]
-      }  
+      return {
+        users: [action.payload],
+      };
     default:
-      return{
-        state
-      }
-    }
-
-}
+      return {
+        state,
+      };
+  }
+};

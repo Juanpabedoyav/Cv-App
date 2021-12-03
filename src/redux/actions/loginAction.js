@@ -3,14 +3,14 @@ import { getAuth, signInWithPopup } from "firebase/auth";
 import { google, facebook, db } from "../../firebase/firebase";
 import { getDocs, collection } from "firebase/firestore";
 
-export const login = (name, phone, email, image) => {
+export const login = (name, phone, image) => {
   return {
     type: types.login,
     payload: {
       name,
       phone,
-      email,
       image,
+      logged: true,
     },
   };
 };
@@ -42,13 +42,21 @@ export const loginFacebook = () => {
   };
 };
 
-export const loginPhoneAndPassword = () => {
+export const loginPhoneAndPassword = (phone, password) => {
   return async (dispatch) => {
     const docRef = collection(db, "users");
     const getData = await getDocs(docRef);
-    // const dataa = getData.data();
-    // if(dataa === undefined) console.log('no existe')
-    console.log(getData);
-    // const querySnapshot = await getDocs(collection(db, "cities"));
+
+    getData.forEach((doc) => {
+      //doc.data() is never undefined for query doc snapshots
+
+      //console.log(doc.data().phone);
+
+      if (doc.data().phone === phone && doc.data().password === password) {
+        dispatch(login(doc.data().name, doc.data().phone, doc.data().image));
+      }
+
+      //console.log(getData.data());
+    });
   };
 };
