@@ -14,15 +14,19 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
 import "../styles/Descargas.style.css";
 import { DescargasContainer } from "../styles/Descargas.styles";
+import NavBar from '../components/NavBar'
 
 const Descargas = () => {
   const { onOpen, onClose } = useDisclosure();
   const [placement] = useState("left");
 
   return (
-    <DescargasContainer>
-      <Drawer placement={placement} onClose={onClose} isOpen={onOpen}>
-        <DrawerContent>
+    <DescargasContainer onClose={onClose} >
+      <Drawer placement={placement}   isOpen={onOpen}>
+      
+      <DrawerContent className='contaniner'>
+
+          {/* cabecera */}
           <DrawerHeader className="header-descargas" borderBottomWidth="2px">
             <h1 className="color">Descargas</h1>
             <LinkReact to="/home" className="color">
@@ -42,6 +46,7 @@ const Descargas = () => {
                 </Text>
               </Box>
             </LinkReact>
+
             <LinkReact to="/vistaprevia">
               <Box className="card" p={4} shadow="md" borderWidth="2px">
                 <Heading className="header-box" fontSize="xm">
@@ -53,6 +58,7 @@ const Descargas = () => {
                 </Text>
               </Box>
             </LinkReact>
+
             <LinkReact to="/vistaprevia">
               <Box className="card" p={4} shadow="md" borderWidth="2px">
                 <Heading className="header-box" fontSize="xm">
@@ -64,6 +70,7 @@ const Descargas = () => {
                 </Text>
               </Box>
             </LinkReact>
+
             <LinkReact to="/vistaprevia">
               <Box className="card" p={4} shadow="md" borderWidth="2px">
                 <Heading className="header-box" fontSize="xm">
@@ -75,7 +82,11 @@ const Descargas = () => {
                 </Text>
               </Box>
             </LinkReact>
+
           </DrawerBody>
+
+
+
           <DrawerFooter className="footer">
             <LinkReact to="/home">
               <Button
@@ -91,8 +102,11 @@ const Descargas = () => {
               </Button>
             </LinkReact>
           </DrawerFooter>
+
         </DrawerContent>
       </Drawer>
+      <NavBar />
+
     </DescargasContainer>
   );
 };
