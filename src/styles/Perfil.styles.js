@@ -94,5 +94,5 @@ export const GridEliminar = styled.div`
   grid-row: 8/8;
   font-size: 25px;
   color: #4b777e;
-  padding-top: 12px;
+  padding-top: 15px;
 `;
