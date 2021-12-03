@@ -2,7 +2,7 @@ import { Box, Heading } from "@chakra-ui/layout";
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faPlusCircle,
+  faFilePdf,
   faAngleDoubleDown,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link as LinkReact } from "react-router-dom";
@@ -26,7 +26,7 @@ const Home = () => {
             borderRadius="md"
           >
             <Heading fontSize="xl">
-              <FontAwesomeIcon icon={faPlusCircle} className="icon" />
+              <FontAwesomeIcon icon={faFilePdf} className="icon" />
             </Heading>
             <h4 className="text-create">Crear Curriculum </h4>
           </Box>
