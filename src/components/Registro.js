@@ -10,8 +10,60 @@ import {
 } from "../styles/Registro.styles";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faReply, faUpload } from "@fortawesome/free-solid-svg-icons";
+import { useDispatch } from "react-redux";
+// import {useFormik} from 'formik'
+import { register, registerAction } from "../redux/actions/registerAction";
+import { useForm } from "../hooks/useForm";
+
 const Registro = () => {
   const elegirImagen = () => document.getElementById("image").click();
+
+
+const dispatch = useDispatch();
+// uso de formik no funciona
+// const formik = useFormik({
+//     initialValues:{
+
+//         name: "",
+//         number:"",
+//         password:"",
+//         password2: ""
+       
+//     },
+//     onSubmit: () => {
+
+//       console.log("Ejecuto")
+//       console.log(formik.initialValues)
+     
+//       dispatch(register(formik.initialValues.name,
+//         formik.initialValues.number,
+//         formik.initialValues.password
+//         ))
+      
+//     }
+
+// });
+
+  const [form, handleInputChange, reset] = useForm({
+    name: "",
+    phone:"",
+    password:"",
+    password2: ""
+  })
+
+  const {name, phone, password, password2 }= form  
+
+  const handleSubmit = e =>{
+    e.preventDefault()
+    // console.log(e)
+  if(password === password2){
+    dispatch(registerAction({name, phone, password}))
+  
+  } else {
+    alert('Las contraseñas no son iguales.')
+  }
+}
+
 
   return (
     <StyleRegistro>
@@ -26,33 +78,54 @@ const Registro = () => {
         />
       </ImgRegistro>
       <TitleRegistro>Crea tu cuenta</TitleRegistro>
-      <form className="formulario">
+      <form onSubmit={handleSubmit} className="formulario">
         <ContenedorInputs>
-          <FormControl id="names" isRequired>
-            <InputForm className="input" placeholder="Nombre y Apellidos " />
-          </FormControl>
-
-          <FormControl id="telephoneNumber" isRequired>
-            <InputForm className="input" placeholder="Telefono celular " />
-          </FormControl>
-
-          <FormControl id="image" isRequired style={{ display: "none" }}>
-            <Input type="file" />
-          </FormControl>
-
-          <FormControl id="password" isRequired>
+          <FormControl isRequired>
             <InputForm
+            name="name"
+            onChange={handleInputChange}
+            className="input" 
+            placeholder="Nombre y Apellidos "
+            value={name} />
+            
+          </FormControl>
+
+          <FormControl  isRequired>
+            <InputForm 
+            name="phone"
+            onChange={handleInputChange}
+            className="input" 
+            placeholder="Telefono celular "
+            value={phone} />
+            
+          </FormControl>
+
+          <FormControl  style={{ display: "none" }}>
+            <Input
+            type="file"/>
+          </FormControl>
+
+          <FormControl isRequired>
+            <InputForm
+              onChange={handleInputChange}
               type="password"
               className="input"
               placeholder="Contraseña "
+              name='password'
+              value={password}
+
             />
           </FormControl>
 
-          <FormControl id="ConfirmPassword" isRequired>
+          <FormControl isRequired>
             <InputForm
+              onChange={handleInputChange}
               type="password"
               className="input"
-              placeholder="Confirmar contraseña "
+              placeholder="Confirmar contraseña"
+              name="password2"
+              value={password2}
+
             />
           </FormControl>
         </ContenedorInputs>
@@ -67,7 +140,10 @@ const Registro = () => {
           Elegir imagen
         </Button>
 
-        <Button className="botton-submit button" size="lg">
+        <Button
+          type='submit'
+          className="botton-submit button" 
+          size="lg">
           Crear cuenta
         </Button>
       </form>

@@ -7,7 +7,7 @@ export const loginReducer = (state = {}, action) => {
       return {
         ...state,
         name: action.payload.name,
-        number: action.payload.number,
+        phone: action.payload.phone,
         email: action.payload.email,
         image: action.payload.image
       }      

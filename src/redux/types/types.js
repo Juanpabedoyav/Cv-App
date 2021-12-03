@@ -1,3 +1,4 @@
 export const types = {
-  login: "[Login] Login"
+  login: "[Login] Login",
+  registro:"[Registro] Registro"
 }

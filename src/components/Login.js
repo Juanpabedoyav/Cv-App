@@ -16,27 +16,27 @@ import {
 } from "../styles/Login.style";
 import { useDispatch } from "react-redux";
 import {useFormik} from 'formik'
+import { registerAction } from "../redux/actions/registerAction";
 
 const Login = () => {
 
+  // const dispatch = useDispatch();
 
-const dispatch = useDispatch();
-
-const formik = useFormik({
-    initialValues:{
-
-        number:"",
-        password:""
-       
-    },
-    onSubmit: (data) => {
-        dispatch((data))
-
-        console.log(data);
-
-    }
-
-});
+  const formik = useFormik({
+      initialValues:{
+  
+          phone:"",
+          password:""
+         
+      },
+      onSubmit: () => {
+          /* dispatch(registerAction(data)) */
+  
+          
+  
+      }
+  
+  });
 
 
   return (
@@ -52,28 +52,36 @@ const formik = useFormik({
               alt="logo"
             />
           </ImgLogin>
-          <TitleRegistro>Ingresar</TitleRegistro>
+          <TitleRegistro>Ingresar</TitleRegistro>          
+            <ContenedorInputs>
+              <FormControl id="first-name" isRequired>
+                <InputForm 
+                placeholder="Teléfono celular"
+                name="phone"                
+                />
+              </FormControl>
 
-          <ContenedorInputs>
-            <FormControl id="first-name" isRequired>
-              <InputForm placeholder="Teléfono celular " />
-            </FormControl>
+              <FormControl id="password" isRequired>
+                {/* <Label1 ><FormLabel  >Contraseña</FormLabel></Label1 > */}
+                <InputForm 
+                type="password" 
+                placeholder="Contraseña"
+                name="password"
+                 />
+              </FormControl>
 
-            <FormControl id="password" isRequired>
-              {/* <Label1 ><FormLabel  >Contraseña</FormLabel></Label1 > */}
-              <InputForm type="password" placeholder="Contraseña" />
-            </FormControl>
-
-            <ForgotPassword>
-              <p>
-                <i>¿Olvidaste la contraseña?</i>
-              </p>
-            </ForgotPassword>
-          </ContenedorInputs>
-          <LinkReact to="/home">
-            <Button className="botton-login">Ingresar</Button>
-          </LinkReact>
+              <ForgotPassword>
+                <p>
+                  <i>¿Olvidaste la contraseña?</i>
+                </p>
+              </ForgotPassword>
+            </ContenedorInputs>
+            <LinkReact to="/home"> 
+              <Button type="submit" className="botton-login">Ingresar</Button>
+           </LinkReact> 
+          
         </div>
+        
       </ContainerLogin>
     </>
   );
