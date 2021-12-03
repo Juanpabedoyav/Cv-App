@@ -5,7 +5,6 @@ import btnGoogle from "../assets/btnGoogle.png";
 import { faPhoneAlt } from "@fortawesome/free-solid-svg-icons";
 import { Link as LinkReact } from "react-router-dom";
 import { faFacebook } from "@fortawesome/free-brands-svg-icons";
-
 import {
   ButtonContainer,
   ImgContainer,
@@ -14,8 +13,21 @@ import {
   TextH1,
   TextH4,
 } from "../styles/InicioApp.styles";
+import {loginGoogle, loginFacebook} from '../redux/actions/loginAction'
+import { useDispatch } from "react-redux";
 
 const Inicio = () => {
+
+  const dispatch = useDispatch();  
+
+  const handleLoginGoogle =()=>{
+    dispatch(loginGoogle())
+  }
+
+  const handleLoginFacebook =()=>{
+    dispatch(loginFacebook())
+  }
+
   return (
     <StylesContainer>
       <ImgContainer>
@@ -41,7 +53,9 @@ const Inicio = () => {
         </LinkReact>
 
         <Button
+          onClick={handleLoginFacebook}
           style={{ backgroundColor: "#5890FF" }}
+          
           leftIcon={
             <FontAwesomeIcon className="icon-facebook" icon={faFacebook} />
           }
@@ -50,7 +64,12 @@ const Inicio = () => {
         >
           Iniciar con Facebook
         </Button>
-        <Button variant="solid" className="button-google">
+        <Button 
+        onClick={() => handleLoginGoogle()}
+        variant="solid"
+         className="button-google"
+         
+         >
           <img src={btnGoogle} alt="" />
           <span> Iniciar con Google</span>
         </Button>

@@ -14,8 +14,31 @@ import {
   ContenedorInputs,
   TitleRegistro,
 } from "../styles/Login.style";
+import { useDispatch } from "react-redux";
+import {useFormik} from 'formik'
 
 const Login = () => {
+
+
+const dispatch = useDispatch();
+
+const formik = useFormik({
+    initialValues:{
+
+        number:"",
+        password:""
+       
+    },
+    onSubmit: (data) => {
+        dispatch((data))
+
+        console.log(data);
+
+    }
+
+});
+
+
   return (
     <>
       <ContainerLogin>
