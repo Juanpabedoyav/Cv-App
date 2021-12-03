@@ -5,6 +5,8 @@ export const GridAbuperf = styled.div`
   grid-template-columns: repeat(14, 1fr);
   grid-template-rows: repeat(10, 1fr);
   background-color: #eef5f6;
+  margin-top: -40px;
+
   height: 100vh;
   .styles-font-perfil {
     font-size: 15px;
@@ -27,13 +29,16 @@ export const GridAbuperf = styled.div`
     border-radius: 100%;
     width: 100%;
   }
+
 `;
 
 export const GridPaperf1 = styled.div`
   grid-column: 2/8;
   grid-row: 2/2;
   padding: 0px 0px;
+/* margin-left: 10px; */
   /* border: 2px solid fuchsia; */
+width: 180px;
 `;
 
 export const GridPaperf2 = styled.div`
@@ -47,9 +52,13 @@ export const GridPaperf2 = styled.div`
 `;
 
 export const GridPaperf3 = styled.div`
+/* border: 1px solid red; */
   grid-column: 9/14;
   grid-row: 2/4;
   border-radius: 100%;
+  width: 100px;
+  height: 100px;
+
 `;
 
 export const GridPaperf4 = styled.div`
@@ -73,7 +82,7 @@ export const GridPaperf6 = styled.div`
   grid-row: 8/8;
   padding: 15px 0px;
   margin-top: 5px;
-  margin-right: 65px;
+  /* margin-right: 65px; */
 `;
 
 export const GridPhone = styled.div`
@@ -82,6 +91,8 @@ export const GridPhone = styled.div`
   font-size: 25px;
   color: #4b777e;
   margin: auto;
+ 
+
 `;
 
 export const GridCerrar = styled.div`
@@ -90,6 +101,7 @@ export const GridCerrar = styled.div`
   font-size: 25px;
   color: #4b777e;
   margin: auto;
+  align-items: center;
 `;
 
 export const GridTerminos = styled.div`
