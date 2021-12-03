@@ -28,7 +28,7 @@ const Registro = () => {
     phone:"",
     password:"",
     password2: "",
-    image: "santiago"
+    image: ""
   })
 
   const {name, phone, password, password2, image } = form

@@ -1,6 +1,7 @@
 import {types} from '../types/types'
-import { getAuth, signInWithEmailAndPassword, signInWithPopup } from "firebase/auth"
-import { google, facebook } from '../../firebase/firebase'
+import { getAuth,  signInWithPopup } from "firebase/auth"
+import { google, facebook, db } from '../../firebase/firebase'
+import {getDocs, collection} from 'firebase/firestore'
 
 export const login = (name, phone, email, image) =>{
     return{
@@ -47,18 +48,17 @@ export const loginFacebook = () => {
     
   }
 
-// export const loginPhoneAndPassword = (number) =>{
-//     return (dispatch)=>{
-//         const auth = getAuth()
-//         signInWithEmailAndPassword(auth , number)
-//         .then(({user})=>{
-//             console.log(user)    
-//             //dispatch(login(user.email, user.displayName))
-    
-//         }).catch(e=>{
-//             console.log(e);
-//         })
-       
-//     }
-// }
+export const loginPhoneAndPassword = () =>{
+    return async (dispatch) => {
+      const docRef = collection(db, "users");
+      const getData = await getDocs(docRef)
+      // const dataa = getData.data();
+      // if(dataa === undefined) console.log('no existe')
+      console.log(getData);
+      // const querySnapshot = await getDocs(collection(db, "cities"));
+
+
+
+    }
+}
 
