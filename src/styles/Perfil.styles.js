@@ -96,12 +96,3 @@ export const GridEliminar = styled.div`
   color: #4b777e;
   padding-top: 12px;
 `;
-export const GridButtonDelete = styled.div`
-  grid-column: 5/11;
-  grid-row: 9/9;
-  margin: auto;
-  color: #fff;
-  &:hover {
-    color: red;
-  }
-`;

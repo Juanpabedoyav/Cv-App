@@ -48,7 +48,7 @@ const Perfil = () => {
           </LinkReact>
         </GridCerrar>{" "}
         <GridPaperf5 className="styles-font-perfil">
-          <LinkReact to="/login"> Cerrar sesión </LinkReact>{" "}
+          <LinkReact to="/"> Cerrar sesión </LinkReact>{" "}
         </GridPaperf5>
         <GridEliminar>
           <LinkReact to="/">
@@ -58,14 +58,6 @@ const Perfil = () => {
         <GridPaperf6 className="styles-font-perfil">
           <LinkReact to="/">Eliminar cuenta </LinkReact>{" "}
         </GridPaperf6>
-        {/*  <GridButtonDelete>
-          <LinkReact to="/">
-        <Button bg= '#4b777e'  size='md'>
-        Eliminar cuenta
-        </Button>
-        </LinkReact>
-
-        </GridButtonDelete> */}
       </GridAbuperf>
 
       <NavBar />
