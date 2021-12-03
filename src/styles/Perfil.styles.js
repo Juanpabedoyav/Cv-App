@@ -17,13 +17,14 @@ export const GridAbuperf = styled.div`
     font-size: 15px;
     font-weight: bold;
     color: var(--color-principal);
-    margin-top: 30px;
+    /* margin-top: 30px; */
+    padding-top: 3vh;
   }
   .styles-font-correo {
     font-size: 13px;
     font-weight: bold;
     color: var(--color-principal);
-    margin-top: 35px;
+    /* margin-top: 35px; */
   }
   .styles-imagen {
     border-radius: 100%;
@@ -33,81 +34,100 @@ export const GridAbuperf = styled.div`
 `;
 
 export const GridPaperf1 = styled.div`
+
   grid-column: 2/8;
   grid-row: 2/2;
-  padding: 0px 0px;
-/* margin-left: 10px; */
-  /* border: 2px solid fuchsia; */
-width: 180px;
+ 
 `;
 
 export const GridPaperf2 = styled.div`
-  /* border: 2px solid fuchsia; */
+  
   grid-column: 2/8;
-  grid-row: 2/4;
+  grid-row: 3/3;
   font-size: 11px;
   font-weight: bold;
   color: #47525e;
-  padding: 20px 0px;
+
 `;
 
 export const GridPaperf3 = styled.div`
-/* border: 1px solid red; */
+
   grid-column: 9/14;
   grid-row: 2/4;
   border-radius: 100%;
   width: 100px;
   height: 100px;
+  
 
 `;
 
 export const GridPaperf4 = styled.div`
-  grid-column: 3/7;
+ 
+  grid-column: 4/12;
   grid-row: 4/4;
-  padding: 15px 0px;
-  margin-top: 8px;
-  margin-right: 25px;
+  text-align: start;
+  padding-top: 22px ;
+  
 `;
 
 export const GridPaperf5 = styled.div`
-  grid-column: 3/9;
+ 
+  grid-column: 4/12;
   grid-row: 6/6;
-  padding: 15px 0px;
-  margin-top: 5px;
-  margin-right: 50px;
+  text-align: start;
+  padding-top: 22px ;
+  &:hover {
+      background-color: var(--color-blanco);
+      border: 2px solid var(--color-principal);
+      color: var(--color-principal);
+      border-radius: 20px;
+      box-shadow: 10px 10px 20px #fff;
+      width: 120px;
+      text-align: center;
+      padding-top: 20px;
+    }
 `;
 
 export const GridPaperf6 = styled.div`
-  grid-column: 2/13;
+ 
+  grid-column: 4/12;
   grid-row: 8/8;
-  padding: 15px 0px;
-  margin-top: 5px;
-  /* margin-right: 65px; */
+  text-align: start;
+  padding-top: 22px ;
 `;
 
 export const GridPhone = styled.div`
-  grid-column: 2/3;
+
+  grid-column: 2/4;
   grid-row: 4/4;
   font-size: 25px;
   color: #4b777e;
-  margin: auto;
- 
-
+  padding-top: 12px ;
 `;
 
 export const GridCerrar = styled.div`
-  grid-column: 2/3;
+
+  grid-column: 2/4;
   grid-row: 6/6;
   font-size: 25px;
   color: #4b777e;
-  margin: auto;
-  align-items: center;
+  padding-top: 16px ;
 `;
 
 export const GridTerminos = styled.div`
-  grid-column: 2/3;
+
+  grid-column: 2/4;
   grid-row: 8/8;
   font-size: 25px;
   color: #4b777e;
+  padding-top: 12px ;
+`;
+export const GridButtonDelete = styled.div`
+  grid-column: 5/11;
+  grid-row: 9/9;
   margin: auto;
+  color: #fff;
+  &:hover {
+      color: red;
+    }
 `;

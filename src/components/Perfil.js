@@ -1,30 +1,18 @@
 import React from "react";
-import {
-  GridAbuperf,
-  GridCerrar,
-  GridPaperf1,
-  GridPaperf2,
-  GridPaperf3,
-  GridPaperf4,
-  GridPaperf5,
-  GridPaperf6,
-  GridPhone,
-  GridTerminos,
-} from "../styles/Perfil.styles";
+import {GridAbuperf,GridButtonDelete,GridCerrar,GridPaperf1,GridPaperf2,
+  GridPaperf3,GridPaperf4,GridPaperf5,GridPaperf6, GridPhone,GridTerminos,} from "../styles/Perfil.styles";
 import NavBar from "./NavBar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faPhone,
-  faQuestion,
-  faSignOutAlt,
-} from "@fortawesome/free-solid-svg-icons";
+import {faPhone,faQuestion,faSignOutAlt,} from "@fortawesome/free-solid-svg-icons";
 import { Link as LinkReact } from "react-router-dom";
+import {Button} from '@chakra-ui/react'
 
 const Perfil = () => {
   return (
     <div>
       <GridAbuperf>
         <GridPaperf1 className="styles-font-name">
+        
           Nombre Usuario
           <br />
         </GridPaperf1>
@@ -56,8 +44,19 @@ const Perfil = () => {
         <GridPaperf6 className="styles-font-perfil">
           {" "}
           Terminos y condiciones{" "}
+         
         </GridPaperf6>
+        <GridButtonDelete>
+          <LinkReact to="/">
+        <Button bg= '#4b777e'  size='md'>
+        Eliminar cuenta
+        </Button>
+        </LinkReact>
+
+        </GridButtonDelete>
+        
       </GridAbuperf>
+  
       <NavBar />
     </div>
   );
