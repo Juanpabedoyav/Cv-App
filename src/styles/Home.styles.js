@@ -34,7 +34,7 @@ export const HomeContainer = styled.div`
     font-size: 22px;
   }
   .create {
-    background-color: #bad5da;
+    background-color: var(--color-principal);
     border-radius: 5px;
     width: 80vw;
     margin-left: auto;
