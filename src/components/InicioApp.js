@@ -32,8 +32,8 @@ const Inicio = () => {
     <StylesContainer>
       <ImgContainer>
         <ImgLogo
-          src="https://res.cloudinary.com/dv08oqgvx/image/upload/v1637968857/mk3ocdc7zaenmvrmaskc.jpg"
-          alt=""
+          src="https://res.cloudinary.com/dv08oqgvx/image/upload/v1638466378/wx5nvjktake1qgprm4da.jpg"
+          alt="logo"
         />
       </ImgContainer>
 

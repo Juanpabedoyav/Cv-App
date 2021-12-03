@@ -1,11 +1,7 @@
 import { types } from "../types/types";
-import {
-  getAuth,
-  signInWithEmailAndPassword,
-  signInWithPopup,
-} from "firebase/auth";
+import { getAuth, signInWithPopup } from "firebase/auth";
 import { google, facebook, db } from "../../firebase/firebase";
-import { collection, getDocs } from "firebase/firestore";
+import { getDocs, collection } from "firebase/firestore";
 
 export const login = (name, phone, email, image) => {
   return {
@@ -48,10 +44,11 @@ export const loginFacebook = () => {
 
 export const loginPhoneAndPassword = () => {
   return async (dispatch) => {
-    const querySnapshot = await getDocs(collection(db, "users"));
-    querySnapshot.forEach((doc) => {
-      // doc.data() is never undefined for query doc snapshots
-      console.log(doc.id, " => ", doc.data());
-    });
+    const docRef = collection(db, "users");
+    const getData = await getDocs(docRef);
+    // const dataa = getData.data();
+    // if(dataa === undefined) console.log('no existe')
+    console.log(getData);
+    // const querySnapshot = await getDocs(collection(db, "cities"));
   };
 };
