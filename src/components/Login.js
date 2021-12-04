@@ -35,7 +35,7 @@ const Login = () => {
     e.preventDefault();
     // if (doc.data().phone == phone && doc.data().password ==password)
     const resp = await dispatch(loginPhoneAndPassword(phone, password));
-    console.log(resp);
+    //console.log(resp);
   };
   // };
 
