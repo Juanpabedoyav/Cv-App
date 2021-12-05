@@ -9,7 +9,7 @@ import Tutoriales from "../components/Tutoriales";
 import VistaPreviaCv from "../components/VistaPreviaCv";
 import PlantillasCv from "../components/PlantillasCv";
 
-const RoutersApp = () => {
+const PrivateRoutes = () => {
   return (
     <div>
       <Routes>
@@ -21,10 +21,10 @@ const RoutersApp = () => {
         <Route path="/plantillascv" element={<PlantillasCv />} />
         <Route path="/tutoriales" element={<Tutoriales />} />
         <Route path="/vistaprevia" element={<VistaPreviaCv />} />
-        <Route path="/login" element={<Navigate to="/home" />} />
+        <Route path="*" element={<Navigate to="/home" />} />
       </Routes>
     </div>
   );
 };
 
-export default RoutersApp;
+export default PrivateRoutes;

@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import RoutersApp from "./RoutersApp";
 import PrivateRouter from "./PrivateRouter";
 import PublicRouter from "./PublicRouter";
+import PublicRoutes from "./PublicRoutes";
 import Login from "../components/Login";
 import InicioApp from "../components/InicioApp";
 import { useSelector } from "react-redux";
@@ -35,7 +35,7 @@ const AppRouter = () => {
             path="*"
             element={
               <PrivateRouter>
-                <RoutersApp />
+                <PrivateRoutes />
               </PrivateRouter>
             }
           />
@@ -44,16 +44,7 @@ const AppRouter = () => {
             path="/"
             element={
               <PublicRouter>
-                <InicioApp />
-              </PublicRouter>
-            }
-          />
-
-          <Route
-            path="login"
-            element={
-              <PublicRouter>
-                <Login />
+                <PublicRoutes />
               </PublicRouter>
             }
           />
