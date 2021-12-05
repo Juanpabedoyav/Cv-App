@@ -9,11 +9,10 @@ export const loginReducer = (state = {}, action) => {
         image: action.payload.image,
         logged: action.payload.logged,
       };
-      case types.logout:
-        return{
-          ...action.payload,
-          logged: false
-        }
+    case types.logout:
+      return {
+        logged: false,
+      };
     default:
       return state;
   }

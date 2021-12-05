@@ -7,50 +7,38 @@ import Login from "../components/Login";
 import InicioApp from "../components/InicioApp";
 import { useSelector, useDispatch } from "react-redux";
 import PrivateRoutes from "./PrivateRoutes";
-import Registro from "../components/Registro"
-import { logout } from '../redux/actions/loginAction'
+import Registro from "../components/Registro";
+import { logout } from "../redux/actions/loginAction";
 
-// const initial= ()=>{
-// return{
-//     // JSON.parse(localStorage.getItem("logged")) || { logged: false };
-// }
-// } 
+/* const initial= ()=>{
+return{
+    JSON.parse(localStorage.getItem("logged")) || { logged: false };
+}
+} */
 const AppRouter = () => {
+  const dispatch = useDispatch();
 
-  const dispatch = useDispatch()
-
-  const { logged } = useSelector(state => state.login)
+  const state = useSelector((state) => state.login);
 
   useEffect(() => {
-    //localStorage.setItem("logged", logged);
-
-    if (localStorage.getItem("logged") === undefined) {
-      console.log("logout")
-
-      // localStorage.setItem('logged', JSON.stringify(logged));
-
-    } else {
-      console.log("else")
-      dispatch(logout());
-      //localStorage.setItem('logged', JSON.stringify(logged));
-
-    }
+    //console.log(localStorage.getItem("logged"));
     // console.log(data)
+    if (localStorage.getItem("logged") == null) {
+      console.log("no esta logeado");
+      dispatch(logout());
+    }
+
+    //console.log(localStorage.getItem("logged"));
   }, []);
 
   useEffect(() => {
-
-    if (logged == false) {
-
-      console.log("hola")
-      localStorage.setItem('logged', JSON.stringify(logged));
-
+    console.log(localStorage.getItem("logged"));
+    if (state.logged) {
+      localStorage.setItem("logged", JSON.stringify(state.logged));
     }
+  }, [state]);
 
-
-
-
-  }, [logged]);
+  //console.log("esta logueado");
 
   // useEffect(() => {
   //   if (logged === undefined) {
@@ -91,7 +79,8 @@ const AppRouter = () => {
               <PublicRouter>
                 <InicioApp />
               </PublicRouter>
-            } />
+            }
+          />
 
           <Route
             path="login"
@@ -99,7 +88,8 @@ const AppRouter = () => {
               <PublicRouter>
                 <Login />
               </PublicRouter>
-            } />
+            }
+          />
 
           <Route
             path="registro"
@@ -107,12 +97,8 @@ const AppRouter = () => {
               <PublicRouter>
                 <Registro />
               </PublicRouter>
-            } />
-
-
-
-
-
+            }
+          />
         </Routes>
       </BrowserRouter>
     </>

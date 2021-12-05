@@ -45,7 +45,7 @@ const Registro = () => {
     e.preventDefault();
     // console.log(e)
 
-    console.log(form);
+    //console.log(form);
     if (password === password2) {
       dispatch(registerAction({ name, phone, password, image }));
       alert("Registro Exitoso");
