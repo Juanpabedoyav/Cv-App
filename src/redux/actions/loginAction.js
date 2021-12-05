@@ -3,7 +3,7 @@ import { getAuth, signInWithPopup } from "firebase/auth";
 import { google, facebook, db } from "../../firebase/firebase";
 import { getDocs, collection } from "firebase/firestore";
 
-export const login = (name, phone, image) => {
+export const login = (name, phone, email, image) => {
 
   localStorage.setItem("logged", true);
 
@@ -12,6 +12,7 @@ export const login = (name, phone, image) => {
     payload: {
       name,
       phone,
+      email,
       image
     },
   };
@@ -36,6 +37,7 @@ export const loginFacebook = () => {
     const auth = getAuth();
     signInWithPopup(auth, facebook)
       .then(({ user }) => {
+        console.log(user);
         dispatch(
           login(user.displayName, user.phoneNumber, user.email, user.photoURL)
         );
@@ -58,7 +60,7 @@ export const loginPhoneAndPassword = (phone, password) => {
         dispatch(login(doc.data().name, doc.data().phone, doc.data().image));
       }
 
-      //console.log(getData.data());
+      console.log(getData.data());
     });
   };
 };

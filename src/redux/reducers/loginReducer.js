@@ -28,6 +28,7 @@ export const loginReducer = (state = initialValues(), action) => {
       return {
         name: action.payload.name,
         phone: action.payload.phone,
+        email: action.payload.email,
         image: action.payload.image,
         logged: true
       };
