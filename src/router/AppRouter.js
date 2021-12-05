@@ -5,15 +5,51 @@ import PublicRouter from "./PublicRouter";
 import PublicRoutes from "./PublicRoutes";
 import Login from "../components/Login";
 import InicioApp from "../components/InicioApp";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import PrivateRoutes from "./PrivateRoutes";
+import Registro from "../components/Registro"
+import { logout } from '../redux/actions/loginAction'
 
+// const initial= ()=>{
+// return{
+//     // JSON.parse(localStorage.getItem("logged")) || { logged: false };
+// }
+// } 
 const AppRouter = () => {
-  const { logged } = useSelector((state) => state.login);
+
+  const dispatch = useDispatch()
+
+  const { logged } = useSelector(state => state.login)
 
   useEffect(() => {
-    if (logged) {
-      localStorage.setItem("logged", JSON.stringify(logged));
+    //localStorage.setItem("logged", logged);
+
+    if (localStorage.getItem("logged") === undefined) {
+      console.log("logout")
+
+      // localStorage.setItem('logged', JSON.stringify(logged));
+
+    } else {
+      console.log("else")
+      dispatch(logout());
+      //localStorage.setItem('logged', JSON.stringify(logged));
+
     }
+    // console.log(data)
+  }, []);
+
+  useEffect(() => {
+
+    if (logged == false) {
+
+      console.log("hola")
+      localStorage.setItem('logged', JSON.stringify(logged));
+
+    }
+
+
+
+
   }, [logged]);
 
   // useEffect(() => {
@@ -28,7 +64,7 @@ const AppRouter = () => {
   // }, []);
 
   return (
-    <div>
+    <>
       <BrowserRouter>
         <Routes>
           <Route
@@ -40,17 +76,46 @@ const AppRouter = () => {
             }
           />
 
-          <Route
-            path="/"
+          {/* <Route
+            path="*"
             element={
               <PublicRouter>
                 <PublicRoutes />
               </PublicRouter>
             }
-          />
+          /> */}
+
+          <Route
+            path="/"
+            element={
+              <PublicRouter>
+                <InicioApp />
+              </PublicRouter>
+            } />
+
+          <Route
+            path="login"
+            element={
+              <PublicRouter>
+                <Login />
+              </PublicRouter>
+            } />
+
+          <Route
+            path="registro"
+            element={
+              <PublicRouter>
+                <Registro />
+              </PublicRouter>
+            } />
+
+
+
+
+
         </Routes>
       </BrowserRouter>
-    </div>
+    </>
   );
 };
 

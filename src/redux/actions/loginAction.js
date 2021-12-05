@@ -60,3 +60,11 @@ export const loginPhoneAndPassword = (phone, password) => {
     });
   };
 };
+
+export const logout = () => {
+
+  return {
+    type: types.logout
+  }
+
+}
