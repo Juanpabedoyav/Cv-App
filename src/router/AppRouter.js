@@ -1,50 +1,62 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Descargas from "../components/Descargas";
-import FormCv1 from "../components/FormCv1";
-import FormCv2 from "../components/FormCv2";
-import Home from "../components/Home";
+import RoutersApp from "./RoutersApp";
+import PrivateRouter from "./PrivateRouter";
+import PublicRouter from "./PublicRouter";
 import Login from "../components/Login";
-import Perfil from "../components/Perfil";
-import PlantillasCv from "../components/PlantillasCv";
-import Tutoriales from "../components/Tutoriales";
-import VistaPreviaCv from "../components/VistaPreviaCv";
 import InicioApp from "../components/InicioApp";
-import Registro from "../components/Registro";
+import { useSelector } from "react-redux";
 
 const AppRouter = () => {
+  const { logged } = useSelector((state) => state.login);
+
+  useEffect(() => {
+    if (logged) {
+      localStorage.setItem("logged", JSON.stringify(logged));
+    }
+  }, [logged]);
+
+  // useEffect(() => {
+  //   if (logged === undefined) {
+  //     /* return JSON.parse(localStorage.getItem("logged")) || { logged: false }; */
+  //     console.log("cogio");
+  //     return (
+  //       localStorage.setItem("logged", true) ||
+  //       localStorage.setItem("logged", false)
+  //     );
+  //   }
+  // }, []);
+
   return (
     <div>
       <BrowserRouter>
-      
         <Routes>
-          <Route path="/" element={<InicioApp />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/perfil" element={<Perfil />} />
-          <Route path="/descargas" element={<Descargas />} />
-          <Route path="/formcv1" element={<FormCv1 />} />
-          <Route path="/formcv2" element={<FormCv2 />} />
-          <Route path="/plantillascv" element={<PlantillasCv />} />
-          <Route path="/tutoriales" element={<Tutoriales />} />
-          <Route path="/vistaprevia" element={<VistaPreviaCv />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/registro" element={<Registro />} />
+          <Route
+            path="*"
+            element={
+              <PrivateRouter>
+                <RoutersApp />
+              </PrivateRouter>
+            }
+          />
 
-          {/* <Route path="*" element={
+          <Route
+            path="/"
+            element={
+              <PublicRouter>
+                <InicioApp />
+              </PublicRouter>
+            }
+          />
 
-                        <PrivateRouter>
-                            <RoutersApp />
-                        </PrivateRouter>
-                    }/>
-
-
-                    <Route path="/login" element={
-
-                        <PublicRouter>
-                            <Login />
-                        </PublicRouter>
-                    }
-                    /> */}
+          <Route
+            path="login"
+            element={
+              <PublicRouter>
+                <Login />
+              </PublicRouter>
+            }
+          />
         </Routes>
       </BrowserRouter>
     </div>

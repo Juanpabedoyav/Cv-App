@@ -3,10 +3,8 @@ import { Button } from "@chakra-ui/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import btnGoogle from "../assets/btnGoogle.png";
 import { faPhoneAlt } from "@fortawesome/free-solid-svg-icons";
-import { Link as LinkReact } from "react-router-dom";
-// import { fab } from '@fortawesome/free-brands-svg-icons'
+import { Link as LinkReact, nAVIGAT } from "react-router-dom";
 import { faFacebook } from "@fortawesome/free-brands-svg-icons";
-
 import {
   ButtonContainer,
   ImgContainer,
@@ -15,14 +13,26 @@ import {
   TextH1,
   TextH4,
 } from "../styles/InicioApp.styles";
+import { loginGoogle, loginFacebook } from "../redux/actions/loginAction";
+import { useDispatch } from "react-redux";
 
 const Inicio = () => {
+  const dispatch = useDispatch();
+
+  const handleLoginGoogle = () => {
+    dispatch(loginGoogle());
+  };
+
+  const handleLoginFacebook = () => {
+    dispatch(loginFacebook());
+  };
+
   return (
     <StylesContainer>
       <ImgContainer>
         <ImgLogo
-          src="https://res.cloudinary.com/dv08oqgvx/image/upload/v1637968857/mk3ocdc7zaenmvrmaskc.jpg"
-          alt=""
+          src="https://res.cloudinary.com/dv08oqgvx/image/upload/v1638466378/wx5nvjktake1qgprm4da.jpg"
+          alt="logo"
         />
       </ImgContainer>
 
@@ -31,40 +41,39 @@ const Inicio = () => {
       <TextH4>Creando perfiles profesionales</TextH4>
 
       <ButtonContainer>
-        <LinkReact to="/login">
+        <LinkReact to="login">
           <Button
             leftIcon={<FontAwesomeIcon icon={faPhoneAlt} />}
             variant="solid"
             className="phone "
           >
-            Iniciar sesion
+            Iniciar con Celular
           </Button>
         </LinkReact>
-        {/* <FontAwesomeIcon icon={fabFacebook}/> */}
-        {/* <FontAwesomeIcon icon={['fab', 'facebook-f']} /> */}
 
         <Button
-          style={{backgroundColor:'#5890FF'}}
-            leftIcon={<FontAwesomeIcon className="icon-facebook"icon={faFacebook} /> }
-            variant="solid"
-            className="button-facebook"
-          >
-            Iniciar Con Facebook
-          </Button>
-          <Button
-            variant="solid"
-            className="button-google"
-          >
-<img src={btnGoogle} alt="" />
-<span> Iniciar con Google</span>
-           
-          </Button>
-       
-        
+          onClick={handleLoginFacebook}
+          style={{ backgroundColor: "#5890FF" }}
+          leftIcon={
+            <FontAwesomeIcon className="icon-facebook" icon={faFacebook} />
+          }
+          variant="solid"
+          className="button-facebook"
+        >
+          Iniciar con Facebook
+        </Button>
+        <Button
+          onClick={() => handleLoginGoogle()}
+          variant="solid"
+          className="button-google"
+        >
+          <img src={btnGoogle} alt="" />
+          <span> Iniciar con Google</span>
+        </Button>
       </ButtonContainer>
 
       <p className="registro">
-        Si no quieres registrarte{" "}
+        Si no tienes cuenta{" "}
         <LinkReact to="/registro" className="registrate">
           Registrate Aquí
         </LinkReact>

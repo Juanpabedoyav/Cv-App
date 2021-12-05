@@ -1,18 +1,59 @@
 import React from "react";
-import { FormControl, Input, Button, FormLabel } from "@chakra-ui/react";
-// import {Form} from 'formik'
+import { FormControl, Input, Button } from "@chakra-ui/react";
 import { Link as LinkReact } from "react-router-dom";
 import {
   ImgRegistro,
   TitleRegistro,
   StyleRegistro,
   InputForm,
-  ContenedorInputs
+  ContenedorInputs,
 } from "../styles/Registro.styles";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faReply } from "@fortawesome/free-solid-svg-icons";
-// import {ContenedorInputs., } from '../styles/FormCv.style'
+import { faReply, faUpload } from "@fortawesome/free-solid-svg-icons";
+import { useDispatch } from "react-redux";
+import { fileUpload } from "../helpers/fileUpload";
+import { registerAction } from "../redux/actions/registerAction";
+import { useForm } from "../hooks/useForm";
+
 const Registro = () => {
+  const elegirImagen = () => document.getElementById("image").click();
+
+  const dispatch = useDispatch();
+
+  const [form, handleInputChange, reset] = useForm({
+    name: "",
+    phone: "",
+    password: "",
+    password2: "",
+    image: "",
+  });
+
+  const { name, phone, password, password2, image } = form;
+
+  const handleFileChangeImg = ({ target }) => {
+    const file = target.files[0];
+
+    fileUpload(file)
+      .then((url) => {
+        //console.log(url);
+        form.image = url;
+      })
+      .catch((err) => console.log(err.message));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // console.log(e)
+
+    console.log(form);
+    if (password === password2) {
+      dispatch(registerAction({ name, phone, password, image }));
+      alert("Registro Exitoso");
+    } else {
+      alert("Las contraseñas no son iguales.");
+    }
+  };
+
   return (
     <StyleRegistro>
       <LinkReact to="/" className="back-container">
@@ -21,39 +62,71 @@ const Registro = () => {
 
       <ImgRegistro>
         <img
-          src="https://res.cloudinary.com/dv08oqgvx/image/upload/v1637968857/mk3ocdc7zaenmvrmaskc.jpg"
+          src="https://res.cloudinary.com/dv08oqgvx/image/upload/v1638466378/wx5nvjktake1qgprm4da.jpg"
           alt="logo"
         />
       </ImgRegistro>
       <TitleRegistro>Crea tu cuenta</TitleRegistro>
-      <form className="formulario">
-      <ContenedorInputs>
-      <FormControl id="names" isRequired>
-          <InputForm 
-          className="input" 
-          placeholder="Nombre y Apellidos " />
-        </FormControl>
+      <form onSubmit={handleSubmit} className="formulario">
+        <ContenedorInputs>
+          <FormControl isRequired>
+            <InputForm
+              name="name"
+              onChange={handleInputChange}
+              className="input"
+              placeholder="Nombre y Apellidos "
+              value={name}
+            />
+          </FormControl>
 
-        <FormControl id="telephoneNumber" isRequired>
-          <InputForm 
-          className="input" 
-          placeholder="Telefono celular " />
-        </FormControl>
+          <FormControl isRequired>
+            <InputForm
+              name="phone"
+              onChange={handleInputChange}
+              className="input"
+              placeholder="Telefono celular "
+              value={phone}
+            />
+          </FormControl>
+          {/* input de imagen  */}
+          <FormControl style={{ display: "none" }}>
+            <Input id="image" type="file" onChange={handleFileChangeImg} />
+          </FormControl>
 
-        <FormControl id="password" isRequired>
-          <InputForm 
-          className="input" 
-          placeholder="Contraseña " />
-        </FormControl>
+          <FormControl isRequired>
+            <InputForm
+              onChange={handleInputChange}
+              type="password"
+              className="input"
+              placeholder="Contraseña "
+              name="password"
+              value={password}
+            />
+          </FormControl>
 
-        <FormControl id="ConfirmPassword" isRequired>
-          <InputForm 
-          className="input" 
-          placeholder="Confirmar contraseña " />
-        </FormControl>
+          <FormControl isRequired>
+            <InputForm
+              onChange={handleInputChange}
+              type="password"
+              className="input"
+              placeholder="Confirmar contraseña"
+              name="password2"
+              value={password2}
+            />
+          </FormControl>
         </ContenedorInputs>
 
-        <Button className="botton-submit button" size="lg">
+        <Button
+          leftIcon={
+            <FontAwesomeIcon icon={faUpload} className="icono-upload" />
+          }
+          className="elegir-imagen"
+          onClick={elegirImagen}
+        >
+          Elegir imagen
+        </Button>
+
+        <Button type="submit" className="botton-submit button" size="lg">
           Crear cuenta
         </Button>
       </form>

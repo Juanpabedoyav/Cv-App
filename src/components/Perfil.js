@@ -2,6 +2,7 @@ import React from "react";
 import {
   GridAbuperf,
   GridCerrar,
+  GridEliminar,
   GridPaperf1,
   GridPaperf2,
   GridPaperf3,
@@ -9,13 +10,12 @@ import {
   GridPaperf5,
   GridPaperf6,
   GridPhone,
-  GridTerminos,
 } from "../styles/Perfil.styles";
 import NavBar from "./NavBar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faPhone,
-  faQuestion,
+  faPowerOff,
   faSignOutAlt,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link as LinkReact } from "react-router-dom";
@@ -48,16 +48,18 @@ const Perfil = () => {
           </LinkReact>
         </GridCerrar>{" "}
         <GridPaperf5 className="styles-font-perfil">
-          <LinkReact to="/login"> Cerrar sesión </LinkReact>{" "}
+          <LinkReact to="/"> Cerrar sesión </LinkReact>{" "}
         </GridPaperf5>
-        <GridTerminos>
-          <FontAwesomeIcon icon={faQuestion} />{" "}
-        </GridTerminos>
+        <GridEliminar>
+          <LinkReact to="/">
+            <FontAwesomeIcon icon={faPowerOff} />
+          </LinkReact>{" "}
+        </GridEliminar>
         <GridPaperf6 className="styles-font-perfil">
-          {" "}
-          Terminos y condiciones{" "}
+          <LinkReact to="/">Eliminar cuenta </LinkReact>{" "}
         </GridPaperf6>
       </GridAbuperf>
+
       <NavBar />
     </div>
   );

@@ -51,6 +51,7 @@ export const HomeContainer = styled.div`
     color: var(--color-principal);
     background-color: var(--color-blanco);
     padding: 10px;
+    font-size: 18px;
   }
   .box {
     padding-top: 5px;

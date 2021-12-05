@@ -1,64 +1,108 @@
 import { Button } from "@chakra-ui/button";
-import { FormControl, FormLabel } from "@chakra-ui/form-control";
-import { Input } from "@chakra-ui/input";
+import { FormControl } from "@chakra-ui/form-control";
 import React from "react";
-import { ImgContainer, ImgLogo } from "../styles/InicioApp.styles";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faReply } from "@fortawesome/free-solid-svg-icons";
-import { Link as LinkReact } from "react-router-dom";
+import { Link as LinkReact, useNavigate } from "react-router-dom";
 import {
   ContainerLogin,
   ForgotPassword,
-  H1,
-  IconUbi,
-  Label,
-  Label1,
+  ImgLogin,
 } from "../styles/Login.style";
-import {InputForm,ContenedorInputs, TitleRegistro} from "../styles/Login.style";
+import {
+  InputForm,
+  ContenedorInputs,
+  TitleRegistro,
+} from "../styles/Login.style";
+import { useDispatch } from "react-redux";
+/* import {useFormik} from 'formik' */
+import { loginPhoneAndPassword } from "../redux/actions/loginAction";
+import { useForm } from "../hooks/useForm";
 
 const Login = () => {
+  const navigate = useNavigate();
+
+  const [form, handleInputChange, reset] = useForm({
+    phone: "",
+    password: "",
+  });
+
+  const { phone, password } = form;
+
+  const dispatch = useDispatch();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    // if (doc.data().phone == phone && doc.data().password ==password)
+    const resp = await dispatch(loginPhoneAndPassword(phone, password));
+    //console.log(resp);
+  };
+  // };
+
+  // const formik = useFormik({
+  //     initialValues:{
+
+  //         phone:"",
+  //         password:""
+
+  //     },
+  //     onSubmit: () => {
+  //         /* (login(registerAction(data)) */
+  //         dispatch(loginPhoneAndPassword())
+
+  //     }
+
+  // });
+
   return (
     <>
       <ContainerLogin>
-        <IconUbi>
-          <LinkReact to="/">
-            <FontAwesomeIcon icon={faReply} />
-          </LinkReact>{" "}
-        </IconUbi>
+        <LinkReact to="/" className="back-container">
+          <FontAwesomeIcon icon={faReply} className="back" />
+        </LinkReact>{" "}
         <div>
-          <ImgContainer>
-            <ImgLogo
-              src="https://res.cloudinary.com/dv08oqgvx/image/upload/v1637968857/mk3ocdc7zaenmvrmaskc.jpg"
-              alt=""
+          <ImgLogin>
+            <img
+              src="https://res.cloudinary.com/dv08oqgvx/image/upload/v1638466378/wx5nvjktake1qgprm4da.jpg"
+              alt="logo"
             />
-          </ImgContainer>
+          </ImgLogin>
           <TitleRegistro>Ingresar</TitleRegistro>
 
-          <ContenedorInputs>
-          <FormControl id="first-name" isRequired>
-            <InputForm
-            
-              placeholder="Telefono celular "
-            />
-          </FormControl>
+          <form onSubmit={handleSubmit}>
+            <ContenedorInputs>
+              <FormControl id="first-name" isRequired>
+                <InputForm
+                  value={phone}
+                  placeholder="Teléfono celular"
+                  name="phone"
+                  onChange={handleInputChange}
+                />
+              </FormControl>
 
-          <FormControl id="password" isRequired>
-            {/* <Label1 ><FormLabel  >Contraseña</FormLabel></Label1 > */}
-            <InputForm 
-            placeholder="Contraseña " />
-          </FormControl>
+              <FormControl id="password" isRequired>
+                {/* <Label1 ><FormLabel  >Contraseña</FormLabel></Label1 > */}
+                <InputForm
+                  value={password}
+                  type="password"
+                  placeholder="Contraseña"
+                  name="password"
+                  onChange={handleInputChange}
+                />
+              </FormControl>
 
-          <ForgotPassword>
-            <p>
-              <i>¿Olvidaste la contraseña?</i>
-            </p>
-          </ForgotPassword>
-          </ContenedorInputs>
-          <LinkReact to="/home">
-            <Button className='botton-login' >
+              <ForgotPassword>
+                <p>
+                  <i>¿Olvidaste la contraseña?</i>
+                </p>
+              </ForgotPassword>
+            </ContenedorInputs>
+            {/* <LinkReact to="/home">  */}
+            <Button type="submit" className="botton-login">
               Ingresar
             </Button>
-          </LinkReact>
+            {/* </LinkReact> */}
+          </form>
         </div>
       </ContainerLogin>
     </>
