@@ -19,8 +19,18 @@ import {
   faSignOutAlt,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link as LinkReact } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { logout } from "../redux/actions/loginAction";
+
+
 
 const Perfil = () => {
+
+  const dispatch = useDispatch()
+  // logout()
+
+  const handleLogout = () => dispatch(logout()); 
+  
   return (
     <div>
       <GridAbuperf>
@@ -47,8 +57,8 @@ const Perfil = () => {
             <FontAwesomeIcon icon={faSignOutAlt} />{" "}
           </LinkReact>
         </GridCerrar>{" "}
-        <GridPaperf5 className="styles-font-perfil">
-          <LinkReact to="/"> Cerrar sesión </LinkReact>{" "}
+        <GridPaperf5  onClick={handleLogout}  className="styles-font-perfil">
+        Cerrar sesión 
         </GridPaperf5>
         <GridEliminar>
           <LinkReact to="/">

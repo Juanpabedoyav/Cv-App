@@ -4,13 +4,15 @@ import { google, facebook, db } from "../../firebase/firebase";
 import { getDocs, collection } from "firebase/firestore";
 
 export const login = (name, phone, image) => {
+
+  localStorage.setItem("logged", true);
+
   return {
     type: types.login,
     payload: {
       name,
       phone,
-      image,
-      logged: true,
+      image
     },
   };
 };
@@ -62,6 +64,8 @@ export const loginPhoneAndPassword = (phone, password) => {
 };
 
 export const logout = () => {
+
+  localStorage.setItem("logged", false);
 
   return {
     type: types.logout

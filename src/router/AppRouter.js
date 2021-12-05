@@ -19,49 +19,7 @@ const AppRouter = () => {
 
   const dispatch = useDispatch()
 
-  const { logged } = useSelector(state => state.login)
-
-  useEffect(() => {
-    //localStorage.setItem("logged", logged);
-
-    if (localStorage.getItem("logged") === undefined) {
-      console.log("logout")
-
-      // localStorage.setItem('logged', JSON.stringify(logged));
-
-    } else {
-      console.log("else")
-      dispatch(logout());
-      //localStorage.setItem('logged', JSON.stringify(logged));
-
-    }
-    // console.log(data)
-  }, []);
-
-  useEffect(() => {
-
-    if (logged == false) {
-
-      console.log("hola")
-      localStorage.setItem('logged', JSON.stringify(logged));
-
-    }
-
-
-
-
-  }, [logged]);
-
-  // useEffect(() => {
-  //   if (logged === undefined) {
-  //     /* return JSON.parse(localStorage.getItem("logged")) || { logged: false }; */
-  //     console.log("cogio");
-  //     return (
-  //       localStorage.setItem("logged", true) ||
-  //       localStorage.setItem("logged", false)
-  //     );
-  //   }
-  // }, []);
+  const state = useSelector(state => state.login)
 
   return (
     <>

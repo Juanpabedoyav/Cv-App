@@ -4,9 +4,9 @@ import { Navigate } from "react-router-dom";
 const PublicRouter = ({ children }) => {
   const { logged } = useSelector((state) => state.login);
 
-  //console.log(logged);
+  console.log('is: '+logged);
 
-  return logged ? <Navigate to="/home" /> : children;
+  return logged  ? <Navigate to="/home" /> : children;
 };
 
 export default PublicRouter;
