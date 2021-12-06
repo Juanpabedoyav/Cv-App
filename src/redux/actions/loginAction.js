@@ -60,7 +60,7 @@ export const loginPhoneAndPassword = (phone, password) => {
         dispatch(login(doc.data().name, doc.data().phone, doc.data().image));
       }
 
-      console.log(getData.data());
+      //console.log(getData.data());
     });
   };
 };

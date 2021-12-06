@@ -1,6 +1,6 @@
 import React from "react";
 import { FormControl, Input, Button } from "@chakra-ui/react";
-import { Link as LinkReact } from "react-router-dom";
+import { Link as LinkReact, useNavigate } from "react-router-dom";
 import {
   ImgRegistro,
   TitleRegistro,
@@ -14,45 +14,28 @@ import { useDispatch } from "react-redux";
 import { fileUpload } from "../helpers/fileUpload";
 import { registerAction } from "../redux/actions/registerAction";
 import { useForm } from "../hooks/useForm";
+import { Formik, Form, ErrorMessage } from "formik";
+
 
 const Registro = () => {
   const elegirImagen = () => document.getElementById("image").click();
 
   const dispatch = useDispatch();
 
-  const [form, handleInputChange, reset] = useForm({
-    name: "",
-    phone: "",
-    password: "",
-    password2: "",
-    image: "",
-  });
+  const navigate = useNavigate();
+// capturar Imagen
 
-  const { name, phone, password, password2, image } = form;
+  // const handleFileChangeImg = ({ target }) => {
+  //   const file = target.files[0];
 
-  const handleFileChangeImg = ({ target }) => {
-    const file = target.files[0];
+  //   fileUpload(file)
+  //     .then((url) => {
+  //       //console.log(url);
+  //       form.image = url;
+  //     })
+  //     .catch((err) => console.log(err.message));
+  // };
 
-    fileUpload(file)
-      .then((url) => {
-        //console.log(url);
-        form.image = url;
-      })
-      .catch((err) => console.log(err.message));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // console.log(e)
-
-    console.log(form);
-    if (password === password2) {
-      dispatch(registerAction({ name, phone, password, image }));
-      alert("Registro Exitoso");
-    } else {
-      alert("Las contraseñas no son iguales.");
-    }
-  };
 
   return (
     <StyleRegistro>
@@ -67,52 +50,143 @@ const Registro = () => {
         />
       </ImgRegistro>
       <TitleRegistro>Crea tu cuenta</TitleRegistro>
-      <form onSubmit={handleSubmit} className="formulario">
+     
+      <Formik
+      initialValues={{
+        name: "",
+        phone: "",
+        password: "",
+        password2: "",
+        image: "",
+      }}
+      validate={(valores)=>{
+        let fallos={};
+
+        if(!valores.phone){
+          fallos.phone = "Ingresa un télefono por favor"
+        }else if(!/^\d{10}$/.test(valores.phone)){
+          fallos.phone = "El télefono que ingresaste no es valido"
+        }
+
+        if(!valores.password){
+          fallos.password = "Ingrese su contraseña por favor "
+
+        }else if(!/^[A-Za-z]\w{4,11}$/.test(valores.password)){
+          fallos.password = "La contraseña debe iniciar con letra y tener entre 4 a 10 caracteres con letras y números"
+          
+        } 
+        if(!valores.password2){
+          fallos.password2 = "Ingrese su contraseña por favor"
+
+        }else if(!valores.password.match(valores.password2)){
+          fallos.password2 = "Las contraseñas no coinciden "
+          
+        }
+
+        if(!valores.name){
+          fallos.name = "Ingrese su nombre"
+
+        }else if (!/^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/.test(valores.name)){
+          
+          fallos.name = "Ingrese un nombre de usuario valido "
+          
+        }
+
+        return fallos
+      }}
+      onSubmit={(valores)=>{
+        if (valores.password === valores.password2) {
+          dispatch(registerAction({ 
+            name: valores.name, 
+            phone: valores.phone, 
+            password: valores.password, 
+            image: valores.image
+          }));
+          setTimeout(()=> navigate('/login'), 2000 );     
+            
+          //alert("Registro Exitoso");
+        } else {
+          alert("Las contraseñas no son iguales.");
+        }
+      }
+      
+      }
+      
+      >
+
+{({values, errors, handleChange, handleBlur})=>(
+      <Form className="formulario">
         <ContenedorInputs>
           <FormControl isRequired>
             <InputForm
               name="name"
-              onChange={handleInputChange}
+              onChange={handleChange}
+              onBlur={handleBlur}
               className="input"
               placeholder="Nombre y Apellidos "
-              value={name}
+              value={values.name}
             />
+            <ErrorMessage name="name" component={ () => (
+
+              <div>{errors.name}</div>
+                
+            )}/>
           </FormControl>
 
           <FormControl isRequired>
             <InputForm
               name="phone"
-              onChange={handleInputChange}
+              onChange={handleChange}
+              onBlur={handleBlur}
               className="input"
               placeholder="Telefono celular "
-              value={phone}
+              value={values.phone}
             />
+            <ErrorMessage name="phone" component={ () => (
+
+              <div>{errors.phone}</div>
+                
+            )}/>
           </FormControl>
           {/* input de imagen  */}
           <FormControl style={{ display: "none" }}>
-            <Input id="image" type="file" onChange={handleFileChangeImg} />
+            <Input id="image" type="file" /* onChange={handleFileChangeImg} */ />
           </FormControl>
 
           <FormControl isRequired>
             <InputForm
-              onChange={handleInputChange}
+              onChange={handleChange}
+              onBlur={handleBlur}
               type="password"
               className="input"
               placeholder="Contraseña "
               name="password"
-              value={password}
+              value={values.password}
             />
+
+            <ErrorMessage name="password" component={ () => (
+
+              <div>{errors.password}</div>
+                
+            )}/>
           </FormControl>
 
           <FormControl isRequired>
             <InputForm
-              onChange={handleInputChange}
+              onChange={handleChange}
+              onBlur={handleBlur}              
               type="password"
               className="input"
               placeholder="Confirmar contraseña"
               name="password2"
-              value={password2}
+              value={values.password2}
             />
+            <ErrorMessage name="password2" component={ () => (
+
+              <div>{errors.password2}</div>
+                
+            )}/>
+
           </FormControl>
         </ContenedorInputs>
 
@@ -121,7 +195,7 @@ const Registro = () => {
             <FontAwesomeIcon icon={faUpload} className="icono-upload" />
           }
           className="elegir-imagen"
-          onClick={elegirImagen}
+          /* onClick={elegirImagen} */
         >
           Elegir imagen
         </Button>
@@ -129,8 +203,10 @@ const Registro = () => {
         <Button type="submit" className="botton-submit button" size="lg">
           Crear cuenta
         </Button>
-      </form>
-
+      </Form>
+      )}
+      
+      </Formik>
       <p>
         Si ya tienes una cuenta{" "}
         <LinkReact to="/" className="styles-link-react">
