@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FormControl, Input, Button } from "@chakra-ui/react";
 import { Link as LinkReact, useNavigate } from "react-router-dom";
 import {
@@ -31,7 +31,8 @@ const Registro = () => {
 
   const elegirImagen = () => {
     
-    document.getElementById("image").click()
+    //document.getElementById("image").click()
+    // console.log(url);
 
     console.log("elegir")
 
@@ -53,8 +54,11 @@ const Registro = () => {
       })
       .catch((err) => console.log(err.message));
     
-  };
+  };  
 
+  useEffect(() => {
+   console.log("renderizado")
+  }, [])
 
   return (
     <StyleRegistro>
