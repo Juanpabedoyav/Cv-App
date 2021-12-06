@@ -15,30 +15,50 @@ import { fileUpload } from "../helpers/fileUpload";
 import { registerAction } from "../redux/actions/registerAction";
 import { useForm } from "../hooks/useForm";
 import { Formik, Form, ErrorMessage } from "formik";
+import Swal from 'sweetalert2'
+import {
+  Alert,
+  AlertIcon,
+  AlertTitle,
+  CloseButton
+} from '@chakra-ui/react'
 
-
-const Registro = () => {
-  const elegirImagen = () => document.getElementById("image").click();
+const Registro = () => {  
 
   const dispatch = useDispatch();
 
   const navigate = useNavigate();
+
+  const elegirImagen = () => {
+    
+    document.getElementById("image").click()
+
+    console.log("elegir")
+
+  }
 // capturar Imagen
 
-  // const handleFileChangeImg = ({ target }) => {
-  //   const file = target.files[0];
+  let img = "";
 
-  //   fileUpload(file)
-  //     .then((url) => {
-  //       //console.log(url);
-  //       form.image = url;
-  //     })
-  //     .catch((err) => console.log(err.message));
-  // };
+  const handleFileChangeImg = ({ target }) => {
+    const file = target.files[0];
+
+    console.log(file);
+
+    fileUpload(file)
+      .then((url) => {
+        img = url;
+        console.log(url);
+
+      })
+      .catch((err) => console.log(err.message));
+    
+  };
 
 
   return (
     <StyleRegistro>
+
       <LinkReact to="/" className="back-container">
         <FontAwesomeIcon icon={faReply} className="back" />
       </LinkReact>
@@ -50,6 +70,24 @@ const Registro = () => {
         />
       </ImgRegistro>
       <TitleRegistro>Crea tu cuenta</TitleRegistro>
+
+      <FormControl >
+            <Input 
+             id="image" 
+             type="file" 
+            //name="url"           
+             onChange={handleFileChangeImg} />
+      </FormControl>
+
+      <Button
+          leftIcon={
+            <FontAwesomeIcon icon={faUpload} className="icono-upload" />
+          }
+          className="elegir-imagen"
+          onClick={elegirImagen}
+        >
+          Elegir imagen
+      </Button>
      
       <Formik
       initialValues={{
@@ -57,7 +95,7 @@ const Registro = () => {
         phone: "",
         password: "",
         password2: "",
-        image: "",
+        image: img,
       }}
       validate={(valores)=>{
         let fallos={};
@@ -78,7 +116,7 @@ const Registro = () => {
         if(!valores.password2){
           fallos.password2 = "Ingrese su contraseña por favor"
 
-        }else if(!valores.password.match(valores.password2)){
+        }else if(valores.password !== valores.password2){
           fallos.password2 = "Las contraseñas no coinciden "
           
         }
@@ -88,12 +126,13 @@ const Registro = () => {
 
         }else if (!/^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/.test(valores.name)){
           
-          fallos.name = "Ingrese un nombre de usuario valido "
+          fallos.name = "Ingrese un nombre valido "
           
         }
 
         return fallos
       }}
+   
       onSubmit={(valores)=>{
         if (valores.password === valores.password2) {
           dispatch(registerAction({ 
@@ -102,7 +141,15 @@ const Registro = () => {
             password: valores.password, 
             image: valores.image
           }));
-          setTimeout(()=> navigate('/login'), 2000 );     
+
+          Swal.fire({
+            icon: 'success',
+            title: 'Registro Exitoso',
+            showConfirmButton: false,
+            timer: 1500
+          })
+
+          setTimeout(()=> navigate('/login'), 1850 );
             
           //alert("Registro Exitoso");
         } else {
@@ -126,9 +173,16 @@ const Registro = () => {
               placeholder="Nombre y Apellidos "
               value={values.name}
             />
-            <ErrorMessage name="name" component={ () => (
+            <ErrorMessage name="name" component={ () => (         
 
-              <div>{errors.name}</div>
+              <Alert 
+              status='error' 
+              margin="auto"
+              borderRadius="8px" 
+              width="92%" mb={4} mt={-3}>
+                <AlertIcon />
+                <AlertTitle mr={4}>{errors.name}</AlertTitle>                
+              </Alert>
                 
             )}/>
           </FormControl>
@@ -144,14 +198,18 @@ const Registro = () => {
             />
             <ErrorMessage name="phone" component={ () => (
 
-              <div>{errors.phone}</div>
+              <Alert status='error' 
+                margin="auto" 
+                width="92%"
+                borderRadius="8px" 
+                mb={4} 
+                mt={-3}>
+                <AlertIcon />
+                <AlertTitle mr={4}>{errors.phone}</AlertTitle>                
+              </Alert>
                 
             )}/>
-          </FormControl>
-          {/* input de imagen  */}
-          <FormControl style={{ display: "none" }}>
-            <Input id="image" type="file" /* onChange={handleFileChangeImg} */ />
-          </FormControl>
+          </FormControl>         
 
           <FormControl isRequired>
             <InputForm
@@ -166,7 +224,16 @@ const Registro = () => {
 
             <ErrorMessage name="password" component={ () => (
 
-              <div>{errors.password}</div>
+              <Alert 
+                status='error' 
+                margin="auto" 
+                width="92%" 
+                mb={4} 
+                mt={-3}
+                borderRadius="8px">
+                <AlertIcon />
+                <AlertTitle mr={4}>{errors.password}</AlertTitle>                
+              </Alert>
                 
             )}/>
           </FormControl>
@@ -183,22 +250,21 @@ const Registro = () => {
             />
             <ErrorMessage name="password2" component={ () => (
 
-              <div>{errors.password2}</div>
+              <Alert 
+                status='error' 
+                margin="auto" 
+                width="92%" mb={4} 
+                mt={-3}
+                borderRadius="8px">
+                <AlertIcon />
+                <AlertTitle mr={4}>{errors.password2}</AlertTitle>
+                
+              </Alert>
                 
             )}/>
 
           </FormControl>
-        </ContenedorInputs>
-
-        <Button
-          leftIcon={
-            <FontAwesomeIcon icon={faUpload} className="icono-upload" />
-          }
-          className="elegir-imagen"
-          /* onClick={elegirImagen} */
-        >
-          Elegir imagen
-        </Button>
+        </ContenedorInputs>        
 
         <Button type="submit" className="botton-submit button" size="lg">
           Crear cuenta
@@ -206,7 +272,7 @@ const Registro = () => {
       </Form>
       )}
       
-      </Formik>
+      </Formik> 
       <p>
         Si ya tienes una cuenta{" "}
         <LinkReact to="/" className="styles-link-react">

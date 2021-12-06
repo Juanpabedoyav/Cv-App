@@ -15,46 +15,22 @@ import {
   TitleRegistro,
 } from "../styles/Login.style";
 import { useDispatch } from "react-redux";
-/* import {useFormik} from 'formik' */
 import { loginPhoneAndPassword } from "../redux/actions/loginAction";
 import { useForm } from "../hooks/useForm";
 import { Formik, Form, Field, ErrorMessage } from 'formik';
+import {
+  Alert,
+  AlertIcon,
+  AlertTitle,
+  CloseButton
+} from '@chakra-ui/react'
+import Swal from 'sweetalert2'
 
 const Login = () => {
   const navigate = useNavigate();
-// hook antes de formik
 
-  /* const [form, handleInputChange, reset] = useForm({
-    phone: "",
-    password: "",
-  });
-
-  const { phone, password } = form; */
 
   const dispatch = useDispatch();
-
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   // if (doc.data().phone == phone && doc.data().password ==password)
-  //   // const resp = await dispatch(loginPhoneAndPassword(phone, password));
-  //   //console.log(resp);
-  // };
-  // };
-
-  // const formik = useFormik({
-  //     initialValues:{
-
-  //         phone:"",
-  //         password:""
-
-  //     },
-  //     onSubmit: () => {
-  //         /* (login(registerAction(data)) */
-  //         dispatch(loginPhoneAndPassword())
-
-  //     }
-
-  // });
 
   return (
     <>
@@ -103,7 +79,14 @@ const Login = () => {
         
         onSubmit = {async (valores) => {
             console.log(valores)
-            const resp = await dispatch(loginPhoneAndPassword(valores.phone, valores.password));
+          const resp = await dispatch(loginPhoneAndPassword(valores.phone, valores.password));
+          setTimeout(()=>( resp, 1900))
+            Swal.fire({
+              icon: 'success',
+              title: 'Bienvenido',
+              showConfirmButton: false,
+              timer: 1500
+            })
 
             // console.log('enviado')
           }
@@ -124,7 +107,14 @@ const Login = () => {
                   />
                 <ErrorMessage name="phone" component={()=>(
 
-                  <div className="errores">{errors.phone}</div> 
+                    <Alert 
+                      status='error' 
+                      margin="auto"
+                      borderRadius="8px" 
+                      width="92%" mb={4} mt={-3}>
+                      <AlertIcon />
+                      <AlertTitle mr={4}>{errors.phone}</AlertTitle>
+                    </Alert>
                 
                 )}/>
                 </FormControl>
@@ -138,9 +128,19 @@ const Login = () => {
                     onChange={handleChange}
                     onBlur={handleBlur}
                   />
-                   <ErrorMessage name="password" element={() => (
-                     <div className="errores" style={{color: "red"}}>{errors.password}</div>
-                   )}/>
+                    <ErrorMessage name="password" component={()=>(
+
+                  <Alert 
+                    status='error' 
+                    margin="auto"
+                    borderRadius="8px" 
+                    width="92%" mb={4} mt={-3}>
+                    <AlertIcon />
+                    <AlertTitle mr={4}>{errors.password}</AlertTitle>
+                    
+                  </Alert>
+
+                    )}/>
                 </FormControl>
 
                 <ForgotPassword>

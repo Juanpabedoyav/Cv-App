@@ -10,6 +10,12 @@ import {
 } from "../styles/FormCv.style";
 import { ErrorMessage, Form, Formik } from "formik";
 import {useNavigate} from "react-router-dom"
+import {
+  Alert,
+  AlertIcon,
+  AlertTitle,
+  CloseButton
+} from '@chakra-ui/react'
 
 const FormCv1 = () => {
 
@@ -85,9 +91,9 @@ const FormCv1 = () => {
         
         >
 
-        {
+      {
         
-          ({values, errors,handleChange, handleBlur })=>(
+        ({values, errors,handleChange, handleBlur })=>(
 
           <Form>
           
@@ -102,7 +108,15 @@ const FormCv1 = () => {
 
                 <ErrorMessage name="name" component={() => (
 
-                  <div>{errors.name}</div>
+                    <Alert 
+                      status='warning' 
+                      margin="auto"
+                      borderRadius="8px" 
+                      width="100%" mb={4} mt={-3}
+                      color="#272727">
+                      <AlertIcon />
+                      <AlertTitle mr={4}>{errors.name}</AlertTitle>
+                    </Alert>
 
                 )}/>
               <InputForm 
@@ -115,7 +129,15 @@ const FormCv1 = () => {
 
                 <ErrorMessage name="lastName" component={() => (
 
-                  <div>{errors.lastName}</div>
+                    <Alert 
+                      status='warning' 
+                      margin="auto"
+                      borderRadius="8px" 
+                      width="100%" mb={4} mt={-3}
+                      color="#272727">
+                      <AlertIcon />
+                      <AlertTitle mr={4}>{errors.lastName}</AlertTitle>
+                    </Alert>
 
                 )}/>
 
@@ -130,7 +152,15 @@ const FormCv1 = () => {
 
                 <ErrorMessage name="email" component={() => (
 
-                  <div>{errors.email}</div>
+                    <Alert 
+                      status='warning' 
+                      margin="auto"
+                      borderRadius="8px" 
+                      width="100%" mb={4} mt={-3}
+                      color="#272727">
+                      <AlertIcon />
+                      <AlertTitle mr={4}>{errors.email}</AlertTitle>
+                    </Alert>
 
                 )}/>
 
@@ -144,7 +174,15 @@ const FormCv1 = () => {
                 />
                 <ErrorMessage name="position" component={() => (
 
-                  <div>{errors.position}</div>
+                    <Alert 
+                      status='warning' 
+                      margin="auto"
+                      borderRadius="8px" 
+                      width="100%" mb={4} mt={-3}
+                      color="#272727">
+                      <AlertIcon />
+                      <AlertTitle mr={4}>{errors.position}</AlertTitle>
+                    </Alert>
 
                 )}/>
 
@@ -158,7 +196,15 @@ const FormCv1 = () => {
                 />
                 <ErrorMessage name="place" component={() => (
 
-                  <div>{errors.place}</div>
+                    <Alert 
+                      status='warning' 
+                      margin="auto"
+                      borderRadius="8px" 
+                      width="100%" mb={4} mt={-3}
+                      color="#272727">
+                      <AlertIcon />
+                      <AlertTitle mr={4}>{errors.place}</AlertTitle>
+                    </Alert>
 
                 )}/>
 
@@ -172,7 +218,15 @@ const FormCv1 = () => {
                 />
                 <ErrorMessage name="phone" component={() => (
 
-                  <div>{errors.phone}</div>
+                    <Alert 
+                      status='warning' 
+                      margin="auto"
+                      borderRadius="8px" 
+                      width="100%" mb={4} mt={-3}
+                      color="#272727">
+                      <AlertIcon />
+                      <AlertTitle mr={4}>{errors.phone}</AlertTitle>
+                    </Alert>
 
                 )}/>
 

@@ -10,6 +10,12 @@ import {
 } from "../styles/FormCv.style";
 import { useNavigate } from "react-router";
 import { Formik , Form, ErrorMessage} from "formik";
+import {
+  Alert,
+  AlertIcon,
+  AlertTitle,
+  CloseButton
+} from '@chakra-ui/react'
 
 const FormCv2 = () => {
   
@@ -91,7 +97,14 @@ const navigate = useNavigate()
             />
             <ErrorMessage name="qualities" component={() => (
 
-              <div>{errors.qualities}</div>
+                    <Alert 
+                      status='warning' 
+                      margin="auto"
+                      borderRadius="8px" 
+                      width="92%" mb={4} mt={-3}>
+                      <AlertIcon />
+                      <AlertTitle mr={4}>{errors.qualities}</AlertTitle>
+                    </Alert>
 
             )}/>
             
@@ -105,7 +118,14 @@ const navigate = useNavigate()
 
           <ErrorMessage name="motivation" component={() => (
 
-            <div>{errors.motivation}</div>
+                    <Alert 
+                      status='warning' 
+                      margin="auto"
+                      borderRadius="8px" 
+                      width="92%" mb={4} mt={-3}>
+                      <AlertIcon />
+                      <AlertTitle mr={4}>{errors.motivation}</AlertTitle>
+                    </Alert>
 
           )}/>
           
@@ -119,7 +139,14 @@ const navigate = useNavigate()
 
           <ErrorMessage name="jobExperiences" component={() => (
 
-            <div>{errors.jobExperiences}</div>
+                    <Alert 
+                      status='warning' 
+                      margin="auto"
+                      borderRadius="8px" 
+                      width="92%" mb={4} mt={-3}>
+                      <AlertIcon />
+                      <AlertTitle mr={4}>{errors.jobExperiences}</AlertTitle>
+                    </Alert>
 
           )}/>
           
@@ -133,7 +160,14 @@ const navigate = useNavigate()
 
           <ErrorMessage name="skills" component={() => (
 
-            <div>{errors.skills}</div>
+                    <Alert 
+                      status='warning' 
+                      margin="auto"
+                      borderRadius="8px" 
+                      width="92%" mb={4} mt={-3}>
+                      <AlertIcon />
+                      <AlertTitle mr={4}>{errors.skills}</AlertTitle>
+                    </Alert>
 
           )}/>
 
@@ -147,7 +181,14 @@ const navigate = useNavigate()
 
           <ErrorMessage name="language" component={() => (
 
-            <div>{errors.language}</div>
+                    <Alert 
+                      status='warning' 
+                      margin="auto"
+                      borderRadius="8px" 
+                      width="92%" mb={4} mt={-3}>
+                      <AlertIcon />
+                      <AlertTitle mr={4}>{errors.language}</AlertTitle>
+                    </Alert>
 
           )}/>
 
