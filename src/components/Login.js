@@ -149,11 +149,11 @@ const Login = () => {
                   </p>
                 </ForgotPassword>
               </ContenedorInputs>
-                {/* <LinkReact to="/home">  */}
+                
                 <Button type="submit" className="botton-login">
                   Ingresar
                 </Button>
-                {/* </LinkReact> */}
+                
             </Form>
             
 
