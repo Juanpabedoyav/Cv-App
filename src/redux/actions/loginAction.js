@@ -1,5 +1,5 @@
 import { types } from "../types/types";
-import { getAuth, signInWithPopup } from "firebase/auth";
+import { getAuth, signInWithPopup, FacebookAuthProvider } from "firebase/auth";
 import { google, facebook, db } from "../../firebase/firebase";
 import { getDocs, collection } from "firebase/firestore";
 
@@ -36,11 +36,22 @@ export const loginFacebook = () => {
   return (dispatch) => {
     const auth = getAuth();
     signInWithPopup(auth, facebook)
-      .then(({ user }) => {
+      .then((result) => {
+
+        const user = result.user;
+
+        /* const credential = FacebookAuthProvider.credentialFromResult(result);
+        const token = credential.accessToken; */
+
+
         console.log(user);
-        dispatch(
-          login(user.displayName, user.phoneNumber, user.email, user.photoURL)
-        );
+
+
+
+
+        // dispatch(
+        //   login(user.displayName, user.phoneNumber, user.email, user.photoURL)
+        // );
       })
       .catch((error) => console.log(error));
   };
