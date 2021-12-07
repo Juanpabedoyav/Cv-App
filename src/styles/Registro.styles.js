@@ -22,7 +22,7 @@ export const TitleRegistro = styled.h1`
 export const StyleRegistro = styled.div`
   height: 100vh;
   background-color: #eef5f6;
-  width: 100%;
+  width: 100%;  
   .input {
     color: var(--color-principal);
   }
@@ -44,7 +44,7 @@ export const StyleRegistro = styled.div`
   }
   .formulario {
     margin-top: 10px;
-    padding: 0px 20px;
+    padding: 0px 20px;    
     .label {
       margin-top: 10px;
       margin-bottom: 5px;

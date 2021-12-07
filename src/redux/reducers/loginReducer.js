@@ -1,13 +1,27 @@
 import { types } from "../types/types";
 
-export const loginReducer = (state = {}, action) => {
+const initialValues = () => {
+  //console.log(JSON.stringify(localStorage.getItem("logged")))
+  if (!JSON.parse(localStorage.getItem("logged"))) {
+    return {
+      logged: false,
+    };
+  } else {
+    return {
+      logged: true,
+    };
+  }
+};
+
+export const loginReducer = (state = initialValues(), action) => {
   switch (action.type) {
     case types.login:
       return {
         name: action.payload.name,
         phone: action.payload.phone,
+        email: action.payload.email,
         image: action.payload.image,
-        logged: action.payload.logged,
+        logged: true,
       };
     case types.logout:
       return {

@@ -11,7 +11,7 @@ import PlantillasCv from "../components/PlantillasCv";
 
 const PrivateRoutes = () => {
   return (
-    <div>
+    <>
       <Routes>
         <Route path="/home" element={<Home />} />
         <Route path="/perfil" element={<Perfil />} />
@@ -23,7 +23,7 @@ const PrivateRoutes = () => {
         <Route path="/vistaprevia" element={<VistaPreviaCv />} />
         <Route path="*" element={<Navigate to="/home" />} />
       </Routes>
-    </div>
+    </>
   );
 };
 

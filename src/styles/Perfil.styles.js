@@ -59,11 +59,12 @@ export const GridPaperf4 = styled.div`
   padding-top: 22px;
 `;
 
-export const GridPaperf5 = styled.div`
+export const GridPaperf5 = styled.button`
   grid-column: 4/12;
-  grid-row: 6/6;
+  grid-row: 6/6;  
   text-align: start;
   padding-top: 22px;
+  border:none
 `;
 
 export const GridPaperf6 = styled.div`

@@ -16,41 +16,6 @@ return{
 }
 } */
 const AppRouter = () => {
-  const dispatch = useDispatch();
-
-  const state = useSelector((state) => state.login);
-
-  useEffect(() => {
-    //console.log(localStorage.getItem("logged"));
-    // console.log(data)
-    if (localStorage.getItem("logged") == null) {
-      console.log("no esta logeado");
-      dispatch(logout());
-    }
-
-    //console.log(localStorage.getItem("logged"));
-  }, []);
-
-  useEffect(() => {
-    console.log(localStorage.getItem("logged"));
-    if (state.logged) {
-      localStorage.setItem("logged", JSON.stringify(state.logged));
-    }
-  }, [state]);
-
-  //console.log("esta logueado");
-
-  // useEffect(() => {
-  //   if (logged === undefined) {
-  //     /* return JSON.parse(localStorage.getItem("logged")) || { logged: false }; */
-  //     console.log("cogio");
-  //     return (
-  //       localStorage.setItem("logged", true) ||
-  //       localStorage.setItem("logged", false)
-  //     );
-  //   }
-  // }, []);
-
   return (
     <>
       <BrowserRouter>

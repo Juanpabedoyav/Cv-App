@@ -1,16 +1,18 @@
 import { types } from "../types/types";
-import { getAuth, signInWithPopup } from "firebase/auth";
+import { getAuth, signInWithPopup, FacebookAuthProvider } from "firebase/auth";
 import { google, facebook, db } from "../../firebase/firebase";
 import { getDocs, collection } from "firebase/firestore";
 
-export const login = (name, phone, image) => {
+export const login = (name, phone, email, image) => {
+  localStorage.setItem("logged", true);
+
   return {
     type: types.login,
     payload: {
       name,
       phone,
+      email,
       image,
-      logged: true,
     },
   };
 };
@@ -33,10 +35,17 @@ export const loginFacebook = () => {
   return (dispatch) => {
     const auth = getAuth();
     signInWithPopup(auth, facebook)
-      .then(({ user }) => {
-        dispatch(
-          login(user.displayName, user.phoneNumber, user.email, user.photoURL)
-        );
+      .then((result) => {
+        const user = result.user;
+
+        /* const credential = FacebookAuthProvider.credentialFromResult(result);
+        const token = credential.accessToken; */
+
+        console.log(user);
+
+        // dispatch(
+        //   login(user.displayName, user.phoneNumber, user.email, user.photoURL)
+        // );
       })
       .catch((error) => console.log(error));
   };
@@ -62,6 +71,8 @@ export const loginPhoneAndPassword = (phone, password) => {
 };
 
 export const logout = () => {
+  localStorage.setItem("logged", false);
+
   return {
     type: types.logout,
   };
