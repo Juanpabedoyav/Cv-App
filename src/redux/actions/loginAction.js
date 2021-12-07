@@ -42,15 +42,7 @@ export const loginFacebook = () => {
     signInWithPopup(auth, facebook)
       .then((result) => {
         const user = result.user;
-
-        /* const credential = FacebookAuthProvider.credentialFromResult(result);
-        const token = credential.accessToken; */
-
         console.log(user);
-
-        // dispatch(
-        //   login(user.displayName, user.phoneNumber, user.email, user.photoURL)
-        // );
       })
       .catch((error) => console.log(error));
   };
