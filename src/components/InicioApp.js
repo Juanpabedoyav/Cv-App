@@ -52,7 +52,7 @@ const Inicio = () => {
         </LinkReact>
 
         <Button
-          onClick={()=>handleLoginFacebook()}
+          onClick={() => handleLoginFacebook()}
           style={{ backgroundColor: "#5890FF" }}
           leftIcon={
             <FontAwesomeIcon className="icon-facebook" icon={faFacebook} />

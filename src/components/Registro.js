@@ -24,7 +24,7 @@ const Registro = () => {
   const navigate = useNavigate();
 
   const elegirImagen = () => {
-    //document.getElementById("image").click()
+    document.getElementById("image").click();
     // console.log(url);
 
     console.log("elegir");
@@ -41,7 +41,7 @@ const Registro = () => {
     fileUpload(file)
       .then((url) => {
         img = url;
-        console.log(url);
+        console.log(img);
       })
       .catch((err) => console.log(err.message));
   };
@@ -64,30 +64,13 @@ const Registro = () => {
       </ImgRegistro>
       <TitleRegistro>Crea tu cuenta</TitleRegistro>
 
-      <FormControl>
-        <Input
-          id="image"
-          type="file"
-          //name="url"
-          onChange={handleFileChangeImg}
-        />
-      </FormControl>
-
-      <Button
-        leftIcon={<FontAwesomeIcon icon={faUpload} className="icono-upload" />}
-        className="elegir-imagen"
-        onClick={elegirImagen}
-      >
-        Elegir imagen
-      </Button>
-
       <Formik
         initialValues={{
           name: "",
           phone: "",
           password: "",
           password2: "",
-          image: img,
+          image: "",
         }}
         validate={(valores) => {
           let fallos = {};
@@ -125,7 +108,7 @@ const Registro = () => {
                 name: valores.name,
                 phone: valores.phone,
                 password: valores.password,
-                image: valores.image,
+                image: img,
               })
             );
 
@@ -257,7 +240,21 @@ const Registro = () => {
                   )}
                 />
               </FormControl>
+
+              <FormControl style={{ display: "none" }}>
+                <Input id="image" type="file" onChange={handleFileChangeImg} />
+              </FormControl>
             </ContenedorInputs>
+
+            <Button
+              leftIcon={
+                <FontAwesomeIcon icon={faUpload} className="icono-upload" />
+              }
+              className="elegir-imagen"
+              onClick={elegirImagen}
+            >
+              Elegir imagen
+            </Button>
 
             <Button type="submit" className="botton-submit button" size="lg">
               Crear cuenta

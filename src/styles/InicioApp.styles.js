@@ -1,14 +1,14 @@
 import styled from "styled-components";
 
 export const StylesContainer = styled.div`
-  background-color: #eef5f6;
+  background-color: var(--color-principal);
   height: 100vh;
-  color: var(--color-principal);
+  color: var(--color-blanco);
   overflow: hidden;
   p {
     font-weight: 600;
     .registrate {
-      color: #629197;
+      color: var(--color-blanco);
       text-decoration-line: underline;
     }
   }
@@ -19,7 +19,6 @@ export const StylesContainer = styled.div`
 `;
 
 export const ImgContainer = styled.div`
-  /* border: 2px solid red; */
   width: 150px;
   margin: 0 auto;
 `;
@@ -29,6 +28,8 @@ export const ImgLogo = styled.img`
   height: auto;
   margin-top: 50px;
   border-radius: 8px;
+  border: 2px solid var(--color-blanco);
+  box-shadow: 0 0 10px -1px var(--color-blanco);
 `;
 
 export const TextH1 = styled.h1`
@@ -60,8 +61,8 @@ export const ButtonContainer = styled.div`
     height: 49px;
     width: 100%;
     border-width: 0;
-    background-color: var(--color-principal);
-    color: var(--color-blanco);
+    background-color: var(--color-blanco);
+    color: var(--color-principal);
     border-radius: 2px;
   }
   .button-facebook {
@@ -96,6 +97,6 @@ export const ButtonContainer = styled.div`
   }
 
   .phone:hover {
-    background-color: var(--color-principal);
+    background-color: var(--color-blanco);
   }
 `;

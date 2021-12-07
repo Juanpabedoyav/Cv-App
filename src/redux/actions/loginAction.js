@@ -1,5 +1,10 @@
 import { types } from "../types/types";
-import { getAuth, signInWithPopup, FacebookAuthProvider } from "firebase/auth";
+import {
+  getAuth,
+  signInWithPopup,
+  signInWithRedirect,
+  getRedirectResult,
+} from "firebase/auth";
 import { google, facebook, db } from "../../firebase/firebase";
 import { getDocs, collection } from "firebase/firestore";
 
