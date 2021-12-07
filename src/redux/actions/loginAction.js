@@ -40,9 +40,7 @@ export const loginFacebook = () => {
   return (dispatch) => {
     const auth = getAuth();
     signInWithPopup(auth, facebook)
-      .then((result) => {
-        const user = result.user;
-
+      .then(({ user }) => {
         /* const credential = FacebookAuthProvider.credentialFromResult(result);
         const token = credential.accessToken; */
 
