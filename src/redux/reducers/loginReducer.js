@@ -1,7 +1,7 @@
 import { types } from "../types/types";
 
-const initialValues = () => {
-  //console.log(JSON.stringify(localStorage.getItem("logged")))
+/* const initialValues = () => {
+  console.log(JSON.stringify(localStorage.getItem("logged")))
   if (!JSON.parse(localStorage.getItem("logged"))) {
     return {
       logged: false,
@@ -11,9 +11,9 @@ const initialValues = () => {
       logged: true,
     };
   }
-};
+}; */
 
-export const loginReducer = (state = initialValues(), action) => {
+export const loginReducer = (state = {}, action) => {
   switch (action.type) {
     case types.login:
       return {
