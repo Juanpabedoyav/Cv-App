@@ -9,14 +9,6 @@ import { google, facebook, db } from "../../firebase/firebase";
 import { getDocs, collection } from "firebase/firestore";
 
 export const login = (name, phone, email, image) => {
-  /* localStorage.setItem("user", {
-    name,
-    phone,
-    email,
-    image,
-    logged: true,
-  });
- */
   return {
     type: types.login,
     payload: {
@@ -34,8 +26,6 @@ export const loginGoogle = () => {
     const auth = getAuth();
     signInWithPopup(auth, google)
       .then(({ user }) => {
-        //    console.log(user)
-        //    console.log(user.displayName)
         dispatch(
           login(user.displayName, user.phoneNumber, user.email, user.photoURL)
         );
@@ -62,22 +52,14 @@ export const loginPhoneAndPassword = (phone, password) => {
     const getData = await getDocs(docRef);
 
     getData.forEach((doc) => {
-      //doc.data() is never undefined for query doc snapshots
-
-      //console.log(doc.data().phone);
-
       if (doc.data().phone === phone && doc.data().password === password) {
         dispatch(login(doc.data().name, doc.data().phone, doc.data().image));
       }
-
-      //console.log(getData.data());
     });
   };
 };
 
 export const logout = () => {
-  /* localStorage.setItem("logged", false); */
-
   return {
     type: types.logout,
   };

@@ -88,6 +88,12 @@ export const ForgotPassword = styled.div`
   padding-top: 20px;
   padding-bottom: 10px;
   color: #629197;
+  i {
+    border-bottom: 1px solid #629197;
+    &:hover {
+      color: #62919799;
+    }
+  }
 `;
 export const InputForm = styled.input`
   /* border:1px solid red; */

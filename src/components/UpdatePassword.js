@@ -16,10 +16,12 @@ import { loginPhoneAndPassword } from "../redux/actions/loginAction";
 import { Formik, Form, ErrorMessage } from "formik";
 import { Alert, AlertIcon, AlertTitle } from "@chakra-ui/react";
 import Swal from "sweetalert2";
+import { updatePassword } from "../redux/actions/updateAction";
 
 const UpdatePassword = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
   return (
     <ContainerUpdate>
       <LinkReact to="/" className="back-container">
@@ -65,7 +67,7 @@ const UpdatePassword = () => {
             return fallos;
           }}
           onSubmit={async (valores) => {
-            console.log(valores);
+            // console.log(valores);
             const resp = await dispatch(
               loginPhoneAndPassword(valores.phone, valores.password)
             );
@@ -75,7 +77,7 @@ const UpdatePassword = () => {
               icon: "success",
               title: "Contraseña Actualizada",
               showConfirmButton: false,
-              timer: 1500,
+              timer: 1800,
             });
 
             // console.log('enviado')
@@ -164,7 +166,13 @@ const UpdatePassword = () => {
                 </FormControl>
               </ContenedorInputs>
 
-              <Button type="submit" className="botton-login">
+              <Button
+                type="submit"
+                className="botton-login"
+                onClick={() =>
+                  dispatch(updatePassword(values.phone, values.password1))
+                }
+              >
                 Actualizar
               </Button>
             </Form>
