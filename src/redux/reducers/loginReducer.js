@@ -1,20 +1,24 @@
 import { types } from "../types/types";
 
-/* const initialValues = () => {
+const initialValues = () => {
   //console.log(JSON.stringify(localStorage.getItem("logged")))
-  console.log(JSON.parse(localStorage.getItem("user")))
-  if (!JSON.parse(localStorage.getItem("user"))) {
+  //console.log();
+  if (!JSON.parse(localStorage.getItem("user"))?.user.logged) {
     return {
       logged: false,
     };
   } else {
-    return {      
+    return {
+      name: JSON.parse(localStorage.getItem("user")).user.name,
+      phone: JSON.parse(localStorage.getItem("user")).user.phone,
+      email: JSON.parse(localStorage.getItem("user")).user.email,
+      image: JSON.parse(localStorage.getItem("user")).user.image,
       logged: true,
     };
   }
-}; */
+};
 
-export const loginReducer = (state = {}, action) => {
+export const loginReducer = (state = initialValues(), action) => {
   switch (action.type) {
     case types.login:
       return {

@@ -9,6 +9,7 @@ import { useSelector, useDispatch } from "react-redux";
 import PrivateRoutes from "./PrivateRoutes";
 import Registro from "../components/Registro";
 import { logout } from "../redux/actions/loginAction";
+import UpdatePassword from "../components/UpdatePassword";
 
 /* const initial= ()=>{
 return{
@@ -28,15 +29,6 @@ const AppRouter = () => {
               </PrivateRouter>
             }
           />
-
-          {/* <Route
-            path="*"
-            element={
-              <PublicRouter>
-                <PublicRoutes />
-              </PublicRouter>
-            }
-          /> */}
 
           <Route
             path="/"
@@ -61,6 +53,15 @@ const AppRouter = () => {
             element={
               <PublicRouter>
                 <Registro />
+              </PublicRouter>
+            }
+          />
+
+          <Route
+            path="actualizar"
+            element={
+              <PublicRouter>
+                <UpdatePassword />
               </PublicRouter>
             }
           />

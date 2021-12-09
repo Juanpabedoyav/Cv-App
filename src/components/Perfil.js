@@ -21,16 +21,32 @@ import {
 import { Link as LinkReact } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../redux/actions/loginAction";
-import { deleteAsync } from '../redux/actions/deleteAction'
-
+import { deleteAsync } from "../redux/actions/deleteAction";
+import Swal from "sweetalert2";
 
 const Perfil = () => {
-
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   // logout()
-  const { phone } = useSelector(state => state.login)
+  const { phone } = useSelector((state) => state.login);
   // console.log(phone)
   const handleLogout = () => dispatch(logout());
+
+  const handleDelete = () => {
+    Swal.fire({
+      title: "Estas seguro de eliminar tu cuenta?",
+      text: "Esta acción no se puede revertir!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#d33",
+      cancelButtonColor: "#629197",
+      confirmButtonText: "Eliminar",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        dispatch(deleteAsync(phone));
+        Swal.fire("Eliminada!", "Tu información ha sido eliminada", "success");
+      }
+    });
+  };
 
   return (
     <div>
@@ -60,7 +76,10 @@ const Perfil = () => {
         </GridCerrar>{" "}
         <GridCerrar>
           <LinkReact to="/politica">
-            <GridPaperf4 className="styles-font-perfil"> Politica y condiciones</GridPaperf4>
+            <GridPaperf4 className="styles-font-perfil">
+              {" "}
+              Politica y condiciones
+            </GridPaperf4>
             {/* <FontAwesomeIcon icon={faSignOutAlt} />{" "} */}
           </LinkReact>
         </GridCerrar>{" "}
@@ -73,7 +92,9 @@ const Perfil = () => {
           </LinkReact>{" "}
         </GridEliminar>
         <GridPaperf6 className="styles-font-perfil">
-          <LinkReact onClick={() => dispatch(deleteAsync(phone))} to="/">Eliminar cuenta </LinkReact>{" "}
+          <LinkReact onClick={handleDelete} to="/perfil">
+            Eliminar cuenta{" "}
+          </LinkReact>{" "}
         </GridPaperf6>
       </GridAbuperf>
 
