@@ -8,6 +8,7 @@ import FormCv2 from "../components/FormCv2";
 import Tutoriales from "../components/Tutoriales";
 import VistaPreviaCv from "../components/VistaPreviaCv";
 import PlantillasCv from "../components/PlantillasCv";
+import Polity from "../components/Polity";
 
 const PrivateRoutes = () => {
   return (
@@ -21,6 +22,7 @@ const PrivateRoutes = () => {
         <Route path="/plantillascv" element={<PlantillasCv />} />
         <Route path="/tutoriales" element={<Tutoriales />} />
         <Route path="/vistaprevia" element={<VistaPreviaCv />} />
+        <Route path="/politica" element={<Polity />} />
         <Route path="*" element={<Navigate to="/home" />} />
       </Routes>
     </>

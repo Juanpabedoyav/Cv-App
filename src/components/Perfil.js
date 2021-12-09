@@ -19,18 +19,19 @@ import {
   faSignOutAlt,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link as LinkReact } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../redux/actions/loginAction";
-
+import { deleteAsync } from '../redux/actions/deleteAction'
 
 
 const Perfil = () => {
 
   const dispatch = useDispatch()
   // logout()
+  const { phone } = useSelector(state => state.login)
+  // console.log(phone)
+  const handleLogout = () => dispatch(logout());
 
-  const handleLogout = () => dispatch(logout()); 
-  
   return (
     <div>
       <GridAbuperf>
@@ -57,8 +58,14 @@ const Perfil = () => {
             <FontAwesomeIcon icon={faSignOutAlt} />{" "}
           </LinkReact>
         </GridCerrar>{" "}
-        <GridPaperf5  onClick={handleLogout}  className="styles-font-perfil">
-        Cerrar sesión 
+        <GridCerrar>
+          <LinkReact to="/politica">
+            <GridPaperf4 className="styles-font-perfil"> Politica y condiciones</GridPaperf4>
+            {/* <FontAwesomeIcon icon={faSignOutAlt} />{" "} */}
+          </LinkReact>
+        </GridCerrar>{" "}
+        <GridPaperf5 onClick={handleLogout} className="styles-font-perfil">
+          Cerrar sesión
         </GridPaperf5>
         <GridEliminar>
           <LinkReact to="/">
@@ -66,7 +73,7 @@ const Perfil = () => {
           </LinkReact>{" "}
         </GridEliminar>
         <GridPaperf6 className="styles-font-perfil">
-          <LinkReact to="/">Eliminar cuenta </LinkReact>{" "}
+          <LinkReact onClick={() => dispatch(deleteAsync(phone))} to="/">Eliminar cuenta </LinkReact>{" "}
         </GridPaperf6>
       </GridAbuperf>
 
