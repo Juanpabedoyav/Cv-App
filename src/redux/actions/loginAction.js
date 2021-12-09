@@ -9,7 +9,14 @@ import { google, facebook, db } from "../../firebase/firebase";
 import { getDocs, collection } from "firebase/firestore";
 
 export const login = (name, phone, email, image) => {
-  localStorage.setItem("logged", true);
+  localStorage.setItem("user", 
+  {
+    name,
+    phone,
+    email,
+    image,
+    logged: true
+  });
 
   return {
     type: types.login,
@@ -41,10 +48,9 @@ export const loginFacebook = () => {
     const auth = getAuth();
     signInWithPopup(auth, facebook)
       .then(({ user }) => {
-        /* const credential = FacebookAuthProvider.credentialFromResult(result);
-        const token = credential.accessToken; */
-
-        console.log(user);
+        dispatch(
+          login(user.displayName, user.phoneNumber, user.email, user.photoURL)
+        );
       })
       .catch((error) => console.log(error));
   };
