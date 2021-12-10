@@ -247,7 +247,7 @@ const FormCv1 = () => {
 
               <ReactTagInput
                 tags={tags}
-                onChange={(newTags) => setTags(Number(newTags))}
+                onChange={(newTags) => setTags(newTags)}
                 maxTags={3}
                 removeOnBackspace={true}
                 placeholder="Teléfono de Contacto"
