@@ -22,7 +22,7 @@ import {
   faPowerOff,
   faSignOutAlt,
   faShieldAlt,
-  faEnvelope
+  faEnvelope,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link as LinkReact } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -33,9 +33,9 @@ import Swal from "sweetalert2";
 const Perfil = () => {
   const dispatch = useDispatch();
   // logout()
-  const { phone, name, email, image, } = useSelector((state) => state.login);
+  const { phone, name, email, image } = useSelector((state) => state.login);
   // console.log(phone)
-  
+
   const handleLogout = () => dispatch(logout());
 
   const handleDelete = () => {
@@ -63,14 +63,13 @@ const Perfil = () => {
           <br />
         </GridPaperf1>
         <GridPaperf2 className="styles-font-correo">
-          correo@electronico.com{image}{/* ¿por qué no se esta capturando el email?  */}
-          
+          {email}
+          {/* ¿por qué no se esta capturando el email?  */}
         </GridPaperf2>
         <GridPaperf3 className="styles-font-perfil">
           <img
             className="styles-imagen"
-            src={email}// aqui deberia ser image pero se esta almacenando la url de coudinary en el emain y no en image image 
-            
+            src={image} // aqui deberia ser image pero se esta almacenando la url de coudinary en el emain y no en image image
             alt=""
           />{" "}
         </GridPaperf3>
@@ -84,24 +83,18 @@ const Perfil = () => {
           </LinkReact>
         </GridCerrar>{" "}
         <GridPaperf5 className="styles-font-perfil">
-            <LinkReact to="/politica">
-              {" "}
-              Politicas y condiciones
-              </LinkReact>
-            </GridPaperf5>
-            <GridPolitics>
-              <FontAwesomeIcon icon={faShieldAlt} />{" "}
-            </GridPolitics>
-            <GridPaperf6 className="styles-font-perfil">
-              {" "}
-              <a href="https://linktr.ee/CvApp">
-              Contactanos
-               </a>
-            </GridPaperf6>
-         
-          <GridContacus>
-            <FontAwesomeIcon icon={faEnvelope} />{" "}
-          </GridContacus>
+          <LinkReact to="/politica"> Politicas y condiciones</LinkReact>
+        </GridPaperf5>
+        <GridPolitics>
+          <FontAwesomeIcon icon={faShieldAlt} />{" "}
+        </GridPolitics>
+        <GridPaperf6 className="styles-font-perfil">
+          {" "}
+          <a href="https://linktr.ee/CvApp">Contactanos</a>
+        </GridPaperf6>
+        <GridContacus>
+          <FontAwesomeIcon icon={faEnvelope} />{" "}
+        </GridContacus>
         <GridPaperf7 onClick={handleLogout} className="styles-font-perfil">
           Cerrar sesión
         </GridPaperf7>

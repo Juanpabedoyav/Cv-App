@@ -53,7 +53,9 @@ export const loginPhoneAndPassword = (phone, password) => {
 
     getData.forEach((doc) => {
       if (doc.data().phone === phone && doc.data().password === password) {
-        dispatch(login(doc.data().name, doc.data().phone, doc.data().image));
+        dispatch(
+          login(doc.data().name, doc.data().phone, "", doc.data().image)
+        );
       }
     });
   };
