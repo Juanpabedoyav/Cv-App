@@ -13,11 +13,12 @@ import { useNavigate } from "react-router-dom";
 import { Alert, AlertIcon, AlertTitle, CloseButton } from "@chakra-ui/react";
 import ReactTagInput from "@pathofdev/react-tag-input";
 import "@pathofdev/react-tag-input/build/index.css";
+import Swal from "sweetalert2";
 
 const FormCv1 = () => {
   const navegar = useNavigate();
 
-  const [tags, setTags] = useState(["3127272614"]);
+  const [tags, setTags] = useState(["Télefono celular"]);
 
   return (
     <FormCvContainer>
@@ -68,17 +69,19 @@ const FormCv1 = () => {
               "La ciudad de residencia que ingresaste no es valida";
           }
 
-          // if (!valores.phone) {
-          //   fallos.phone = "Ingresa el télofono por favor";
-          // } else if (!/^\d{10}$/.test(valores.phone)) {
-          //   fallos.phone = "El télefono que ingresaste no es valido";
-          // }
-
           return fallos;
         }}
         onSubmit={(valores) => {
-          navegar("/formcv2");
-          console.log(valores.phone);
+          if (tags.length === 0) {
+            Swal.fire({
+              icon: "error",
+              title: "Oops...",
+              text: "Verifica que todos los campos tengan información correcta!",
+            });
+          } else {
+            navegar("/formcv2");
+            //console.log(valores.phone);
+          }
         }}
       >
         {({ values, errors, handleChange, handleBlur }) => (
@@ -244,7 +247,7 @@ const FormCv1 = () => {
 
               <ReactTagInput
                 tags={tags}
-                onChange={(newTags) => setTags(newTags)}
+                onChange={(newTags) => setTags(Number(newTags))}
                 maxTags={3}
                 removeOnBackspace={true}
                 placeholder="Teléfono de Contacto"

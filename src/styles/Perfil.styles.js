@@ -57,6 +57,7 @@ export const GridPaperf4 = styled.div`
   grid-row: 4/4;
   text-align: start;
   padding-top: 22px;
+  border: 2px solid red;
 `;
 
 export const GridPaperf5 = styled.button`

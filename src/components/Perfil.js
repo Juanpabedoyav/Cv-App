@@ -82,6 +82,13 @@ const Perfil = () => {
             </GridPaperf4>
             {/* <FontAwesomeIcon icon={faSignOutAlt} />{" "} */}
           </LinkReact>
+          <a href="https://linktr.ee/CvApp">
+            <GridPaperf4 className="styles-font-perfil">
+              {" "}
+              Contactanos
+            </GridPaperf4>
+            {/* <FontAwesomeIcon icon={faSignOutAlt} />{" "} */}
+          </a>
         </GridCerrar>{" "}
         <GridPaperf5 onClick={handleLogout} className="styles-font-perfil">
           Cerrar sesión
