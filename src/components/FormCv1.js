@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@chakra-ui/button";
 import {
@@ -8,20 +8,17 @@ import {
   InputForm,
   TituloForm,
 } from "../styles/FormCv.style";
-import { ErrorMessage, Form, Formik } from "formik";
-import {useNavigate} from "react-router-dom"
-import {
-  Alert,
-  AlertIcon,
-  AlertTitle,
-  CloseButton
-} from '@chakra-ui/react'
+import { ErrorMessage, Form, Formik, Field } from "formik";
+import { useNavigate } from "react-router-dom";
+import { Alert, AlertIcon, AlertTitle, CloseButton } from "@chakra-ui/react";
+import ReactTagInput from "@pathofdev/react-tag-input";
+import "@pathofdev/react-tag-input/build/index.css";
 
 const FormCv1 = () => {
-
-  
   const navegar = useNavigate();
-  
+
+  const [tags, setTags] = useState(["3127272614"]);
+
   return (
     <FormCvContainer>
       <TituloForm>
@@ -29,223 +26,240 @@ const FormCv1 = () => {
       </TituloForm>
       <Formik
         initialValues={{
-          name:"",
-          lastName:"",
+          name: "",
+          lastName: "",
           email: "",
-          position:"",
-          place:"",
-          phone:"",
-        
+          position: "",
+          place: "",
+          phone: tags,
         }}
-        validate={(valores)=>{
+        validate={(valores) => {
+          let fallos = {};
+          if (!valores.name) {
+            fallos.name = "Ingresa el nombre por favor";
+          } else if (!/^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/.test(valores.name)) {
+            fallos.name = "El nombre solo debe tener letras";
+          }
 
-          let fallos ={};
-          if(!valores.name){
-            fallos.name ="Ingresa el nombre por favor"
-          }else if (!/^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/.test(valores.name)){
-            fallos.name="El nombre solo debe tener letras"
+          if (!valores.lastName) {
+            fallos.lastName = "Ingresa el apellido por favor";
+          } else if (!/^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/.test(valores.lastName)) {
+            fallos.lastName = "El apellido solo debe tener letras";
           }
-          
-        
-          if(!valores.lastName){
-            fallos.lastName ="Ingresa el apellido por favor"
-          }else if (!/^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/.test(valores.lastName)){
-            fallos.lastName="El apellido solo debe tener letras"
-          }
-          
-          
-          if(!valores.email){
-            fallos.email ="Ingresa el email por favor"
-          }else if (!/^(\w+[/./-]?){1,}@[a-z]+[/.]\w{2,}$/.test(valores.email)){
-            fallos.email="El email que ingresaste no es valido"
-          }
-          
-          if(!valores.position){
-            fallos.position ="Ingresa el lugar de residencia por favor"
-          }else if(!/^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/.test(valores.position)){
-            fallos.position ="Ingresa el lugar de residencia por favor"
-          }
-          
-          
-          if(!valores.place){
-            fallos.place ="Ingresa la ciudad de residencia por favor"
-          }else if(!/^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/.test(valores.place)){
-            fallos.place ="La ciudad de residencia que ingresaste no es valida"
-          }
-          
-          if(!valores.phone){
-            fallos.phone ="Ingresa el télofono por favor"
-          }else if (!/^\d{10}$/.test(valores.phone)){
-            fallos.phone="El télefono que ingresaste no es valido"
-          }          
 
-            return fallos
-
+          if (!valores.email) {
+            fallos.email = "Ingresa el email por favor";
+          } else if (
+            !/^(\w+[/./-]?){1,}@[a-z]+[/.]\w{2,}$/.test(valores.email)
+          ) {
+            fallos.email = "El email que ingresaste no es valido";
           }
-          
-        }
-        
-          onSubmit = {
-            () => navegar("/formcv2")
+
+          if (!valores.position) {
+            fallos.position = "Ingresa el lugar de residencia por favor";
+          } else if (!/^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/.test(valores.position)) {
+            fallos.position = "Ingresa el lugar de residencia por favor";
           }
-        
-        >
 
-      {
-        
-        ({values, errors,handleChange, handleBlur })=>(
+          if (!valores.place) {
+            fallos.place = "Ingresa la ciudad de residencia por favor";
+          } else if (!/^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/.test(valores.place)) {
+            fallos.place =
+              "La ciudad de residencia que ingresaste no es valida";
+          }
 
+          // if (!valores.phone) {
+          //   fallos.phone = "Ingresa el télofono por favor";
+          // } else if (!/^\d{10}$/.test(valores.phone)) {
+          //   fallos.phone = "El télefono que ingresaste no es valido";
+          // }
+
+          return fallos;
+        }}
+        onSubmit={(valores) => {
+          navegar("/formcv2");
+          console.log(valores.phone);
+        }}
+      >
+        {({ values, errors, handleChange, handleBlur }) => (
           <Form>
-          
             <ContenedorInputs>
-              <InputForm 
-                placeholder="Nombre" 
+              <InputForm
+                placeholder="Nombre"
                 type="text"
                 name="name"
                 onChange={handleChange}
                 onBlur={handleBlur}
-                value={values.name}/>
+                value={values.name}
+              />
 
-                <ErrorMessage name="name" component={() => (
-
-                    <Alert 
-                      status='warning' 
-                      margin="auto"
-                      borderRadius="8px" 
-                      width="100%" mb={4} mt={-3}
-                      color="#272727">
-                      <AlertIcon />
-                      <AlertTitle mr={4}>{errors.name}</AlertTitle>
-                    </Alert>
-
-                )}/>
-              <InputForm 
-                placeholder="Apellido" 
+              <ErrorMessage
+                name="name"
+                component={() => (
+                  <Alert
+                    status="warning"
+                    margin="auto"
+                    borderRadius="8px"
+                    width="100%"
+                    mb={4}
+                    mt={-3}
+                    color="#272727"
+                  >
+                    <AlertIcon />
+                    <AlertTitle mr={4}>{errors.name}</AlertTitle>
+                  </Alert>
+                )}
+              />
+              <InputForm
+                placeholder="Apellido"
                 type="text"
-                name="lastName" 
+                name="lastName"
                 onChange={handleChange}
                 onBlur={handleBlur}
-                value={values.lastName}/>
+                value={values.lastName}
+              />
 
-                <ErrorMessage name="lastName" component={() => (
+              <ErrorMessage
+                name="lastName"
+                component={() => (
+                  <Alert
+                    status="warning"
+                    margin="auto"
+                    borderRadius="8px"
+                    width="100%"
+                    mb={4}
+                    mt={-3}
+                    color="#272727"
+                  >
+                    <AlertIcon />
+                    <AlertTitle mr={4}>{errors.lastName}</AlertTitle>
+                  </Alert>
+                )}
+              />
 
-                    <Alert 
-                      status='warning' 
-                      margin="auto"
-                      borderRadius="8px" 
-                      width="100%" mb={4} mt={-3}
-                      color="#272727">
-                      <AlertIcon />
-                      <AlertTitle mr={4}>{errors.lastName}</AlertTitle>
-                    </Alert>
-
-                )}/>
-
-              <InputForm 
-                placeholder="Correo Electrónico" 
+              <InputForm
+                placeholder="Correo Electrónico"
                 type="email"
-                name="email" 
+                name="email"
                 onChange={handleChange}
                 onBlur={handleBlur}
                 value={values.email}
-                />
+              />
 
-                <ErrorMessage name="email" component={() => (
+              <ErrorMessage
+                name="email"
+                component={() => (
+                  <Alert
+                    status="warning"
+                    margin="auto"
+                    borderRadius="8px"
+                    width="100%"
+                    mb={4}
+                    mt={-3}
+                    color="#272727"
+                  >
+                    <AlertIcon />
+                    <AlertTitle mr={4}>{errors.email}</AlertTitle>
+                  </Alert>
+                )}
+              />
 
-                    <Alert 
-                      status='warning' 
-                      margin="auto"
-                      borderRadius="8px" 
-                      width="100%" mb={4} mt={-3}
-                      color="#272727">
-                      <AlertIcon />
-                      <AlertTitle mr={4}>{errors.email}</AlertTitle>
-                    </Alert>
-
-                )}/>
-
-              <InputForm 
-                placeholder="Cargo / Puesto" 
+              <InputForm
+                placeholder="Cargo / Puesto"
                 type="text"
                 name="position"
                 onChange={handleChange}
                 onBlur={handleBlur}
                 value={values.position}
-                />
-                <ErrorMessage name="position" component={() => (
+              />
+              <ErrorMessage
+                name="position"
+                component={() => (
+                  <Alert
+                    status="warning"
+                    margin="auto"
+                    borderRadius="8px"
+                    width="100%"
+                    mb={4}
+                    mt={-3}
+                    color="#272727"
+                  >
+                    <AlertIcon />
+                    <AlertTitle mr={4}>{errors.position}</AlertTitle>
+                  </Alert>
+                )}
+              />
 
-                    <Alert 
-                      status='warning' 
-                      margin="auto"
-                      borderRadius="8px" 
-                      width="100%" mb={4} mt={-3}
-                      color="#272727">
-                      <AlertIcon />
-                      <AlertTitle mr={4}>{errors.position}</AlertTitle>
-                    </Alert>
-
-                )}/>
-
-              <InputForm 
-                placeholder="Lugar de residencia" 
+              <InputForm
+                placeholder="Lugar de residencia"
                 type="text"
                 name="place"
                 onChange={handleChange}
                 onBlur={handleBlur}
                 value={values.place}
-                />
-                <ErrorMessage name="place" component={() => (
+              />
+              <ErrorMessage
+                name="place"
+                component={() => (
+                  <Alert
+                    status="warning"
+                    margin="auto"
+                    borderRadius="8px"
+                    width="100%"
+                    mb={4}
+                    mt={-3}
+                    color="#272727"
+                  >
+                    <AlertIcon />
+                    <AlertTitle mr={4}>{errors.place}</AlertTitle>
+                  </Alert>
+                )}
+              />
 
-                    <Alert 
-                      status='warning' 
-                      margin="auto"
-                      borderRadius="8px" 
-                      width="100%" mb={4} mt={-3}
-                      color="#272727">
-                      <AlertIcon />
-                      <AlertTitle mr={4}>{errors.place}</AlertTitle>
-                    </Alert>
-
-                )}/>
-
-              <InputForm 
-                placeholder="Teléfono de Contacto" 
+              {/* <InputForm
+                placeholder="Teléfono de Contacto"
                 type="tel"
                 name="phone"
                 onChange={handleChange}
                 onBlur={handleBlur}
                 value={values.phone}
-                />
-                <ErrorMessage name="phone" component={() => (
+              />
+              <ErrorMessage
+                name="phone"
+                component={() => (
+                  <Alert
+                    status="warning"
+                    margin="auto"
+                    borderRadius="8px"
+                    width="100%"
+                    mb={4}
+                    mt={-3}
+                    color="#272727"
+                  >
+                    <AlertIcon />
+                    <AlertTitle mr={4}>{errors.phone}</AlertTitle>
+                  </Alert>
+                )}
+              /> */}
 
-                    <Alert 
-                      status='warning' 
-                      margin="auto"
-                      borderRadius="8px" 
-                      width="100%" mb={4} mt={-3}
-                      color="#272727">
-                      <AlertIcon />
-                      <AlertTitle mr={4}>{errors.phone}</AlertTitle>
-                    </Alert>
-
-                )}/>
-
+              <ReactTagInput
+                tags={tags}
+                onChange={(newTags) => setTags(newTags)}
+                maxTags={3}
+                removeOnBackspace={true}
+                placeholder="Teléfono de Contacto"
+              />
             </ContenedorInputs>
             <ContenedorBotones>
               <Link to="/home">
                 <Button className="button">Regresar</Button>
               </Link>
-                              
-              <Button className="button" type="submit">Siguiente</Button>{" "}
-            
+              <Button className="button" type="submit">
+                Siguiente
+              </Button>{" "}
             </ContenedorBotones>
           </Form>
-
-        )
-        
-      }
-
-
+        )}
       </Formik>
     </FormCvContainer>
   );

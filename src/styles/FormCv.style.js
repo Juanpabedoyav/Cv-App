@@ -4,6 +4,31 @@ export const FormCvContainer = styled.div`
   background-color: #eef5f6;
   color: var(--color-principal);
   height: 100vh;
+  .react-tag-input {
+    outline: 1px solid var(--color-principal);
+    padding: 1rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    &::placeholder {
+      color: var(--color-principal);
+    }
+    .react-tag-input__tag {
+      background-color: var(--color-principal);
+      color:white;
+      font-weight:600;
+      padding: 5px;
+    }
+    .react-tag-input__tag__remove{
+      background-color: var(--color-principal);
+      color:white;      
+      &:after{
+          background-color:white;
+      } 
+      &:before{
+          background-color:white;
+      }
+    }
+    
 `;
 
 export const TituloForm = styled.h1`
