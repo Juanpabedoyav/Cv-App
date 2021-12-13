@@ -5,7 +5,7 @@ import { loginReducer } from "../reducers/loginReducer";
 import { registerReducer } from "../reducers/registerReducer";
 
 const storageState = obtenerDatos();
-console.log(storageState);
+//console.log(storageState);
 
 const composeEnhancers =
   (typeof window !== "undefined" &&
