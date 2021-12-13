@@ -6,7 +6,7 @@ import { registerReducer } from "../reducers/registerReducer";
 import {pdfReducer} from "../reducers/pdfReducer"
 
 const storageState = obtenerDatos();
-console.log(storageState);
+//console.log(storageState);
 
 const composeEnhancers =
   (typeof window !== "undefined" &&
