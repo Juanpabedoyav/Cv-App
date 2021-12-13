@@ -34,7 +34,7 @@ const dispatch = useDispatch();
           email: "",
           position: "",
           place: "",
-          phone: tags,
+          phone: [],
         }}
         validate={(valores) => {
           let fallos = {};
@@ -82,8 +82,8 @@ const dispatch = useDispatch();
             });
           } else {
             navegar("/formcv2");
-            dispatch(PdfAction(valores))
-            //console.log(valores.phone);
+            valores.phone = tags;
+            dispatch(PdfAction(valores));
           }
         }}
       >

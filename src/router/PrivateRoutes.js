@@ -9,6 +9,10 @@ import Tutoriales from "../components/Tutoriales";
 import VistaPreviaCv from "../components/VistaPreviaCv";
 import PlantillasCv from "../components/PlantillasCv";
 import Polity from "../components/Polity";
+import PlantillaRenderCv1 from "../components/PlantillaRenderCv1";
+import PlantillaRenderCv2 from "../components/PlantillaRenderCv2";
+import PlantillaRenderCv3 from "../components/PlantillaRenderCv3";
+import PlantillaRenderCv4 from "../components/PlantillaRenderCv4";
 
 const PrivateRoutes = () => {
   return (
@@ -24,6 +28,11 @@ const PrivateRoutes = () => {
         <Route path="/vistaprevia" element={<VistaPreviaCv />} />
         <Route path="/politica" element={<Polity />} />
         <Route path="*" element={<Navigate to="/home" />} />
+        <Route path="/plantilla1" element={<PlantillaRenderCv1/>} />
+        <Route path="/plantilla2" element={<PlantillaRenderCv2/>} />
+        <Route path="/plantilla3" element={<PlantillaRenderCv3/>} />
+        <Route path="/plantilla4" element={<PlantillaRenderCv4/>} />
+
       </Routes>
     </>
   );
