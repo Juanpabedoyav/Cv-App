@@ -14,10 +14,12 @@ import { Alert, AlertIcon, AlertTitle, CloseButton } from "@chakra-ui/react";
 import ReactTagInput from "@pathofdev/react-tag-input";
 import "@pathofdev/react-tag-input/build/index.css";
 import Swal from "sweetalert2";
+import { useDispatch } from "react-redux";
+import {PdfAction} from "../redux/actions/PdfAction"
 
 const FormCv1 = () => {
   const navegar = useNavigate();
-
+const dispatch = useDispatch();
   const [tags, setTags] = useState(["Télefono celular"]);
 
   return (
@@ -80,6 +82,7 @@ const FormCv1 = () => {
             });
           } else {
             navegar("/formcv2");
+            dispatch(PdfAction(valores))
             //console.log(valores.phone);
           }
         }}
