@@ -135,7 +135,7 @@ const PlantillasCv = () => {
 
 
               <Button padding="1rem 3rem" className="button" type="submit">
-                <Link to="/plantillaRender">Crear CV</Link> 
+                <Link to="/plantilla1">Crear CV</Link> 
               </Button>{" "}
             </ContenedorBotones>
     </Form>

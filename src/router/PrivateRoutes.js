@@ -26,12 +26,12 @@ const PrivateRoutes = () => {
         <Route path="/plantillascv" element={<PlantillasCv />} />
         <Route path="/tutoriales" element={<Tutoriales />} />
         <Route path="/vistaprevia" element={<VistaPreviaCv />} />
-        <Route path="/politica" element={<Polity />} />
-        <Route path="*" element={<Navigate to="/home" />} />
+        <Route path="/politica" element={<Polity />} />        
         <Route path="/plantilla1" element={<PlantillaRenderCv1/>} />
         <Route path="/plantilla2" element={<PlantillaRenderCv2/>} />
         <Route path="/plantilla3" element={<PlantillaRenderCv3/>} />
         <Route path="/plantilla4" element={<PlantillaRenderCv4/>} />
+        <Route path="*" element={<Navigate to="/home" />} />
 
       </Routes>
     </>
