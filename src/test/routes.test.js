@@ -1,15 +1,12 @@
-import '@testing-library/jest-dom';
-import { logged } from '../base/routeTest';
+import "@testing-library/jest-dom";
+import { logged } from "../base/routeTest";
 
-describe('Pruebas de rutas', () => {
-    test('Logged ', () => {
-        expect(logged).toEqual(true);
-    })
+describe("Pruebas de rutas", () => {
+  test("Logged ", () => {
+    expect(logged).toEqual(true);
+  });
 
-    test('logout', () => {
-        expect(logged).toEqual(false);
-    });
-})
-
-
-
+  test("logout", () => {
+    expect(logged).toEqual(false);
+  });
+});
