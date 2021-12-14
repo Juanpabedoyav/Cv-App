@@ -13,9 +13,6 @@ export const updatePassword = (phone, password2) => {
 
     await updateDoc(docRef2, {
       password: password2,
-    })
-      .then((resp) => console.log(resp))
-
-      .catch((err) => console.log(err));
+    });
   };
 };
