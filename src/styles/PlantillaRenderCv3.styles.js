@@ -97,6 +97,7 @@ export const PlantillaCv3Container = styled.div`
         height: 130px;
         /* border: 1px solid red; */
         margin: 0 auto;
+        margin-bottom: 10px;
       }
 
       .nombre {
