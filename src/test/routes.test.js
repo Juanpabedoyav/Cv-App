@@ -1,5 +1,5 @@
 import '@testing-library/jest-dom';
-import { logged } from '../base/routeTest';
+const logged = true;
 
 describe('Pruebas de rutas', () => {
     test('Logged ', () => {
