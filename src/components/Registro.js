@@ -85,7 +85,7 @@ const Registro = () => {
             fallos.password = "Ingrese su contraseña por favor ";
           } else if (!/^[A-Za-z]\w{4,11}$/.test(valores.password)) {
             fallos.password =
-              "La contraseña debe iniciar con letra y tener entre 4 a 10 caracteres con letras y números";
+              "La contraseña debe iniciar con letra y tener entre 5 a 10 caracteres con letras y números";
           }
           if (!valores.password2) {
             fallos.password2 = "Ingrese su contraseña por favor";

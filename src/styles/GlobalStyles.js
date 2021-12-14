@@ -26,5 +26,14 @@ export const GlobalStyles = createGlobalStyle`
       text-align: center;
       height: 100vh;
   }
+
+  .swal2-styled.swal2-confirm {
+    border: 0;
+    border-radius: 0.25 em;
+    background: initial;
+    background-color: var(--color-principal);
+    color: #fff;
+    font-size: 1em;
+  }
   
 `;

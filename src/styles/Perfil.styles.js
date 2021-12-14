@@ -54,29 +54,45 @@ export const GridPaperf3 = styled.div`
 
 export const GridPaperf4 = styled.div`
   grid-column: 4/12;
-  grid-row: 4/4;
+  grid-row: 5/5;
   text-align: start;
-  padding-top: 22px;
+  padding-top: 20px;
 `;
 
 export const GridPaperf5 = styled.button`
   grid-column: 4/12;
-  grid-row: 6/6;  
+  grid-row: 6/6;
   text-align: start;
-  padding-top: 22px;
-  border:none
+  padding-top: 0px;
+  border: none;
 `;
 
 export const GridPaperf6 = styled.div`
   grid-column: 4/12;
+  grid-row: 7/7;
+  text-align: start;
+  padding-top: 20px;
+`;
+export const GridPaperf7 = styled.div`
+  grid-column: 4/12;
   grid-row: 8/8;
   text-align: start;
-  padding-top: 22px;
+  padding-top: 20px;
+
+  &:hover {
+    cursor: pointer;
+  }
+`;
+export const GridPaperf8 = styled.div`
+  grid-column: 4/12;
+  grid-row: 9/9;
+  text-align: start;
+  padding-top: 20px;
 `;
 
 export const GridPhone = styled.div`
   grid-column: 2/4;
-  grid-row: 4/4;
+  grid-row: 5/5;
   font-size: 25px;
   color: #4b777e;
   padding-top: 12px;
@@ -84,7 +100,7 @@ export const GridPhone = styled.div`
 
 export const GridCerrar = styled.div`
   grid-column: 2/4;
-  grid-row: 6/6;
+  grid-row: 8/8;
   font-size: 25px;
   color: #4b777e;
   padding-top: 16px;
@@ -92,8 +108,26 @@ export const GridCerrar = styled.div`
 
 export const GridEliminar = styled.div`
   grid-column: 2/4;
-  grid-row: 8/8;
+  grid-row: 9/9;
   font-size: 25px;
   color: #4b777e;
   padding-top: 15px;
+`;
+export const GridPolitics = styled.div`
+  grid-column: 2/4;
+  grid-row: 6/6;
+  font-size: 25px;
+  color: #4b777e;
+  padding-top: 15px;
+`;
+export const GridContacus = styled.div`
+  grid-column: 2/4;
+  grid-row: 7/7;
+  font-size: 25px;
+  color: #4b777e;
+  padding-top: 15px;
+
+  &:hover {
+    cursor: pointer;
+  }
 `;

@@ -2,12 +2,17 @@ import { types } from "../types/types";
 
 const initialValues = () => {
   //console.log(JSON.stringify(localStorage.getItem("logged")))
-  if (!JSON.parse(localStorage.getItem("logged"))) {
+  //console.log();
+  if (!JSON.parse(localStorage.getItem("user"))?.user.logged) {
     return {
       logged: false,
     };
   } else {
     return {
+      name: JSON.parse(localStorage.getItem("user")).user.name,
+      phone: JSON.parse(localStorage.getItem("user")).user.phone,
+      email: JSON.parse(localStorage.getItem("user")).user.email,
+      image: JSON.parse(localStorage.getItem("user")).user.image,
       logged: true,
     };
   }
