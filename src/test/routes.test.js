@@ -1,6 +1,15 @@
-const { logged } = useSelector((state) => state.login);
+import '@testing-library/jest-dom';
+import { logged } from '../base/routeTest';
 
-test('two plus two is four', () => {
-    expect(2 + 2).toBe(4);
-});
+describe('Pruebas de rutas', () => {
+    test('Logged ', () => {
+        expect(logged).toEqual({logged: true});
+    })
+
+    test('logout', () => {
+        expect(logged).toEqual({logged: false});
+    });
+})
+
+
 
