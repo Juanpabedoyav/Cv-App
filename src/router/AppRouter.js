@@ -10,6 +10,7 @@ import PrivateRoutes from "./PrivateRoutes";
 import Registro from "../components/Registro";
 import { logout } from "../redux/actions/loginAction";
 import UpdatePassword from "../components/UpdatePassword";
+import PlantillaRenderCv3 from "../components/PlantillaRenderCv3";
 
 /* const initial= ()=>{
 return{
@@ -29,6 +30,8 @@ const AppRouter = () => {
               </PrivateRouter>
             }
           />
+
+          <Route path="/plantilla3" element={<PlantillaRenderCv3 />} />
 
           <Route
             path="/"
