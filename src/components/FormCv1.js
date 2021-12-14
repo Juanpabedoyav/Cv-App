@@ -84,6 +84,7 @@ const dispatch = useDispatch();
             navegar("/formcv2");
             valores.phone = tags;
             dispatch(PdfAction(valores));
+            
           }
         }}
       >
