@@ -40,21 +40,22 @@ const PlantillasCv = () => {
       <ContenedorPlantillas>
               <ContenedorPlantilla>
                 <ContenedorGrid>
-                  <ImagenPlantilla src="https://res.cloudinary.com/workshop-principe/image/upload/v1638332668/Demo%20day/template_1_bin4sh.jpg" />
+                  
+                  <ImagenPlantilla src="https://www.hoja-de-vida.co/wp-content/uploads/2021/02/formato-hoja-de-vida-basica-y-formal-X5-p1.jpg" />
                   <Field
                     name="plantilla"
                     className="plantillas" 
                     type="radio"
                     value="plantilla1"
                   />
-
+                  
                 </ContenedorGrid>
                 <TextoPlantilla>Seleccionar plantilla</TextoPlantilla>
               </ContenedorPlantilla>{" "}
               {/* .ContenedorPlantilla */}
               <ContenedorPlantilla>
                 <ContenedorGrid>
-                  <ImagenPlantilla src="https://res.cloudinary.com/workshop-principe/image/upload/v1638332668/Demo%20day/template_1_bin4sh.jpg" />
+                  <ImagenPlantilla src="  " />
                   
                   <Field 
                     name="plantilla"
@@ -71,7 +72,7 @@ const PlantillasCv = () => {
               {/* .ContenedorPlantilla */}
               <ContenedorPlantilla>
                 <ContenedorGrid>
-                  <ImagenPlantilla src="https://res.cloudinary.com/workshop-principe/image/upload/v1638332668/Demo%20day/template_1_bin4sh.jpg" />
+                  <ImagenPlantilla src="https://www.hoja-de-vida.co/wp-content/uploads/2019/09/96-hoja-de-vida-auxiliar-de-enfermeria.jpg" />
                   
                   <Field 
                     name="plantilla"
@@ -86,7 +87,7 @@ const PlantillasCv = () => {
               {/* .ContenedorPlantilla */}
               <ContenedorPlantilla>
                 <ContenedorGrid>
-                  <ImagenPlantilla src="https://res.cloudinary.com/workshop-principe/image/upload/v1638332668/Demo%20day/template_1_bin4sh.jpg" />
+                  <ImagenPlantilla src="https://www.hoja-de-vida.co/wp-content/uploads/2021/07/hoja-de-vida-laboral.jpg" />
                   
                   <Field 
                     name="plantilla" 
@@ -101,7 +102,7 @@ const PlantillasCv = () => {
               {/* .ContenedorPlantilla */}
               <ContenedorPlantilla>
                 <ContenedorGrid>
-                  <ImagenPlantilla src="https://res.cloudinary.com/workshop-principe/image/upload/v1638332668/Demo%20day/template_1_bin4sh.jpg" />
+                  <ImagenPlantilla src="https://www.hoja-de-vida.co/wp-content/uploads/2021/07/hoja-de-vida-para-llenar-e-imprimir.jpg" />
                   <Field 
                     name="plantilla" 
                     className='plantillas' 
@@ -131,8 +132,10 @@ const PlantillasCv = () => {
                 <Button className="button">Regresar</Button>
               </Link>
                 {" "}
+
+
               <Button padding="1rem 3rem" className="button" type="submit">
-                Crear CV
+                <Link to="/plantilla1">Crear CV</Link> 
               </Button>{" "}
             </ContenedorBotones>
     </Form>

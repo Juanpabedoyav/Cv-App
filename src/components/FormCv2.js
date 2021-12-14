@@ -14,6 +14,8 @@ import { Alert, AlertIcon, AlertTitle, CloseButton } from "@chakra-ui/react";
 import ReactTagInput from "@pathofdev/react-tag-input";
 import "@pathofdev/react-tag-input/build/index.css";
 import Swal from "sweetalert2";
+import { PdfAction2 } from "../redux/actions/PdfAction";
+import {useDispatch} from "react-redux"
 
 const FormCv2 = () => {
   const navigate = useNavigate();
@@ -22,6 +24,8 @@ const FormCv2 = () => {
   const [tags3, setTags3] = useState([]);
   const [tags4, setTags4] = useState([]);
   const [tags5, setTags5] = useState([]);
+
+  const dispatch = useDispatch();
 
   return (
     <FormCvContainer>
@@ -53,8 +57,9 @@ const FormCv2 = () => {
             valores.jobExperiences = tags3;
             valores.skills = tags4;
             valores.language = tags5;
-            console.log(valores);
+            //console.log(valores);
             navigate("/plantillascv");
+            dispatch(PdfAction2(valores));
           }
         }}
       >
