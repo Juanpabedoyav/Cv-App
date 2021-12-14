@@ -22,6 +22,8 @@ h2{
 h3{
     text-align: start;
     padding: 0 7vh 1vh; 
+    color:grey;
+    font-weight: 600; 
 
 }
 
