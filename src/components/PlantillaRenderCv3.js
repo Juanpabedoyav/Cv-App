@@ -53,7 +53,7 @@ const PlantillaRenderCv3 = () => {
         </div>
         <div className="container-2">
           <img
-            src="https://lh3.googleusercontent.com/LI6MycVJ43b4s6aIob0VcyMKX6YQI8usnl78IVxtRqnQPfl4lP3A_Zi1xhflMYPlcKFrNxXh2ZJKqfbmN4wEWcEU14gYkhWvvfqQu3wa53lC0shcamGUoiO_r8PCYhq-9DnMnzGHq4UGASpMCayjFdmqeg8anADgT5fDJ7ANWzMG3Xsto4p2CEc3uzhqNo7JuVwlQS_qHPAIBQUbUK4VmnB_Wg7V5Ohh3UGgrAh-0TIzEelm3lq7KAURv3VZ0Onhwn4Gn1i6x3MZibdKUjiBJiSK_E3zG58Rejq4-SWpmrUtzpignS5EBFPYC8PLqa5CPMcSX37Lk_xul8EP4tRobN4LXAgow8i4y3RfjujKZG2bQjTaAU9Lr7-gqqdMey-7NtLh2hqIlhKFVFZoQaaLZKdjckK5O63OjS4uW7NgP-5aQ1Uubn7tOpWpCiyr9BFjx7wOtQra79SmgkxlxlafkedaD6f7UAvr3AR2dzTeww_DF43usPYE44Hrl2WyjM_G3JBjmFTLgmjQi5YiLJWwMki1f223XOrNuD7ddy6aPKE97tm_5O_51kTwJm-s-goKXkerReu6g16po_T-JVrJKDXaqfkKyNFSS7aQG5QsanCJGY4bNRyMk7Q0fmRawmLoo5YAGz7ZT7sOodqRFvFNhz9z2eO4hHntlYlOSJ6l36KHUAsOqjKk0SLfsbAIqtIx3raMoHiy8WqcdPE-Sk6MCpg=w354-h472-no?authuser=0"
+            src="https://res.cloudinary.com/da6fz1omm/image/upload/v1639448025/Foto_2021_jy49m8.jpg"
             alt="Imagen"
           />
 
