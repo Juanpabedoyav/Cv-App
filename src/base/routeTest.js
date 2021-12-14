@@ -1,4 +1,1 @@
-import { useSelector } from "react-redux";
-
-export const { logged } = true;
-
+export const logged  = true;
