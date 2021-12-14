@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { PlantillaCv3Container } from "../styles/PlantillaRenderCv3";
+import { PlantillaCv3Container } from "../styles/PlantillaRenderCv3.styles";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faPhoneAlt,
