@@ -84,7 +84,7 @@ export const PlantillaCv3Container = styled.div`
       width: 40%;
       height: 100vh;
       /* border: 1px solid black; */
-      padding: 0 10px;
+      padding: 10px;
       background-color: #53b8b0;
 
       p {
@@ -97,6 +97,7 @@ export const PlantillaCv3Container = styled.div`
         height: 130px;
         /* border: 1px solid red; */
         margin: 0 auto;
+        margin-bottom: 10px;
       }
 
       .nombre {
