@@ -17,11 +17,11 @@ export const TitleRegistro = styled.h1`
   margin-bottom: 20px;
   font-size: 1.6rem;
   font-weight: bold;
-  color: var(--color-principal);
+  color: var(--color-blanco);
 `;
 export const StyleRegistro = styled.div`
   height: 100vh;
-  background-color: #eef5f6;
+  background-color: #4caab6;
   width: 100%;
   overflow-x: hidden;
   .input {
@@ -32,16 +32,16 @@ export const StyleRegistro = styled.div`
     color: var(--color-principal);
   }
   .button {
-    background-color: var(--color-principal);
-    color: var(--color-blanco);
+    background-color: var(--color-blanco);
+    color: var(--color-principal);
     margin-bottom: 0;
   }
   .button:hover {
-    background-color: var(--color-principal);
-    color: var(--color-blanco);
+    background-color: var(--color-blanco);
+    color: var(--color-principal);
   }
   .input:focus {
-    border: 1px solid var(--color-principal);
+    border: 1px solid var(--color-blanco);
   }
   .formulario {
     margin-top: 10px;
@@ -55,7 +55,7 @@ export const StyleRegistro = styled.div`
     .botton-submit {
       width: 92%;
       margin: 15px 0 20px 0;
-      background-color: var(--color-principal);
+      background-color: var(--color-blanco);
     }
   }
   .back-container {
@@ -68,11 +68,11 @@ export const StyleRegistro = styled.div`
     font-size: 1.4rem;
     margin-top: 10px;
     margin-left: 15px;
-    color: var(--color-principal);
+    color: var(--color-blanco);
   }
   p {
     font-weight: 600;
-    color: var(--color-principal);
+    color: var(--color-blanco);
     margin: 0;
     a {
       text-decoration-line: underline;
