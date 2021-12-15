@@ -31,8 +31,6 @@ const AppRouter = () => {
             }
           />
 
-          <Route path="/plantilla3" element={<PlantillaRenderCv3 />} />
-
           <Route
             path="/"
             element={

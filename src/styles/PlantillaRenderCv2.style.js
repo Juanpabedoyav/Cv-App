@@ -30,7 +30,15 @@ export const PlantillaCv2 = styled.div`
         margin-top: 20px;
         font-size: 1.3rem;
         text-align: left;
-    } 
+        margin-bottom: 0;
+    }
+    .last-name{
+      font-weight: 800;
+      margin-top: 0;
+      font-size: 1.3rem;
+      text-align: left;
+      margin-bottom: 0;
+    }
     .position{
         font-size: .9rem;
         text-align: left;   
@@ -106,6 +114,16 @@ width: 100%;
     }
 }
 .educacion{
+    ul{
+        /* border: 1px solid red; */
+        text-align:left;
+        margin-bottom:10px;
+    }
+    li{
+        /* border: 1px solid red; */
+        margin-left: 15px;
+        padding-left: 0px;
+    }
  h1{
         font-weight: 800;
         background-color: #b8dce8;
@@ -133,4 +151,8 @@ width: 100%;
 }
 }
 
-`
+.list-profesional{
+  margin-bottom: 10px;
+}
+
+`;

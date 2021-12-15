@@ -15,7 +15,7 @@ import ReactTagInput from "@pathofdev/react-tag-input";
 import "@pathofdev/react-tag-input/build/index.css";
 import Swal from "sweetalert2";
 import { PdfAction2 } from "../redux/actions/PdfAction";
-import {useDispatch} from "react-redux"
+import { useDispatch } from "react-redux";
 
 const FormCv2 = () => {
   const navigate = useNavigate();
@@ -96,6 +96,7 @@ const FormCv2 = () => {
                 removeOnBackspace={true}
                 placeholder="Idiomas"
               />
+              <textarea name="" id="" cols="10" rows="10"></textarea>
             </ContenedorInputs>
             <ContenedorBotones margin="5rem 2rem">
               <Link to="/formcv1">

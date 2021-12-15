@@ -11,6 +11,9 @@ import {
 const PlantillaRenderCv3 = () => {
   const { form1, form2 } = useSelector((state) => state.pdfData);
 
+  console.log(form1);
+  console.log(form2);
+
   return (
     <PlantillaCv3Container>
       <div className="plantilla-container">
@@ -23,33 +26,15 @@ const PlantillaRenderCv3 = () => {
             maxime dolores magnam sunt?
           </p>
           <p className="title-experiencia">EXPERIENCIA PROFESIONAL</p>
-          <p className="empresa">Empresa | Cargo</p>
-          <p className="fecha-empresa">Junio 2018 - Octubre 2021</p>
-          <p className="tareas">Tareas realizadas</p>
-          <ul className="tareas-container">
-            <li>Tarea 1</li>
-            <li>Tarea 2</li>
-            <li>Tarea 3</li>
-            <li>Tarea 4</li>
-          </ul>
-          <p className="empresa">Empresa | Cargo</p>
-          <p className="fecha-empresa">Junio 2018 - Octubre 2021</p>
-          <p className="tareas">Tareas realizadas</p>
-          <ul className="tareas-container">
-            <li>Tarea 1</li>
-            <li>Tarea 2</li>
-            <li>Tarea 3</li>
-            <li>Tarea 4</li>
-          </ul>
+          {form2.jobExperiences.map((el) => (
+            <p>{el}</p>
+          ))}
+
           <p className="title-habilidades">HABILIDADES</p>
-          <div className="habilidades-container">
-            <p>Habilidad 1</p>
-            <p>Habilidad 2</p>
-          </div>
-          <div className="habilidades-container">
-            <p>Habilidad 3</p>
-            <p>Habilidad 4</p>
-          </div>
+
+          {form2.skills.map((el) => (
+            <p>{el}</p>
+          ))}
         </div>
         <div className="container-2">
           <img
@@ -64,47 +49,38 @@ const PlantillaRenderCv3 = () => {
           <div className="contacto-container">
             <div className="contacto">
               <FontAwesomeIcon icon={faPhoneAlt} className="icono" />
-              <span className="numero">3004499476</span>
+              {form1.phone.map((el) => (
+                <span className="numero">{el}</span>
+              ))}
             </div>
 
             <div className="contacto">
               <FontAwesomeIcon icon={faMapMarkerAlt} className="icono" />
-              <span className="ubicacion">Medellín</span>
+              <span className="ubicacion">{form1.place}</span>
             </div>
 
             <div className="contacto">
               <FontAwesomeIcon icon={faEnvelope} className="icono" />
-              <span className="correo">santiagomontoya98@hotmail.com</span>
+              <span className="correo">{form1.email}</span>
             </div>
-
-            {/* <div className="iconos">
-              <FontAwesomeIcon icon={faPhoneAlt} className="icono" />
-              <FontAwesomeIcon icon={faMapMarkerAlt} className="icono" />
-              <FontAwesomeIcon icon={faEnvelope} className="icono" />
-            </div>
-            <div className="texto">
-              <p>3004499476</p>
-              <p className="ubicacion">Medellín</p>
-              <p className="correo">santiagomontoya98@hotmail.com</p>
-            </div> */}
           </div>
 
-          <p className="title-educacion">EDUCACIÓN</p>
-          <p className="titulo">Tecnólogo en Sistemas</p>
-          <p className="universidad">
-            <em>Institucion Universitaria ITM</em>
-          </p>
-          <p className="fecha-universidad">Agosto 2018 - Agosto 2021</p>
+          <p className="title-motivaciones">MOTIVACIONES</p>
 
-          <p className="titulo">Desarrollador frontend</p>
-          <p className="universidad">
-            <em>Academia Geek</em>
-          </p>
-          <p className="fecha-universidad">Octubre 2021 - Diciembre 2021</p>
+          {form2.motivation.map((el) => (
+            <p className="motivacion">{el}</p>
+          ))}
+
+          <p className="title-cualidades">CUALIDADES</p>
+
+          {form2.qualities.map((el) => (
+            <p className="cualidad">{el}</p>
+          ))}
 
           <p className="title-idiomas">IDIOMAS</p>
-          <p className="idioma">Ingles B1</p>
-          <p className="idioma">Español nativo</p>
+          {form2.language.map((el) => (
+            <p className="idioma">{el}</p>
+          ))}
         </div>
       </div>
     </PlantillaCv3Container>

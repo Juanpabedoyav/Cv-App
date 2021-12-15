@@ -171,8 +171,15 @@ export const PlantillaCv3Container = styled.div`
         }
       }
 
-      .title-educacion {
-        margin-top: 40px;
+      .title-motivaciones {
+        margin-top: 20px;
+        font-weight: 700;
+        text-align: left;
+        margin-left: 5px;
+      }
+
+      .title-cualidades {
+        margin-top: 20px;
         font-weight: 700;
         text-align: left;
         margin-left: 5px;
@@ -211,12 +218,23 @@ export const PlantillaCv3Container = styled.div`
       }
 
       .idioma {
-        font-size: 10px;
         text-align: left;
         margin-left: 5px;
         color: white;
         margin-top: 2px;
       }
     }
+  }
+
+  .motivacion {
+    text-align: left;
+    color: white;
+    margin-left: 5px;
+  }
+
+  .cualidad {
+    text-align: left;
+    color: white;
+    margin-left: 5px;
   }
 `;
