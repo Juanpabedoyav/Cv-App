@@ -163,7 +163,7 @@ export const PlantillaCv3Container = styled.div`
             color: white;
             font-family: Arial, sans-serif;
             width: 90%;
-            margin-top: 15px;
+            margin-top: 0;
             text-align: left;
             /* border: 1px solid black; */
             font-size: 12px;

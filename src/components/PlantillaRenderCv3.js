@@ -19,9 +19,7 @@ const PlantillaRenderCv3 = () => {
       <div className="plantilla-container">
         <div className="container-1">
           <p className="sobre-mi">SOBRE MI</p>
-          <p className="desc">
-            {form2.perfil}
-          </p>
+          <p className="desc">{form2.perfil}</p>
           <p className="title-experiencia">EXPERIENCIA PROFESIONAL</p>
           {form2.jobExperiences.map((el) => (
             <p>{el}</p>
@@ -34,10 +32,7 @@ const PlantillaRenderCv3 = () => {
           ))}
         </div>
         <div className="container-2">
-          <img
-            src={form1.image}
-            alt={form1.name}
-          />
+          <img src={form1.image} alt={form1.name} />
 
           <p className="nombre">{form1.name}</p>
           <p className="apellido">{form1.lastName}</p>
