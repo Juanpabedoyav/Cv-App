@@ -90,7 +90,9 @@ const Perfil = () => {
         </GridPolitics>
         <GridPaperf6 className="styles-font-perfil">
           {" "}
-          <a href="https://linktr.ee/CvApp">Contactanos</a>
+          <a href="https://linktr.ee/CvApp" target="_blank">
+            Contactanos
+          </a>
         </GridPaperf6>
         <GridContacus>
           <FontAwesomeIcon icon={faEnvelope} />{" "}
