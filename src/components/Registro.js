@@ -23,25 +23,19 @@ const Registro = () => {
 
   const navigate = useNavigate();
 
-  const elegirImagen = () => {
-    document.getElementById("image").click();
-    // console.log(url);
-
-    console.log("elegir");
-  };
-  // capturar Imagen
+  const elegirImagen = () => document.getElementById("image").click();
 
   let img = "";
 
   const handleFileChangeImg = ({ target }) => {
     const file = target.files[0];
 
-    console.log(file);
+    //console.log(file);
 
     fileUpload(file)
       .then((url) => {
         img = url;
-        console.log(img);
+        //console.log(img);
       })
       .catch((err) => console.log(err.message));
   };

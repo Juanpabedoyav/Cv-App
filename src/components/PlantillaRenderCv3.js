@@ -20,10 +20,7 @@ const PlantillaRenderCv3 = () => {
         <div className="container-1">
           <p className="sobre-mi">SOBRE MI</p>
           <p className="desc">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora
-            nobis ipsum exercitationem quidem voluptatibus libero! Minima, sed
-            asperiores placeat cum blanditiis repellat unde, commodi fuga ipsam,
-            maxime dolores magnam sunt?
+            {form2.perfil}
           </p>
           <p className="title-experiencia">EXPERIENCIA PROFESIONAL</p>
           {form2.jobExperiences.map((el) => (
@@ -38,13 +35,13 @@ const PlantillaRenderCv3 = () => {
         </div>
         <div className="container-2">
           <img
-            src="https://res.cloudinary.com/da6fz1omm/image/upload/v1639448025/Foto_2021_jy49m8.jpg"
-            alt="Imagen"
+            src={form1.image}
+            alt={form1.name}
           />
 
-          <p className="nombre">Santiago</p>
-          <p className="apellido">Montoya Cano</p>
-          <p className="cargo">Desarrollador frontend</p>
+          <p className="nombre">{form1.name}</p>
+          <p className="apellido">{form1.lastName}</p>
+          <p className="cargo">{form1.position}</p>
           <p className="title-contacto">CONTACTO</p>
           <div className="contacto-container">
             <div className="contacto">

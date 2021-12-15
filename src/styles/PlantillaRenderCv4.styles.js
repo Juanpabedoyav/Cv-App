@@ -4,10 +4,12 @@ export const ContenedorInfoPrincipal = styled.article`
   background-color: #07343a;
   color: white;
   font-size: 1rem;
+  padding: 10px;
   img {
     display: inline;
     text-align: center;
-    width: 25%;
+    width: 100%;
+    height: 100%;
     border-radius: 50%;
     border: 3px solid white;
     margin-top: 1.5rem;

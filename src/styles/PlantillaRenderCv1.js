@@ -45,6 +45,7 @@ margin-right: auto;
 margin-top: 3vh;
 height: 20vh;
 width: 20vh;
+border-radius: 50%;
 
 `
 

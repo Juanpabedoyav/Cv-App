@@ -12,7 +12,7 @@ const PlantillaRenderCv1 = () => {
       <PlantillaCv2>
         <div className="detalle">
           <div className="img-plantilla">
-            {/* <img  src='https://www.hoja-de-vida.co/wp-content/uploads/2021/07/hoja-de-vida-descargar-gratis-word.jpg' alt=''/> */}
+            <img style={{borderRadius: "50%"}} src={form1.image} alt='No existe' />
           </div>
           <h1 className="name">{form1.name}</h1>
           <h2 className="last-name">{form1.lastName}</h2>
@@ -29,7 +29,7 @@ const PlantillaRenderCv1 = () => {
           </section>
           <section className="profile">
             <h1>Perfil</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>{form2.perfil}</p>
           </section>
         </div>
 

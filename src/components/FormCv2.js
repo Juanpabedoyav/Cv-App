@@ -37,6 +37,7 @@ const FormCv2 = () => {
           jobExperiences: tags3,
           skills: tags4,
           language: tags5,
+          perfil: '',
         }}
         onSubmit={(valores) => {
           if (
@@ -96,7 +97,13 @@ const FormCv2 = () => {
                 removeOnBackspace={true}
                 placeholder="Idiomas"
               />
-              <textarea name="" id="" cols="10" rows="10"></textarea>
+              <textarea className='perfil' name="perfil"
+                cols="10"
+                rows="8"
+                placeholder="Perfil"
+                maxlength="250" minlength="5"
+                onChange={handleChange}>
+              </textarea>
             </ContenedorInputs>
             <ContenedorBotones margin="5rem 2rem">
               <Link to="/formcv1">

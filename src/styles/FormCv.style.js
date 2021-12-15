@@ -27,7 +27,6 @@ export const FormCvContainer = styled.div`
       &:before{
           background-color:white;
       }
-    }
     
 `;
 
@@ -55,6 +54,36 @@ export const ContenedorInputs = styled.article`
   display: flex;
   flex-direction: column;
   margin: 2rem 2rem 1rem 2rem;
+  .perfil{
+    outline: 1px solid var(--color-principal);
+    padding: 1rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    color: black;
+    resize: none;
+    &::placeholder {
+      color: var(--color-principal);
+    }
+  }
+
+  .elegir-imagen {
+    outline: 1px solid var(--color-principal);
+    padding: 1rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    width: 100%;
+    /* border: 1px solid red; */
+    margin-left: auto;
+    margin-right: auto;
+    height: 50px;
+    background-color: var(--color-blanco);
+    color: var(--color-principal);
+    /* justify-content: left; */
+  }
+  .elegir-imagen:hover {
+    background-color: var(--color-blanco);
+  }
+
 `;
 
 export const ContenedorBotones = styled.article`

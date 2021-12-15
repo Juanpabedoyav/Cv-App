@@ -16,7 +16,7 @@ export const PlantillaCv2 = styled.div`
     color: white;
     background-color:#464e5e;
     .img-plantilla{
-    border: 1px solid red;
+    // border: 1px solid red;
     border-radius: 50%;
     width: 120px;
     height: 120px;

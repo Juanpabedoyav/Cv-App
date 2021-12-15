@@ -19,7 +19,7 @@ const PlantillaRenderCv1 = () => {
       <ContainerPrincipal>
         <h1 className="principal-title">Hoja de vida </h1>
 
-        <ContainerprofileImg src="https://res.cloudinary.com/dv08oqgvx/image/upload/v1636073658/nmpby4t80lq3gvqjaosu.png" />
+        <ContainerprofileImg src={form1.image} />
 
         <ContainerPersonalData>
           <ContainerTitle>
@@ -52,6 +52,10 @@ const PlantillaRenderCv1 = () => {
             <h2> PERFIL PROFESIONAL </h2>
           </ContainerTitle>
           <ul>
+            <li>
+              {/*{form2.perfil.map((el) => el + " ")} */}
+              <h3>Sobre mi: {form2.perfil}  </h3>
+            </li>
             <li>
               <h3>Cualidades: {form2.qualities.map((el) => el + " ")}</h3>
             </li>

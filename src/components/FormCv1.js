@@ -10,17 +10,38 @@ import {
 } from "../styles/FormCv.style";
 import { ErrorMessage, Form, Formik, Field } from "formik";
 import { useNavigate } from "react-router-dom";
-import { Alert, AlertIcon, AlertTitle, CloseButton } from "@chakra-ui/react";
+import { Alert, AlertIcon, AlertTitle, CloseButton, FormControl, Input } from "@chakra-ui/react";
 import ReactTagInput from "@pathofdev/react-tag-input";
 import "@pathofdev/react-tag-input/build/index.css";
 import Swal from "sweetalert2";
 import { useDispatch } from "react-redux";
-import {PdfAction} from "../redux/actions/PdfAction"
+import { PdfAction } from "../redux/actions/PdfAction"
+import { faFileUpload, faUpload } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { fileUpload } from "../helpers/fileUpload";
 
 const FormCv1 = () => {
   const navegar = useNavigate();
-const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const [tags, setTags] = useState(["Télefono celular"]);
+
+  const elegirImagen = () => document.getElementById("image").click();
+
+  let img = "";
+
+  const handleFileChangeImg = ({ target }) => {
+    const file = target.files[0];
+
+    //console.log(file);
+
+    fileUpload(file)
+      .then((url) => {
+        img = url;
+        console.log(img);
+      })
+      .catch((err) => console.log(err.message));
+  };
+
 
   return (
     <FormCvContainer>
@@ -35,6 +56,7 @@ const dispatch = useDispatch();
           position: "",
           place: "",
           phone: [],
+          image: "",
         }}
         validate={(valores) => {
           let fallos = {};
@@ -83,14 +105,17 @@ const dispatch = useDispatch();
           } else {
             navegar("/formcv2");
             valores.phone = tags;
+            valores.image = img;
+            console.log(valores);
             dispatch(PdfAction(valores));
-            
+
           }
         }}
       >
         {({ values, errors, handleChange, handleBlur }) => (
           <Form>
             <ContenedorInputs>
+
               <InputForm
                 placeholder="Nombre"
                 type="text"
@@ -223,32 +248,6 @@ const dispatch = useDispatch();
                 )}
               />
 
-              {/* <InputForm
-                placeholder="Teléfono de Contacto"
-                type="tel"
-                name="phone"
-                onChange={handleChange}
-                onBlur={handleBlur}
-                value={values.phone}
-              />
-              <ErrorMessage
-                name="phone"
-                component={() => (
-                  <Alert
-                    status="warning"
-                    margin="auto"
-                    borderRadius="8px"
-                    width="100%"
-                    mb={4}
-                    mt={-3}
-                    color="#272727"
-                  >
-                    <AlertIcon />
-                    <AlertTitle mr={4}>{errors.phone}</AlertTitle>
-                  </Alert>
-                )}
-              /> */}
-
               <ReactTagInput
                 tags={tags}
                 onChange={(newTags) => setTags(newTags)}
@@ -256,6 +255,20 @@ const dispatch = useDispatch();
                 removeOnBackspace={true}
                 placeholder="Teléfono de Contacto"
               />
+
+              <FormControl style={{ display: "none" }}>
+                <Input id="image" type="file" onChange={handleFileChangeImg} />
+              </FormControl>
+              <Button
+
+                leftIcon={
+                  <FontAwesomeIcon icon={faFileUpload} className="icono-upload" />
+                }
+                className="elegir-imagen"
+                onClick={elegirImagen}
+              >
+                Elegir imagen
+              </Button>
             </ContenedorInputs>
             <ContenedorBotones>
               <Link to="/home">

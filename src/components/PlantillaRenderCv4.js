@@ -9,13 +9,16 @@ const PlantillaRenderCv = () => {
   const { form1, form2 } = useSelector((state) => state.pdfData);
   //{form1.phone}
   //{form2.skills.map((el) => el + " ")}
+  console.log(form1.image)
   return (
     <>
       <ContenedorInfoPrincipal>
-        <img
-          src="https://res.cloudinary.com/workshop-principe/image/upload/v1639442683/M%C3%AD/jonmircha_foto_rtid4k.jpg"
-          alt=" "
-        />
+        <div style={{ margin: "0 auto 25px auto", width: "120px", height: "120px"}}>
+          <img
+            src={form1.image}
+            alt={form1.name}
+          />
+        </div>
         <h1>
           {form1.name} {form1.lastName}
         </h1>
@@ -34,10 +37,7 @@ const PlantillaRenderCv = () => {
             <section>
               <h2 className="tituloHabilidades">Perfil</h2>
               <p className="parrafoPerfil">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Pariatur non saepe ipsa soluta ex? Fugiat praesentium expedita
-                ipsum at temporibus nemo id nesciunt est nihil quaerat quos,
-                blanditiis facere suscipit.
+                {form2.perfil}
               </p>
             </section>
             <section>
