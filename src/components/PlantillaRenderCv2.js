@@ -1,18 +1,25 @@
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { PlantillaCv2 } from "../styles/PlantillaRenderCv2.style";
+import Pdf from "react-to-pdf";
 
-const PlantillaRenderCv1 = () => {
+const ref = React.createRef();
+
+const PlantillaRenderCv2 = () => {
   const { form1, form2 } = useSelector((state) => state.pdfData);
   // const{name} =form1;
   console.log(form1);
   console.log(form2);
   return (
     <div>
-      <PlantillaCv2>
+      <PlantillaCv2 ref={ref}>
         <div className="detalle">
           <div className="img-plantilla">
-            <img style={{borderRadius: "50%"}} src={form1.image} alt='No existe' />
+            <img
+              style={{ borderRadius: "50%" }}
+              src={form1.image}
+              alt="No existe"
+            />
           </div>
           <h1 className="name">{form1.name}</h1>
           <h2 className="last-name">{form1.lastName}</h2>
@@ -83,8 +90,11 @@ const PlantillaRenderCv1 = () => {
           </section>
         </div>
       </PlantillaCv2>
+      <Pdf targetRef={ref} filename="plantilla.pdf">
+        {({ toPdf }) => <button onClick={toPdf}> Descargar Plantilla </button>}
+      </Pdf>
     </div>
   );
 };
 
-export default PlantillaRenderCv1;
+export default PlantillaRenderCv2;

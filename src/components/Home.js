@@ -9,8 +9,19 @@ import { Link as LinkReact } from "react-router-dom";
 import NavBar from "./NavBar";
 import { HomeContainer } from "../styles/Home.styles";
 import CursosHome from "./CursosHome";
+import Swal from "sweetalert2";
 
 const Home = () => {
+  const inputOptions = new Promise((resolve) => {
+    setTimeout(() => {
+      resolve({
+        "#ff0000": "Red",
+        "#00ff00": "Green",
+        "#0000ff": "Blue",
+      });
+    }, 1000);
+  });
+
   return (
     <HomeContainer>
       <h2 className="text-h2">Inicio</h2>

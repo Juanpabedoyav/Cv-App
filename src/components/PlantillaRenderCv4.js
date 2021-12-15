@@ -4,20 +4,26 @@ import {
   ContenedorDetalles,
   ContenedorInfoPrincipal,
 } from "../styles/PlantillaRenderCv4.styles";
+import Pdf from "react-to-pdf";
+
+const ref = React.createRef();
 
 const PlantillaRenderCv = () => {
   const { form1, form2 } = useSelector((state) => state.pdfData);
   //{form1.phone}
   //{form2.skills.map((el) => el + " ")}
-  console.log(form1.image)
+  console.log(form1.image);
   return (
     <>
-      <ContenedorInfoPrincipal>
-        <div style={{ margin: "0 auto 25px auto", width: "120px", height: "120px"}}>
-          <img
-            src={form1.image}
-            alt={form1.name}
-          />
+      <ContenedorInfoPrincipal ref={ref}>
+        <div
+          style={{
+            margin: "0 auto 25px auto",
+            width: "120px",
+            height: "120px",
+          }}
+        >
+          <img src={form1.image} alt={form1.name} />
         </div>
         <h1>
           {form1.name} {form1.lastName}
@@ -36,9 +42,7 @@ const PlantillaRenderCv = () => {
           <div className="grid-1">
             <section>
               <h2 className="tituloHabilidades">Perfil</h2>
-              <p className="parrafoPerfil">
-                {form2.perfil}
-              </p>
+              <p className="parrafoPerfil">{form2.perfil}</p>
             </section>
             <section>
               <h2 className="tituloHabilidades">Idiomas</h2>
@@ -63,6 +67,11 @@ const PlantillaRenderCv = () => {
             </article>
           </div>
         </div>
+        <Pdf targetRef={ref} filename="plantilla.pdf">
+          {({ toPdf }) => (
+            <button onClick={toPdf}> Descargar Plantilla </button>
+          )}
+        </Pdf>
       </ContenedorDetalles>
     </>
   );

@@ -1,14 +1,14 @@
 import styled from "styled-components";
 
 export const StylesContainer = styled.div`
-  background-color: var(--color-principal);
+  background-color: #eef5f6;
   height: 100vh;
-  color: var(--color-blanco);
+  color: var(--color-principal);
   overflow: hidden;
   p {
     font-weight: 600;
     .registrate {
-      color: var(--color-blanco);
+      color: var(--color-principal);
       text-decoration-line: underline;
     }
   }
@@ -61,8 +61,8 @@ export const ButtonContainer = styled.div`
     height: 49px;
     width: 100%;
     border-width: 0;
-    background-color: var(--color-blanco);
-    color: var(--color-principal);
+    background-color: var(--color-principal);
+    color: var(--color-blanco);
     border-radius: 2px;
   }
   .button-facebook {
@@ -97,6 +97,6 @@ export const ButtonContainer = styled.div`
   }
 
   .phone:hover {
-    background-color: var(--color-blanco);
+    background-color: var(--color-principal);
   }
 `;

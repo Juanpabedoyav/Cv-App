@@ -4,10 +4,12 @@ import {
   ContainerPersonalData,
   ContainerPrincipal,
   ContainerProfesionalProfile,
-  ContainerStudies,
   ContainerprofileImg,
   ContainerTitle,
 } from "../styles/PlantillaRenderCv1";
+import Pdf from "react-to-pdf";
+
+const ref = React.createRef();
 
 const PlantillaRenderCv1 = () => {
   const { form1, form2 } = useSelector((state) => state.pdfData);
@@ -16,7 +18,7 @@ const PlantillaRenderCv1 = () => {
 
   return (
     <>
-      <ContainerPrincipal>
+      <ContainerPrincipal ref={ref}>
         <h1 className="principal-title">Hoja de vida </h1>
 
         <ContainerprofileImg src={form1.image} />
@@ -54,7 +56,7 @@ const PlantillaRenderCv1 = () => {
           <ul>
             <li>
               {/*{form2.perfil.map((el) => el + " ")} */}
-              <h3>Sobre mi: {form2.perfil}  </h3>
+              <h3>Sobre mi: {form2.perfil} </h3>
             </li>
             <li>
               <h3>Cualidades: {form2.qualities.map((el) => el + " ")}</h3>
@@ -77,28 +79,11 @@ const PlantillaRenderCv1 = () => {
           </ul>
         </ContainerProfesionalProfile>
       </ContainerPrincipal>
+      <Pdf targetRef={ref} filename="plantilla.pdf" className="elegir-imagen">
+        {({ toPdf }) => <button onClick={toPdf}> Descargar Plantilla </button>}
+      </Pdf>
     </>
   );
 };
 
 export default PlantillaRenderCv1;
-
-// <CheckoutProduct
-// key={item.name}
-// id={item.lastName}
-// title={item.email}
-// image={item.position}
-// price={item.place}
-// rating={item.phone}
-// />
-
-{
-  /* {form1.map((item) => (
-                        <></>
-                    // console.log(item.name)
-
-
-
-                
-                    ))} */
-}

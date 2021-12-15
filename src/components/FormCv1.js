@@ -10,13 +10,20 @@ import {
 } from "../styles/FormCv.style";
 import { ErrorMessage, Form, Formik, Field } from "formik";
 import { useNavigate } from "react-router-dom";
-import { Alert, AlertIcon, AlertTitle, CloseButton, FormControl, Input } from "@chakra-ui/react";
+import {
+  Alert,
+  AlertIcon,
+  AlertTitle,
+  CloseButton,
+  FormControl,
+  Input,
+} from "@chakra-ui/react";
 import ReactTagInput from "@pathofdev/react-tag-input";
 import "@pathofdev/react-tag-input/build/index.css";
 import Swal from "sweetalert2";
 import { useDispatch } from "react-redux";
-import { PdfAction } from "../redux/actions/PdfAction"
-import { faFileUpload, faUpload } from "@fortawesome/free-solid-svg-icons";
+import { PdfAction } from "../redux/actions/PdfAction";
+import { faUpload } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { fileUpload } from "../helpers/fileUpload";
 
@@ -41,7 +48,6 @@ const FormCv1 = () => {
       })
       .catch((err) => console.log(err.message));
   };
-
 
   return (
     <FormCvContainer>
@@ -108,14 +114,12 @@ const FormCv1 = () => {
             valores.image = img;
             console.log(valores);
             dispatch(PdfAction(valores));
-
           }
         }}
       >
         {({ values, errors, handleChange, handleBlur }) => (
           <Form>
             <ContenedorInputs>
-
               <InputForm
                 placeholder="Nombre"
                 type="text"
@@ -260,9 +264,8 @@ const FormCv1 = () => {
                 <Input id="image" type="file" onChange={handleFileChangeImg} />
               </FormControl>
               <Button
-
                 leftIcon={
-                  <FontAwesomeIcon icon={faFileUpload} className="icono-upload" />
+                  <FontAwesomeIcon icon={faUpload} className="icono-upload" />
                 }
                 className="elegir-imagen"
                 onClick={elegirImagen}

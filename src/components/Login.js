@@ -69,12 +69,12 @@ const Login = () => {
                 loginPhoneAndPassword(valores.phone, valores.password)
               );
               setTimeout(() => (resp, 1900));
-              Swal.fire({
+              /* Swal.fire({
                 icon: "success",
                 title: "Bienvenido",
                 showConfirmButton: false,
                 timer: 1500,
-              });
+              }); */
 
               // console.log('enviado')
             }}
