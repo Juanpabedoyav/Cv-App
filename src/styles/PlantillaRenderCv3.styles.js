@@ -172,14 +172,14 @@ export const PlantillaCv3Container = styled.div`
       }
 
       .title-motivaciones {
-        margin-top: 20px;
+        margin-top: 10px;
         font-weight: 700;
         text-align: left;
         margin-left: 5px;
       }
 
       .title-cualidades {
-        margin-top: 20px;
+        margin-top: 10px;
         font-weight: 700;
         text-align: left;
         margin-left: 5px;
@@ -211,7 +211,7 @@ export const PlantillaCv3Container = styled.div`
       }
 
       .title-idiomas {
-        margin-top: 20px;
+        margin-top: 10px;
         font-weight: 700;
         text-align: left;
         margin-left: 5px;
