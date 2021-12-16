@@ -1,5 +1,5 @@
 import { Box, Heading } from "@chakra-ui/layout";
-import React from "react";
+import React, { useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFilePdf,
@@ -12,15 +12,36 @@ import CursosHome from "./CursosHome";
 import Swal from "sweetalert2";
 
 const Home = () => {
-  const inputOptions = new Promise((resolve) => {
-    setTimeout(() => {
-      resolve({
-        "#ff0000": "Red",
-        "#00ff00": "Green",
-        "#0000ff": "Blue",
+  (async () => {
+    /* inputOptions can be an object or Promise */
+    const inputOptions = new Promise((resolve) => {
+      setTimeout(() => {
+        resolve({
+          analista: "Analista",
+          desarrollador: "Desarrollador",
+          diseñador: "Diseñador",
+        });
+      }, 1000);
+    });
+
+    const { value: campo } = await Swal.fire({
+      title: "Selecciona tu campo de interes",
+      color: "var(--color-principal)",
+      input: "radio",
+      inputOptions: inputOptions,
+      inputValidator: (value) => {
+        if (!value) {
+          return "Debes seleccionar un opción ";
+        }
+      },
+    });
+
+    if (campo) {
+      Swal.fire({
+        html: `Tus plantillas han sido configuradas con éxito`,
       });
-    }, 1000);
-  });
+    }
+  })();
 
   return (
     <HomeContainer>

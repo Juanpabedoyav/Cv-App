@@ -35,5 +35,17 @@ export const GlobalStyles = createGlobalStyle`
     color: #fff;
     font-size: 1em;
   }
+
+  .swal2-label{
+    color:black;
+    font-weight:600;
+    font-size: 1.2rem;
+  }
+
+  .swal2-html-container{
+    color:black;
+    font-weight:600;
+    font-size: 1.3rem;
+  }
   
 `;
