@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import {
   ContainerPersonalData,
@@ -15,6 +15,19 @@ const PlantillaRenderCv1 = () => {
   const { form1, form2 } = useSelector((state) => state.pdfData);
   /* console.log(form1);
   console.log(form2); */
+
+  useEffect(() => {
+    localStorage.setItem(
+      "prueba",
+      JSON.stringify([
+        // ...JSON.parse(localStorage.getItem("prueba")),
+        {
+          url: "/plantilla1",
+          plantilla: `Plantilla ${form1.name} ${form1.lastName}.pdf`,
+        },
+      ])
+    );
+  }, []);
 
   return (
     <>
@@ -78,10 +91,14 @@ const PlantillaRenderCv1 = () => {
             </li>
           </ul>
         </ContainerProfesionalProfile>
-        <Pdf targetRef={ref} filename="plantilla.pdf">
+        <Pdf
+          targetRef={ref}
+          filename={`Plantilla ${form1.name} ${form1.lastName}.pdf`}
+        >
           {({ toPdf }) => (
             <button onClick={toPdf} className="elegir-imagen">
               Descargar Plantilla
+              {console.log(toPdf(this))}
             </button>
           )}
         </Pdf>

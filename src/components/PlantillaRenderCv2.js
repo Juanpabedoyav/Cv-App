@@ -11,8 +11,22 @@ const ref = React.createRef();
 const PlantillaRenderCv2 = () => {
   const { form1, form2 } = useSelector((state) => state.pdfData);
   // const{name} =form1;
-  console.log(form1);
-  console.log(form2);
+  /* console.log(form1);
+  console.log(form2); */
+
+  useEffect(() => {
+    localStorage.setItem(
+      "prueba",
+      JSON.stringify([
+        // ...JSON.parse(localStorage.getItem("prueba")),
+        {
+          url: "/plantilla2",
+          plantilla: `Plantilla ${form1.name} ${form1.lastName}.pdf`,
+        },
+      ])
+    );
+  }, []);
+
   return (
     <MainContainer>
       <PlantillaCv2 ref={ref}>

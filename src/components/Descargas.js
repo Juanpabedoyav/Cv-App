@@ -18,6 +18,10 @@ import NavBar from "../components/NavBar";
 const Descargas = () => {
   const { onOpen, onClose } = useDisclosure();
   const [placement] = useState("left");
+
+  const localPdf = JSON.parse(localStorage.getItem("prueba"));
+  const { url, plantilla } = localPdf;
+
   return (
     <div onClose={onClose}>
       <Drawer placement={placement} isOpen={onOpen}>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import {
   MainContainer,
@@ -19,7 +19,18 @@ const PlantillaRenderCv3 = () => {
 
   console.log(form1);
   console.log(form2);
-
+  useEffect(() => {
+    localStorage.setItem(
+      "prueba",
+      JSON.stringify([
+        // ...JSON.parse(localStorage.getItem("prueba")),
+        {
+          url: "/plantilla3",
+          plantilla: `Plantilla ${form1.name} ${form1.lastName}.pdf`,
+        },
+      ])
+    );
+  }, []);
   return (
     <MainContainer>
       <PlantillaCv3Container ref={ref}>
