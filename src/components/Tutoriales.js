@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link as LinkReact } from "react-router-dom";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -21,11 +21,13 @@ import {
 } from "../styles/Tutoriales.style";
 
 const Tutoriales = () => {
+  const [url, setUrl] = useState("");
+
   return (
     <div>
       <GridGranp>
         <GridUncleVideo
-          src="https://www.youtube.com/embed/gpl8MLZyYDo"
+          src={url}
           title="YouTube video player"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -39,25 +41,43 @@ const Tutoriales = () => {
            de youtube asi concidira el video presentado con el tutorial
             selecionado "como lo hicimos en block master" */}
 
-          <Tutorial1 className="tutorials-styles">
+          <Tutorial1 onClick={() => setUrl("")} className="tutorials-styles">
             <FontAwesomeIcon icon={faPlay} /> ¿Comó utilizar tu App?
           </Tutorial1>
-          <Tutorial2 className="tutorials-styles">
+          <Tutorial2
+            onClick={() => setUrl("https://www.youtube.com/embed/qweelAPzWBw")}
+            className="tutorials-styles"
+          >
             <FontAwesomeIcon icon={faPlay} /> Cualidades...
           </Tutorial2>
-          <Tutorial3 className="tutorials-styles">
+          <Tutorial3
+            onClick={() => setUrl("https://www.youtube.com/embed/bjauPoBrh2o")}
+            className="tutorials-styles"
+          >
             <FontAwesomeIcon icon={faPlay} /> Intereses y narraciones...
           </Tutorial3>
-          <Tutorial4 className="tutorials-styles">
+          <Tutorial4
+            onClick={() => setUrl("https://www.youtube.com/embed/gpl8MLZyYDo")}
+            className="tutorials-styles"
+          >
             <FontAwesomeIcon icon={faPlay} /> Experiencias laborales...
           </Tutorial4>
-          <Tutorial5 className="tutorials-styles">
+          <Tutorial5
+            onClick={() => setUrl("https://www.youtube.com/embed/RuW_pIrG4AU")}
+            className="tutorials-styles"
+          >
             <FontAwesomeIcon icon={faPlay} /> Conocimientos y habilidades...
           </Tutorial5>
-          <Tutorial6 className="tutorials-styles">
+          <Tutorial6
+            onClick={() => setUrl("https://www.youtube.com/embed/gdYFVOMEdu0")}
+            className="tutorials-styles"
+          >
             <FontAwesomeIcon icon={faPlay} /> Idiomas...
           </Tutorial6>
-          <Tutorial7 className="tutorials-styles">
+          <Tutorial7
+            onClick={() => setUrl("https://www.youtube.com/embed/Xjer7egk3ys")}
+            className="tutorials-styles"
+          >
             <FontAwesomeIcon icon={faPlay} /> Imagen...
           </Tutorial7>
         </GridUncleList>
