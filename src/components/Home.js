@@ -1,5 +1,5 @@
 import { Box, Heading } from "@chakra-ui/layout";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFilePdf,
@@ -12,7 +12,7 @@ import CursosHome from "./CursosHome";
 import Swal from "sweetalert2";
 
 const Home = () => {
-  (async () => {
+  const alerta = async () => {
     /* inputOptions can be an object or Promise */
     const inputOptions = new Promise((resolve) => {
       setTimeout(() => {
@@ -41,7 +41,12 @@ const Home = () => {
         html: `Tus plantillas han sido configuradas con éxito`,
       });
     }
-  })();
+  };
+
+  if (!JSON.parse(localStorage.getItem("bandera"))) {
+    localStorage.setItem("bandera", true);
+    alerta();
+  }
 
   return (
     <HomeContainer>

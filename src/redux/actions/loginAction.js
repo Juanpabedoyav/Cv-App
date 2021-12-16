@@ -62,6 +62,8 @@ export const loginPhoneAndPassword = (phone, password) => {
 };
 
 export const logout = () => {
+  localStorage.setItem("bandera", false);
+
   return {
     type: types.logout,
   };
