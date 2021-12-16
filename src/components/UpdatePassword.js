@@ -30,7 +30,7 @@ const UpdatePassword = () => {
       <div>
         <ImgLogin>
           <img
-            src="https://res.cloudinary.com/dv08oqgvx/image/upload/v1638466378/wx5nvjktake1qgprm4da.jpg"
+            src="https://res.cloudinary.com/da6fz1omm/image/upload/v1639621482/logo3_igjcpr.png"
             alt="logo"
           />
         </ImgLogin>

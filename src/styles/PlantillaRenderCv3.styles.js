@@ -1,5 +1,25 @@
 import styled from "styled-components";
 
+export const MainContainer = styled.div`
+  .elegir-imagen {
+    padding: 1rem;
+    border-radius: 4px;
+    margin-top: 25px;
+    margin-bottom: 1rem;
+    width: 90%;
+    /* border: 1px solid red; */
+    margin-left: auto;
+    margin-right: auto;
+    height: 50px;
+    background-color: var(--color-principal);
+    color: var(--color-blanco);
+    /* justify-content: left; */
+  }
+  .elegir-imagen:hover {
+    background-color: var(--color-principal);
+  }
+`;
+
 export const PlantillaCv3Container = styled.div`
   width: 100%;
   height: 100vh;
@@ -22,7 +42,6 @@ export const PlantillaCv3Container = styled.div`
       padding: 10px;
 
       p {
-        font-family: Arial, sans-serif;
         font-size: 13px;
       }
 
@@ -47,24 +66,6 @@ export const PlantillaCv3Container = styled.div`
         margin-top: 8px;
       }
 
-      .fecha-empresa {
-        color: #53b8b0;
-      }
-
-      .tareas {
-        font-weight: 700;
-      }
-
-      .tareas-container {
-        /* border: 1px solid red; */
-        margin-left: 15px;
-
-        li {
-          font-family: Arial, sans-serif;
-          font-size: 12px;
-        }
-      }
-
       .title-habilidades {
         margin-top: 10px;
         font-weight: 700;
@@ -87,10 +88,6 @@ export const PlantillaCv3Container = styled.div`
       padding: 10px;
       background-color: #53b8b0;
 
-      p {
-        font-family: Arial, sans-serif;
-      }
-
       img {
         border-radius: 50%;
         width: 130px;
@@ -109,7 +106,7 @@ export const PlantillaCv3Container = styled.div`
       }
 
       .apellido {
-        font-size: 16px;
+        font-size: 20px;
         font-weight: 700;
         text-align: left;
         margin-left: 5px;
@@ -131,7 +128,6 @@ export const PlantillaCv3Container = styled.div`
       .contacto-container {
         width: 100%;
         /* border: 1px solid red; */
-        font-family: Arial, sans-serif;
         font-size: 14px;
         height: 90px;
         margin-top: 5px;
@@ -147,21 +143,20 @@ export const PlantillaCv3Container = styled.div`
           .numero {
             margin-left: 5px;
             color: white;
-            font-family: Arial, sans-serif;
             font-size: 12px;
           }
 
           .ubicacion {
             margin-left: 10px;
             color: white;
-            font-family: Arial, sans-serif;
+
             font-size: 12px;
           }
 
           .correo {
             margin-left: 7px;
             color: white;
-            font-family: Arial, sans-serif;
+
             width: 90%;
             margin-top: 0;
             text-align: left;

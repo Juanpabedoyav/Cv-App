@@ -19,11 +19,11 @@ import { useDispatch } from "react-redux";
 
 const FormCv2 = () => {
   const navigate = useNavigate();
-  const [tags1, setTags1] = useState([]);
-  const [tags2, setTags2] = useState([]);
-  const [tags3, setTags3] = useState([]);
-  const [tags4, setTags4] = useState([]);
-  const [tags5, setTags5] = useState([]);
+  const [tags1, setTags1] = useState(["Responsabilidad"]);
+  const [tags2, setTags2] = useState(["Aprendizaje continuo"]);
+  const [tags3, setTags3] = useState(["Microsoft"]);
+  const [tags4, setTags4] = useState(["Excel avanzado"]);
+  const [tags5, setTags5] = useState(["Español"]);
 
   const dispatch = useDispatch();
 
@@ -37,7 +37,7 @@ const FormCv2 = () => {
           jobExperiences: tags3,
           skills: tags4,
           language: tags5,
-          perfil: '',
+          perfil: "",
         }}
         onSubmit={(valores) => {
           if (
@@ -97,13 +97,16 @@ const FormCv2 = () => {
                 removeOnBackspace={true}
                 placeholder="Idiomas"
               />
-              <textarea className='perfil' name="perfil"
+              <textarea
+                className="perfil"
+                name="perfil"
                 cols="10"
                 rows="8"
                 placeholder="Perfil"
-                maxlength="250" minlength="5"
-                onChange={handleChange}>
-              </textarea>
+                maxlength="300"
+                minlength="5"
+                onChange={handleChange}
+              ></textarea>
             </ContenedorInputs>
             <ContenedorBotones margin="5rem 2rem">
               <Link to="/formcv1">

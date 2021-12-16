@@ -1,10 +1,35 @@
 import styled from "styled-components";
 
+export const MainContainer = styled.div`
+  .plantilla-container {
+    height: 100vh;
+    background-color: white;
+  }
+  .elegir-imagen {
+    padding: 1rem;
+    border-radius: 4px;
+    margin-top: 25px;
+    margin-bottom: 1rem;
+    width: 90%;
+    /* border: 1px solid red; */
+    margin-left: auto;
+    margin-right: auto;
+    height: 50px;
+    background-color: var(--color-principal);
+    color: var(--color-blanco);
+    /* justify-content: left; */
+  }
+  .elegir-imagen:hover {
+    background-color: var(--color-principal);
+  }
+`;
+
 export const ContenedorInfoPrincipal = styled.article`
   background-color: #07343a;
   color: white;
   font-size: 1rem;
   padding: 10px;
+
   img {
     display: inline;
     text-align: center;

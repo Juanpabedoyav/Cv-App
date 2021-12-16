@@ -41,7 +41,7 @@ export const TextH1 = styled.h1`
 export const TextH4 = styled.h4`
   font-size: 16px;
   margin-top: 10px;
-  font-weight: 400;
+  font-weight: 600;
 `;
 
 export const ButtonContainer = styled.div`

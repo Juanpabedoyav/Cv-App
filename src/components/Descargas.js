@@ -91,7 +91,7 @@ const Descargas = () => {
                 mr={3}
                 onClick={onClose}
               >
-                Volver
+                Inicio
               </Button>
             </LinkReact>
           </DrawerFooter>

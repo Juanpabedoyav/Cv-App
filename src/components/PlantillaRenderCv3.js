@@ -1,6 +1,9 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { PlantillaCv3Container } from "../styles/PlantillaRenderCv3.styles";
+import {
+  MainContainer,
+  PlantillaCv3Container,
+} from "../styles/PlantillaRenderCv3.styles";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faPhoneAlt,
@@ -18,7 +21,7 @@ const PlantillaRenderCv3 = () => {
   console.log(form2);
 
   return (
-    <>
+    <MainContainer>
       <PlantillaCv3Container ref={ref}>
         <div className="plantilla-container">
           <div className="container-1">
@@ -81,9 +84,14 @@ const PlantillaRenderCv3 = () => {
         </div>
       </PlantillaCv3Container>
       <Pdf targetRef={ref} filename="plantilla.pdf">
-        {({ toPdf }) => <button onClick={toPdf}> Descargar Plantilla </button>}
+        {({ toPdf }) => (
+          <button onClick={toPdf} className="elegir-imagen">
+            {" "}
+            Descargar Plantilla{" "}
+          </button>
+        )}
       </Pdf>
-    </>
+    </MainContainer>
   );
 };
 

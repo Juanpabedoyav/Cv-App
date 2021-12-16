@@ -9,8 +9,13 @@ export const FormCvContainer = styled.div`
     padding: 1rem;
     border-radius: 4px;
     margin-bottom: 1rem;
-    &::placeholder {
+    input{
       color: var(--color-principal);
+      
+    }
+    input::placeholder{
+      color: var(--color-principal);
+
     }
     .react-tag-input__tag {
       background-color: var(--color-principal);
@@ -26,7 +31,7 @@ export const FormCvContainer = styled.div`
       } 
       &:before{
           background-color:white;
-      }
+    }    
     
 `;
 
@@ -54,13 +59,14 @@ export const ContenedorInputs = styled.article`
   display: flex;
   flex-direction: column;
   margin: 2rem 2rem 1rem 2rem;
-  .perfil{
+  .perfil {
     outline: 1px solid var(--color-principal);
     padding: 1rem;
     border-radius: 4px;
     margin-bottom: 1rem;
     color: black;
     resize: none;
+    color: var(--color-principal);
     &::placeholder {
       color: var(--color-principal);
     }
@@ -83,7 +89,6 @@ export const ContenedorInputs = styled.article`
   .elegir-imagen:hover {
     background-color: var(--color-blanco);
   }
-
 `;
 
 export const ContenedorBotones = styled.article`

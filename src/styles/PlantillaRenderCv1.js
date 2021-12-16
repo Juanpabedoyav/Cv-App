@@ -24,21 +24,21 @@ export const ContainerPrincipal = styled.div`
   }
 
   .elegir-imagen {
-    outline: 1px solid var(--color-principal);
     padding: 1rem;
     border-radius: 4px;
+    margin-top: 25px;
     margin-bottom: 1rem;
-    width: 92%;
+    width: 90%;
     /* border: 1px solid red; */
     margin-left: auto;
     margin-right: auto;
     height: 50px;
-    background-color: var(--color-blanco);
-    color: var(--color-principal);
+    background-color: var(--color-principal);
+    color: var(--color-blanco);
     /* justify-content: left; */
   }
   .elegir-imagen:hover {
-    background-color: var(--color-blanco);
+    background-color: var(--color-principal);
   }
 `;
 export const ContainerTitle = styled.div`

@@ -1,6 +1,9 @@
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
-import { PlantillaCv2 } from "../styles/PlantillaRenderCv2.style";
+import {
+  MainContainer,
+  PlantillaCv2,
+} from "../styles/PlantillaRenderCv2.style";
 import Pdf from "react-to-pdf";
 
 const ref = React.createRef();
@@ -11,7 +14,7 @@ const PlantillaRenderCv2 = () => {
   console.log(form1);
   console.log(form2);
   return (
-    <div>
+    <MainContainer>
       <PlantillaCv2 ref={ref}>
         <div className="detalle">
           <div className="img-plantilla">
@@ -41,59 +44,54 @@ const PlantillaRenderCv2 = () => {
         </div>
 
         <div className="info">
-          <section className="expeciencia-profesional">
+          <section className="experiencia-profesional">
             <h1>Experiencia Profesional</h1>
 
             {form2.jobExperiences.map((el) => (
               <article className="list-profesional">
-                <ul>
-                  {form2.skills.map((el) => (
-                    <li>{el}</li>
-                  ))}
-                </ul>
+                {form2.skills.map((el) => (
+                  <p>{el}</p>
+                ))}
               </article>
             ))}
           </section>
           <section className="educacion">
             <h1>Cualidades</h1>
             <article className="list-educacion">
-              <ul>
-                {form2.qualities.map((el) => (
-                  <li>{el}</li>
-                ))}
-              </ul>
+              {form2.qualities.map((el) => (
+                <p>{el}</p>
+              ))}
             </article>
             <h1>Habilidades</h1>
             <article className="list-educacion">
-              <ul>
-                {form2.skills.map((el) => (
-                  <li>{el}</li>
-                ))}
-              </ul>
+              {form2.skills.map((el) => (
+                <p>{el}</p>
+              ))}
             </article>
             <h1>Motivaciones</h1>
             <article className="list-educacion">
-              <ul>
-                {form2.motivation.map((el) => (
-                  <li>{el}</li>
-                ))}
-              </ul>
+              {form2.motivation.map((el) => (
+                <p>{el}</p>
+              ))}
             </article>
             <h1>Idiomas</h1>
             <article className="list-educacion">
-              <ul>
-                {form2.language.map((el) => (
-                  <li>{el}</li>
-                ))}
-              </ul>
+              {form2.language.map((el) => (
+                <p>{el}</p>
+              ))}
             </article>
           </section>
         </div>
       </PlantillaCv2>
       <Pdf targetRef={ref} filename="plantilla.pdf">
-        {({ toPdf }) => <button onClick={toPdf}> Descargar Plantilla </button>}
+        {({ toPdf }) => (
+          <button onClick={toPdf} className="elegir-imagen">
+            {" "}
+            Descargar Plantilla{" "}
+          </button>
+        )}
       </Pdf>
-    </div>
+    </MainContainer>
   );
 };
 

@@ -31,14 +31,14 @@ const Inicio = () => {
     <StylesContainer>
       <ImgContainer>
         <ImgLogo
-          src="https://res.cloudinary.com/dv08oqgvx/image/upload/v1638466378/wx5nvjktake1qgprm4da.jpg"
+          src="https://res.cloudinary.com/da6fz1omm/image/upload/v1639621482/logo3_igjcpr.png"
           alt="logo"
         />
       </ImgContainer>
 
       <TextH1>Curriculum Vitae App</TextH1>
 
-      <TextH4>Creando perfiles profesionales</TextH4>
+      <TextH4>Creando curriculums profesionales</TextH4>
 
       <ButtonContainer>
         <LinkReact to="login">

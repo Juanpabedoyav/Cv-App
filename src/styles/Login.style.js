@@ -66,7 +66,7 @@ export const ImgLogin = styled.div`
 `;
 
 export const H1 = styled.h1`
-  color: #629197;
+  color: color: var(--color-principal);
   font-weight: bold;
 `;
 
@@ -75,23 +75,23 @@ export const Label = styled.div`
   margin: auto;
   padding-left: 63px;
   padding-top: 20px;
-  color: #629197;
+  color: color: var(--color-principal);
 `;
 export const Label1 = styled.div`
   width: 250px;
   margin: auto;
   padding-left: 80px;
   padding-top: 20px;
-  color: #629197;
+  color: color: var(--color-principal);
 `;
 export const ForgotPassword = styled.div`
   padding-top: 20px;
   padding-bottom: 10px;
-  color: #629197;
+  color: var(--color-principal);
   i {
-    border-bottom: 1px solid #629197;
+    border-bottom: 1px solid color: var(--color-principal);
     &:hover {
-      color: #62919799;
+      color: var(--color-principal);
     }
   }
 `;

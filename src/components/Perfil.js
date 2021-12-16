@@ -44,9 +44,11 @@ const Perfil = () => {
       text: "Esta acción no se puede revertir!",
       icon: "warning",
       showCancelButton: true,
+      color: "var(--color-principal)",
       confirmButtonColor: "#d33",
-      cancelButtonColor: "#629197",
+      cancelButtonColor: "var(--color-principal)",
       confirmButtonText: "Eliminar",
+      cancelButtonText: "Cancelar",
     }).then((result) => {
       if (result.isConfirmed) {
         dispatch(deleteAsync(phone));
@@ -73,12 +75,14 @@ const Perfil = () => {
             alt=""
           />{" "}
         </GridPaperf3>
-        <GridPhone>
+        <GridPhone
+          style={phone === null ? { display: "none" } : { display: "block" }}
+        >
           <FontAwesomeIcon icon={faPhone} />
         </GridPhone>{" "}
         <GridPaperf4 className="styles-font-perfil"> {phone} </GridPaperf4>
         <GridCerrar>
-          <LinkReact to="/login">
+          <LinkReact to="/" onClick={handleLogout}>
             <FontAwesomeIcon icon={faSignOutAlt} />{" "}
           </LinkReact>
         </GridCerrar>{" "}
@@ -86,7 +90,9 @@ const Perfil = () => {
           <LinkReact to="/politica"> Politicas y condiciones</LinkReact>
         </GridPaperf5>
         <GridPolitics>
-          <FontAwesomeIcon icon={faShieldAlt} />{" "}
+          <LinkReact to="/politica">
+            <FontAwesomeIcon icon={faShieldAlt} />{" "}
+          </LinkReact>
         </GridPolitics>
         <GridPaperf6 className="styles-font-perfil">
           {" "}
@@ -95,13 +101,15 @@ const Perfil = () => {
           </a>
         </GridPaperf6>
         <GridContacus>
-          <FontAwesomeIcon icon={faEnvelope} />{" "}
+          <a href="https://linktr.ee/CvApp" target="_blank">
+            <FontAwesomeIcon icon={faEnvelope} />{" "}
+          </a>
         </GridContacus>
         <GridPaperf7 onClick={handleLogout} className="styles-font-perfil">
           Cerrar sesión
         </GridPaperf7>
         <GridEliminar>
-          <LinkReact to="/">
+          <LinkReact to="/perfil" onClick={handleDelete}>
             <FontAwesomeIcon icon={faPowerOff} />
           </LinkReact>{" "}
         </GridEliminar>

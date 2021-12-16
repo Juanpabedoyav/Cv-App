@@ -78,10 +78,14 @@ const PlantillaRenderCv1 = () => {
             </li>
           </ul>
         </ContainerProfesionalProfile>
+        <Pdf targetRef={ref} filename="plantilla.pdf">
+          {({ toPdf }) => (
+            <button onClick={toPdf} className="elegir-imagen">
+              Descargar Plantilla
+            </button>
+          )}
+        </Pdf>
       </ContainerPrincipal>
-      <Pdf targetRef={ref} filename="plantilla.pdf" className="elegir-imagen">
-        {({ toPdf }) => <button onClick={toPdf}> Descargar Plantilla </button>}
-      </Pdf>
     </>
   );
 };

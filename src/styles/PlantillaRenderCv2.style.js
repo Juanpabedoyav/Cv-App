@@ -1,5 +1,25 @@
 import styled from "styled-components";
 
+export const MainContainer = styled.div`
+  .elegir-imagen {
+    padding: 1rem;
+    border-radius: 4px;
+    margin-top: 25px;
+    margin-bottom: 1rem;
+    width: 90%;
+    /* border: 1px solid red; */
+    margin-left: auto;
+    margin-right: auto;
+    height: 50px;
+    background-color: var(--color-principal);
+    color: var(--color-blanco);
+    /* justify-content: left; */
+  }
+  .elegir-imagen:hover {
+    background-color: var(--color-principal);
+  }
+`;
+
 export const PlantillaCv2 = styled.div`
     /* border: 1px solid red; */
     height: 95vh;
@@ -78,7 +98,12 @@ export const PlantillaCv2 = styled.div`
 padding: 30px 8px;
 /* border: 1px solid red; */
 width: 100%;
-.expeciencia-profesional{
+
+p{
+  text-align: left;
+  margin-bottom: 10px;
+}
+.experiencia-profesional{
     h1{
         font-weight: 800;
         background-color: #b8dce8;
