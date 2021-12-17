@@ -19,9 +19,8 @@ const Descargas = () => {
   const { onOpen, onClose } = useDisclosure();
   const [placement] = useState("left");
 
-  const localPdf = JSON.parse(localStorage.getItem("prueba"));
-  const { url, plantilla } = localPdf;
-
+  const plantillasD = JSON.parse(localStorage.getItem("plantillas"));
+  console.log(plantillasD);
   return (
     <div onClose={onClose}>
       <Drawer placement={placement} isOpen={onOpen}>
@@ -35,53 +34,19 @@ const Descargas = () => {
           </DrawerHeader>
 
           <DrawerBody p={2} className="body-descargas">
-            <LinkReact to="/vistaprevia">
-              <Box className="card" p={4} shadow="lg" borderWidth="2px">
-                <Heading className="header-box" fontSize="xm">
-                  <h1 className="color"> Plantilla Administrador</h1>
-                  <FontAwesomeIcon icon={faEye} className="color" />
-                </Heading>
-                <Text mt={4} className="color">
-                  Curriculum Descargado
-                </Text>
-              </Box>
-            </LinkReact>
-
-            <LinkReact to="/vistaprevia">
-              <Box className="card" p={4} shadow="md" borderWidth="2px">
-                <Heading className="header-box" fontSize="xm">
-                  <h1 className="color"> Plantilla Administrador</h1>
-                  <FontAwesomeIcon icon={faEye} className="color" />
-                </Heading>
-                <Text mt={4} className="color">
-                  Curriculum Descargado
-                </Text>
-              </Box>
-            </LinkReact>
-
-            <LinkReact to="/vistaprevia">
-              <Box className="card" p={4} shadow="md" borderWidth="2px">
-                <Heading className="header-box" fontSize="xm">
-                  <h1 className="color"> Plantilla Administrador</h1>
-                  <FontAwesomeIcon icon={faEye} className="color" />
-                </Heading>
-                <Text mt={4} className="color">
-                  Curriculum Descargado
-                </Text>
-              </Box>
-            </LinkReact>
-
-            <LinkReact to="/vistaprevia">
-              <Box className="card" p={4} shadow="md" borderWidth="2px">
-                <Heading className="header-box" fontSize="xm">
-                  <h1 className="color"> Plantilla Administrador</h1>
-                  <FontAwesomeIcon icon={faEye} className="color" />
-                </Heading>
-                <Text mt={4} className="color">
-                  Curriculum Descargado
-                </Text>
-              </Box>
-            </LinkReact>
+            {plantillasD?.map((el) => (
+              <LinkReact to={el.url}>
+                <Box className="card" p={4} shadow="lg" borderWidth="2px">
+                  <Heading className="header-box" fontSize="xm">
+                    <h1 className="color">{el.plantilla}</h1>
+                    <FontAwesomeIcon icon={faEye} className="color" />
+                  </Heading>
+                  <Text mt={4} className="color">
+                    Curriculum descargado
+                  </Text>
+                </Box>
+              </LinkReact>
+            ))}
           </DrawerBody>
 
           <DrawerFooter className="footer">

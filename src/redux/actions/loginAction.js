@@ -56,6 +56,12 @@ export const loginPhoneAndPassword = (phone, password) => {
         dispatch(
           login(doc.data().name, doc.data().phone, "", doc.data().image)
         );
+        // Swal.fire({
+        //   icon: 'error',
+        //   title: 'Oops...',
+        //   text: 'Something went wrong!',
+        //   footer: '<a href="">Why do I have this issue?</a>'
+        // })
       }
     });
   };

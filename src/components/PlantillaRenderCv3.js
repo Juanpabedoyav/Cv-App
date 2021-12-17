@@ -20,16 +20,28 @@ const PlantillaRenderCv3 = () => {
   console.log(form1);
   console.log(form2);
   useEffect(() => {
-    localStorage.setItem(
-      "prueba",
-      JSON.stringify([
-        // ...JSON.parse(localStorage.getItem("prueba")),
-        {
-          url: "/plantilla3",
-          plantilla: `Plantilla ${form1.name} ${form1.lastName}.pdf`,
-        },
-      ])
-    );
+    if (!JSON.parse(localStorage.getItem("plantillas"))) {
+      localStorage.setItem(
+        "plantillas",
+        JSON.stringify([
+          {
+            url: "/plantilla1",
+            plantilla: `Plantilla ${form1.name} ${form1.lastName}.pdf`,
+          },
+        ])
+      );
+    } else {
+      localStorage.setItem(
+        "plantillas",
+        JSON.stringify([
+          ...JSON.parse(localStorage.getItem("plantillas")),
+          {
+            url: "/plantilla3",
+            plantilla: `Plantilla ${form1.name} ${form1.lastName}.pdf`,
+          },
+        ])
+      );
+    }
   }, []);
   return (
     <MainContainer>

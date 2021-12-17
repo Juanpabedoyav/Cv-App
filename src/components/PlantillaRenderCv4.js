@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import {
   ContenedorDetalles,
@@ -12,9 +12,32 @@ const ref = React.createRef();
 
 const PlantillaRenderCv = () => {
   const { form1, form2 } = useSelector((state) => state.pdfData);
-  //{form1.phone}
-  //{form2.skills.map((el) => el + " ")}
-  console.log(form1.image);
+
+  useEffect(() => {
+    if (!JSON.parse(localStorage.getItem("plantillas"))) {
+      localStorage.setItem(
+        "plantillas",
+        JSON.stringify([
+          {
+            url: "/plantilla1",
+            plantilla: `Plantilla ${form1.name} ${form1.lastName}.pdf`,
+          },
+        ])
+      );
+    } else {
+      localStorage.setItem(
+        "plantillas",
+        JSON.stringify([
+          ...JSON.parse(localStorage.getItem("plantillas")),
+          {
+            url: "/plantilla4",
+            plantilla: `Plantilla ${form1.name} ${form1.lastName}.pdf`,
+          },
+        ])
+      );
+    }
+  }, []);
+
   return (
     <MainContainer>
       <div className="plantilla-container">

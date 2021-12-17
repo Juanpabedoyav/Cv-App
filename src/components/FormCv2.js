@@ -61,6 +61,7 @@ const FormCv2 = () => {
             //console.log(valores);
             navigate("/plantillascv");
             dispatch(PdfAction2(valores));
+            localStorage.setItem("formcv2", JSON.stringify(valores));
           }
         }}
       >

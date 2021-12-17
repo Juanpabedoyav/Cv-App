@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import {
   ContainerPersonalData,
@@ -12,21 +12,42 @@ import Pdf from "react-to-pdf";
 const ref = React.createRef();
 
 const PlantillaRenderCv1 = () => {
-  const { form1, form2 } = useSelector((state) => state.pdfData);
+  // const { form1, form2 } = useSelector((state) => state.pdfData);
   /* console.log(form1);
   console.log(form2); */
 
+  const { name, lastName, email, image, phone, place, position } = JSON.parse(
+    localStorage.getItem("formcv1")
+  );
+
+  const { qualities, motivation, jobExperiences, skills, language, perfil } =
+    JSON.parse(localStorage.getItem("formcv2"));
+
+  const [bandera, setBandera] = useState(0);
+
   useEffect(() => {
-    localStorage.setItem(
-      "prueba",
-      JSON.stringify([
-        // ...JSON.parse(localStorage.getItem("prueba")),
-        {
-          url: "/plantilla1",
-          plantilla: `Plantilla ${form1.name} ${form1.lastName}.pdf`,
-        },
-      ])
-    );
+    if (!JSON.parse(localStorage.getItem("plantillas"))) {
+      localStorage.setItem(
+        "plantillas",
+        JSON.stringify([
+          {
+            url: "/plantilla1",
+            plantilla: `Plantilla ${name} ${lastName}.pdf`,
+          },
+        ])
+      );
+    } else {
+      localStorage.setItem(
+        "plantillas",
+        JSON.stringify([
+          ...JSON.parse(localStorage.getItem("plantillas")),
+          {
+            url: "/plantilla1",
+            plantilla: `Plantilla ${name} ${lastName}.pdf`,
+          },
+        ])
+      );
+    }
   }, []);
 
   return (
@@ -34,7 +55,7 @@ const PlantillaRenderCv1 = () => {
       <ContainerPrincipal ref={ref}>
         <h1 className="principal-title">Hoja de vida </h1>
 
-        <ContainerprofileImg src={form1.image} />
+        <ContainerprofileImg src={image} />
 
         <ContainerPersonalData>
           <ContainerTitle>
@@ -42,22 +63,22 @@ const PlantillaRenderCv1 = () => {
           </ContainerTitle>
           <ul>
             <li>
-              <h3>Nombre: {form1.name}</h3>
+              <h3>Nombre: {name}</h3>
             </li>
             <li>
-              <h3>Apellido: {form1.lastName}</h3>
+              <h3>Apellido: {lastName}</h3>
             </li>
             <li>
-              <h3>E-mail: {form1.email}</h3>
+              <h3>E-mail: {email}</h3>
             </li>
             <li>
-              <h3>Cargo: {form1.position}</h3>
+              <h3>Cargo: {position}</h3>
             </li>
             <li>
-              <h3>Ubicacion: {form1.place}</h3>
+              <h3>Ubicacion: {place}</h3>
             </li>
             <li>
-              <h3>Telefono: {form1.phone.map((el) => el + " ")}</h3>
+              <h3>Telefono: {phone.map((el) => el + " ")}</h3>
             </li>
           </ul>
         </ContainerPersonalData>
@@ -69,32 +90,28 @@ const PlantillaRenderCv1 = () => {
           <ul>
             <li>
               {/*{form2.perfil.map((el) => el + " ")} */}
-              <h3>Sobre mi: {form2.perfil} </h3>
+              <h3>Sobre mi: {perfil} </h3>
             </li>
             <li>
-              <h3>Cualidades: {form2.qualities.map((el) => el + " ")}</h3>
+              <h3>Cualidades: {qualities.map((el) => el + " ")}</h3>
             </li>
             <li>
-              <h3>Motivaciones: {form2.motivation.map((el) => el + " ")}</h3>
+              <h3>Motivaciones: {motivation.map((el) => el + " ")}</h3>
             </li>
             <li>
               <h3>
-                Experincias laborales:{" "}
-                {form2.jobExperiences.map((el) => el + " ")}
+                Experincias laborales: {jobExperiences.map((el) => el + " ")}
               </h3>
             </li>
             <li>
-              <h3>Habilidades blandas: {form2.skills.map((el) => el + " ")}</h3>
+              <h3>Habilidades blandas: {skills.map((el) => el + " ")}</h3>
             </li>
             <li>
-              <h3>Idiomas: {form2.language.map((el) => el + " ")}</h3>
+              <h3>Idiomas: {language.map((el) => el + " ")}</h3>
             </li>
           </ul>
         </ContainerProfesionalProfile>
-        <Pdf
-          targetRef={ref}
-          filename={`Plantilla ${form1.name} ${form1.lastName}.pdf`}
-        >
+        <Pdf targetRef={ref} filename={`Plantilla ${name} ${lastName}.pdf`}>
           {({ toPdf }) => (
             <button onClick={toPdf} className="elegir-imagen">
               Descargar Plantilla

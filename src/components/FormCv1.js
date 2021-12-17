@@ -114,6 +114,7 @@ const FormCv1 = () => {
             valores.image = img;
             console.log(valores);
             dispatch(PdfAction(valores));
+            localStorage.setItem("formcv1", JSON.stringify(valores));
           }
         }}
       >
