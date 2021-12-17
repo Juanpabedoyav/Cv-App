@@ -114,34 +114,6 @@ const PlantillasCv = () => {
                   />
                 </ContenedorGrid>
                 <TextoPlantilla>Seleccionar plantilla</TextoPlantilla>
-              </ContenedorPlantilla>{" "}
-              {/* .ContenedorPlantilla */}
-              <ContenedorPlantilla>
-                <ContenedorGrid>
-                  <ImagenPlantilla src="https://www.hoja-de-vida.co/wp-content/uploads/2021/07/hoja-de-vida-para-llenar-e-imprimir.jpg" />
-                  <Field
-                    name="plantilla"
-                    className="plantillas"
-                    type="radio"
-                    value="plantilla5"
-                    onClick={handleClick}
-                  />
-                </ContenedorGrid>
-                <TextoPlantilla>Seleccionar plantilla</TextoPlantilla>
-              </ContenedorPlantilla>{" "}
-              {/* .ContenedorPlantilla */}
-              <ContenedorPlantilla>
-                <ContenedorGrid>
-                  <ImagenPlantilla src="https://res.cloudinary.com/workshop-principe/image/upload/v1638332668/Demo%20day/template_1_bin4sh.jpg" />
-                  <Field
-                    name="plantilla"
-                    className="plantillas"
-                    type="radio"
-                    value="plantilla6"
-                    onClick={handleClick}
-                  />
-                </ContenedorGrid>
-                <TextoPlantilla>Seleccionar plantilla</TextoPlantilla>
               </ContenedorPlantilla>
             </ContenedorPlantillas>
 

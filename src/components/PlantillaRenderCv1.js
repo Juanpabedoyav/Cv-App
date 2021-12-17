@@ -8,6 +8,7 @@ import {
   ContainerTitle,
 } from "../styles/PlantillaRenderCv1";
 import Pdf from "react-to-pdf";
+import { useNavigate } from "react-router-dom";
 
 const ref = React.createRef();
 
@@ -15,6 +16,7 @@ const PlantillaRenderCv1 = () => {
   // const { form1, form2 } = useSelector((state) => state.pdfData);
   /* console.log(form1);
   console.log(form2); */
+  const navegar = useNavigate();
 
   const { name, lastName, email, image, phone, place, position } = JSON.parse(
     localStorage.getItem("formcv1")
@@ -23,9 +25,7 @@ const PlantillaRenderCv1 = () => {
   const { qualities, motivation, jobExperiences, skills, language, perfil } =
     JSON.parse(localStorage.getItem("formcv2"));
 
-  const [bandera, setBandera] = useState(0);
-
-  useEffect(() => {
+  const handleDescargar = () => {
     if (!JSON.parse(localStorage.getItem("plantillas"))) {
       localStorage.setItem(
         "plantillas",
@@ -48,7 +48,11 @@ const PlantillaRenderCv1 = () => {
         ])
       );
     }
-  }, []);
+
+    setTimeout(() => {
+      navegar("/descargas");
+    }, 2000);
+  };
 
   return (
     <>
@@ -111,15 +115,16 @@ const PlantillaRenderCv1 = () => {
             </li>
           </ul>
         </ContainerProfesionalProfile>
-        <Pdf targetRef={ref} filename={`Plantilla ${name} ${lastName}.pdf`}>
-          {({ toPdf }) => (
+      </ContainerPrincipal>
+      <Pdf targetRef={ref} filename={`Plantilla ${name} ${lastName}.pdf`}>
+        {({ toPdf }) => (
+          <div onClick={handleDescargar}>
             <button onClick={toPdf} className="elegir-imagen">
               Descargar Plantilla
-              {console.log(toPdf(this))}
             </button>
-          )}
-        </Pdf>
-      </ContainerPrincipal>
+          </div>
+        )}
+      </Pdf>
     </>
   );
 };

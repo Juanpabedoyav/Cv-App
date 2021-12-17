@@ -11,11 +11,13 @@ import {
   faEnvelope,
 } from "@fortawesome/free-solid-svg-icons";
 import Pdf from "react-to-pdf";
+import { useNavigate } from "react-router-dom";
 
 const ref = React.createRef();
 
 const PlantillaRenderCv3 = () => {
   // const { form1, form2 } = useSelector((state) => state.pdfData);
+  const navegar = useNavigate();
 
   const { name, lastName, email, image, phone, place, position } = JSON.parse(
     localStorage.getItem("formcv1")
@@ -24,13 +26,13 @@ const PlantillaRenderCv3 = () => {
   const { qualities, motivation, jobExperiences, skills, language, perfil } =
     JSON.parse(localStorage.getItem("formcv2"));
 
-  useEffect(() => {
+  const handleDescargar = () => {
     if (!JSON.parse(localStorage.getItem("plantillas"))) {
       localStorage.setItem(
         "plantillas",
         JSON.stringify([
           {
-            url: "/plantilla1",
+            url: "/plantilla3",
             plantilla: `Plantilla ${name} ${lastName}.pdf`,
           },
         ])
@@ -47,7 +49,11 @@ const PlantillaRenderCv3 = () => {
         ])
       );
     }
-  }, []);
+    setTimeout(() => {
+      navegar("/descargas");
+    }, 2000);
+  };
+
   return (
     <MainContainer>
       <PlantillaCv3Container ref={ref}>
@@ -111,12 +117,13 @@ const PlantillaRenderCv3 = () => {
           </div>
         </div>
       </PlantillaCv3Container>
-      <Pdf targetRef={ref} filename="plantilla.pdf">
+      <Pdf targetRef={ref} filename={`Plantilla ${name} ${lastName}.pdf`}>
         {({ toPdf }) => (
-          <button onClick={toPdf} className="elegir-imagen">
-            {" "}
-            Descargar Plantilla{" "}
-          </button>
+          <div onClick={handleDescargar}>
+            <button onClick={toPdf} className="elegir-imagen">
+              Descargar Plantilla
+            </button>
+          </div>
         )}
       </Pdf>
     </MainContainer>

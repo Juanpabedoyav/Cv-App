@@ -28,7 +28,7 @@ const Home = () => {
       title: "Escribe tu campo de interes",
       color: "var(--color-principal)",
       input: "text",
-      inputPlaceholder: "Ejemplo: diseño, programción, marketing, etc",
+      inputPlaceholder: "Ejemplo: diseño, programación, marketing, etc",
       /* inputOptions: inputOptions, */
       inputValidator: (value) => {
         if (!value) {
