@@ -7,6 +7,7 @@ import {
 } from "firebase/auth";
 import { google, facebook, db } from "../../firebase/firebase";
 import { getDocs, collection } from "firebase/firestore";
+import Swal from "sweetalert2";
 
 export const login = (name, phone, email, image) => {
   return {
@@ -56,12 +57,12 @@ export const loginPhoneAndPassword = (phone, password) => {
         dispatch(
           login(doc.data().name, doc.data().phone, "", doc.data().image)
         );
-        // Swal.fire({
-        //   icon: 'error',
-        //   title: 'Oops...',
-        //   text: 'Something went wrong!',
-        //   footer: '<a href="">Why do I have this issue?</a>'
-        // })
+      } else {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "El usuario no existe!",
+        });
       }
     });
   };

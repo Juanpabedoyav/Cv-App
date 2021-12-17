@@ -47,5 +47,13 @@ export const GlobalStyles = createGlobalStyle`
     font-weight:600;
     font-size: 1.3rem;
   }
-  
+.swal2-input::placeholder{
+  font-weight: 400;
+  color:#222;
+}
+.swal2-input{
+  font-weight: 600;
+  color:#333;
+  font-size:1.1rem;
+}  
 `;

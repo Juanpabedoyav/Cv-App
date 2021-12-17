@@ -10,8 +10,15 @@ import { Link } from "react-router-dom";
 
 const ref = React.createRef();
 
-const PlantillaRenderCv = () => {
-  const { form1, form2 } = useSelector((state) => state.pdfData);
+const PlantillaRenderCv4 = () => {
+  // const { form1, form2 } = useSelector((state) => state.pdfData);
+
+  const { name, lastName, email, image, phone, place, position } = JSON.parse(
+    localStorage.getItem("formcv1")
+  );
+
+  const { qualities, motivation, jobExperiences, skills, language, perfil } =
+    JSON.parse(localStorage.getItem("formcv2"));
 
   useEffect(() => {
     if (!JSON.parse(localStorage.getItem("plantillas"))) {
@@ -20,7 +27,7 @@ const PlantillaRenderCv = () => {
         JSON.stringify([
           {
             url: "/plantilla1",
-            plantilla: `Plantilla ${form1.name} ${form1.lastName}.pdf`,
+            plantilla: `Plantilla ${name} ${lastName}.pdf`,
           },
         ])
       );
@@ -31,7 +38,7 @@ const PlantillaRenderCv = () => {
           ...JSON.parse(localStorage.getItem("plantillas")),
           {
             url: "/plantilla4",
-            plantilla: `Plantilla ${form1.name} ${form1.lastName}.pdf`,
+            plantilla: `Plantilla ${name} ${lastName}.pdf`,
           },
         ])
       );
@@ -49,18 +56,18 @@ const PlantillaRenderCv = () => {
               height: "120px",
             }}
           >
-            <img src={form1.image} alt={form1.name} />
+            <img src={image} alt={name} />
           </div>
           <h1>
-            {form1.name} {form1.lastName}
+            {name} {lastName}
           </h1>
           <div className="spanDiv">
-            <span>{form1.position} </span>
+            <span>{position} </span>
           </div>
           <div>
-            <p>Ciudad: {form1.place} </p>
-            <p>Correo: {form1.email}</p>
-            <p>Teléfono: {form1.phone.map((el) => el + " ")}</p>
+            <p>Ciudad: {place} </p>
+            <p>Correo: {email}</p>
+            <p>Teléfono: {phone.map((el) => el + " ")}</p>
           </div>
         </ContenedorInfoPrincipal>
         <ContenedorDetalles>
@@ -68,16 +75,16 @@ const PlantillaRenderCv = () => {
             <div className="grid-1">
               <section>
                 <h2 className="tituloHabilidades">Perfil</h2>
-                <p className="parrafoPerfil">{form2.perfil}</p>
+                <p className="parrafoPerfil">{perfil}</p>
               </section>
               <section>
                 <h2 className="tituloHabilidades">Idiomas</h2>
-                <h4>Idiomas : {form2.language.map((el) => el + " ")}</h4>
+                <h4>Idiomas : {language.map((el) => el + " ")}</h4>
               </section>
               <section>
                 <h2 className="tituloHabilidades">Habilidades:</h2>
                 {/* <div className="habilidadBarra"></div> */}
-                {form2.skills.map((el) => {
+                {skills.map((el) => {
                   return <p className="textoHabilidades">{el}</p>;
                 })}
               </section>
@@ -87,7 +94,7 @@ const PlantillaRenderCv = () => {
                 <h2 className="tituloHabilidades">Experiencia Profesional</h2>
               </section>
               <article>
-                {form2.jobExperiences.map((el) => (
+                {jobExperiences.map((el) => (
                   <p className="experiencia">{el}</p>
                 ))}
               </article>
@@ -108,4 +115,4 @@ const PlantillaRenderCv = () => {
   );
 };
 
-export default PlantillaRenderCv;
+export default PlantillaRenderCv4;

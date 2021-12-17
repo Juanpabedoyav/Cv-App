@@ -14,7 +14,7 @@ import Swal from "sweetalert2";
 const Home = () => {
   const alerta = async () => {
     /* inputOptions can be an object or Promise */
-    const inputOptions = new Promise((resolve) => {
+    /*  const inputOptions = new Promise((resolve) => {
       setTimeout(() => {
         resolve({
           analista: "Analista",
@@ -22,13 +22,14 @@ const Home = () => {
           diseñador: "Diseñador",
         });
       }, 1000);
-    });
+    }); */
 
     const { value: campo } = await Swal.fire({
-      title: "Selecciona tu campo de interes",
+      title: "Escribe tu campo de interes",
       color: "var(--color-principal)",
-      input: "radio",
-      inputOptions: inputOptions,
+      input: "text",
+      inputPlaceholder: "Ejemplo: diseño, programción, marketing, etc",
+      /* inputOptions: inputOptions, */
       inputValidator: (value) => {
         if (!value) {
           return "Debes seleccionar un opción ";
@@ -38,6 +39,10 @@ const Home = () => {
 
     if (campo) {
       Swal.fire({
+        icon: "success",
+        title: "Bienvenido",
+        showConfirmButton: false,
+        timer: 3000,
         html: `Tus plantillas han sido configuradas con éxito`,
       });
     }
