@@ -56,4 +56,18 @@ export const GlobalStyles = createGlobalStyle`
   color:#333;
   font-size:1.1rem;
 }  
+.elegir-imagen {
+    padding: 1rem;
+    border-radius: 4px;
+    margin-top: 25px;
+    margin-bottom: 1rem;
+    width: 90%;
+    /* border: 1px solid red; */
+    margin-left: auto;
+    margin-right: auto;
+    height: 50px;
+    background-color: var(--color-principal);
+    color: var(--color-blanco);
+    /* justify-content: left; */
+  }
 `;

@@ -46,9 +46,10 @@ const PlantillaRenderCv4 = () => {
   }, []);
 
   return (
-    <MainContainer>
+    <>
+    <MainContainer ref={ref}>
       <div className="plantilla-container">
-        <ContenedorInfoPrincipal ref={ref}>
+        <ContenedorInfoPrincipal >
           <div
             style={{
               margin: "0 auto 25px auto",
@@ -101,17 +102,18 @@ const PlantillaRenderCv4 = () => {
             </div>
           </div>
         </ContenedorDetalles>
-      </div>
-
-      <Pdf targetRef={ref} filename="plantilla.pdf">
-        {({ toPdf }) => (
-          <button onClick={toPdf} className="elegir-imagen">
-            {" "}
-            Descargar Plantilla{" "}
-          </button>
-        )}
-      </Pdf>
+      </div> 
     </MainContainer>
+  
+     <Pdf targetRef={ref} filename="plantilla.pdf">
+     {({ toPdf }) => (
+       <button onClick={toPdf} className="elegir-imagen">
+         {" "}
+         Descargar Plantilla{" "}
+       </button>
+     )}
+   </Pdf>
+   </>
   );
 };
 
