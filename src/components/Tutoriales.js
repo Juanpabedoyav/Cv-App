@@ -41,7 +41,7 @@ const Tutoriales = () => {
            de youtube asi concidira el video presentado con el tutorial
             selecionado "como lo hicimos en block master" */}
 
-          <Tutorial1 onClick={() => setUrl("")} className="tutorials-styles">
+          <Tutorial1 onClick={() => setUrl("https://www.youtube.com/embed/wKZTAFvvidM")} className="tutorials-styles">
             <FontAwesomeIcon icon={faPlay} /> ¿Comó utilizar tu App?
           </Tutorial1>
           <Tutorial2
