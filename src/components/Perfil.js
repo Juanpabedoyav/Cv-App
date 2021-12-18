@@ -96,24 +96,29 @@ const Perfil = () => {
         </GridPolitics>
         <GridPaperf6 className="styles-font-perfil">
           {" "}
-          <a href="https://linktr.ee/CvApp" target="_blank">
+          <a href="https://linktr.ee/CvApp" target="_blank" rel="noreferrer">
             Contactanos
           </a>
         </GridPaperf6>
         <GridContacus>
-          <a href="https://linktr.ee/CvApp" target="_blank">
+          <a href="https://linktr.ee/CvApp" target="_blank" rel="noreferrer">
             <FontAwesomeIcon icon={faEnvelope} />{" "}
           </a>
         </GridContacus>
         <GridPaperf7 onClick={handleLogout} className="styles-font-perfil">
           Cerrar sesión
         </GridPaperf7>
-        <GridEliminar>
+        <GridEliminar
+          style={phone === null ? { display: "none" } : { display: "block" }}
+        >
           <LinkReact to="/perfil" onClick={handleDelete}>
             <FontAwesomeIcon icon={faPowerOff} />
           </LinkReact>{" "}
         </GridEliminar>
-        <GridPaperf8 className="styles-font-perfil">
+        <GridPaperf8
+          className="styles-font-perfil"
+          style={phone === null ? { display: "none" } : { display: "block" }}
+        >
           <LinkReact onClick={handleDelete} to="/perfil">
             Eliminar cuenta{" "}
           </LinkReact>{" "}

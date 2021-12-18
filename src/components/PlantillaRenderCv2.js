@@ -1,5 +1,4 @@
-import React, { useEffect } from "react";
-import { useSelector } from "react-redux";
+import React from "react";
 import {
   MainContainer,
   PlantillaCv2,
@@ -84,13 +83,11 @@ const PlantillaRenderCv2 = () => {
           <section className="experiencia-profesional">
             <h1>Experiencia Profesional</h1>
 
-            {jobExperiences.map((el) => (
-              <article className="list-profesional">
-                {skills.map((el) => (
-                  <p>{el}</p>
-                ))}
-              </article>
-            ))}
+            <article className="list-profesional">
+              {jobExperiences.map((el) => (
+                <p>{el}</p>
+              ))}
+            </article>
           </section>
           <section className="educacion">
             <h1>Cualidades</h1>
@@ -124,8 +121,7 @@ const PlantillaRenderCv2 = () => {
         {({ toPdf }) => (
           <div onClick={handleDescargar}>
             <button onClick={toPdf} className="elegir-imagen">
-              {" "}
-              Descargar Plantilla{" "}
+              Descargar cv
             </button>
           </div>
         )}

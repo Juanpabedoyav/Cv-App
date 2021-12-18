@@ -1,16 +1,12 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import PrivateRouter from "./PrivateRouter";
 import PublicRouter from "./PublicRouter";
-import PublicRoutes from "./PublicRoutes";
 import Login from "../components/Login";
 import InicioApp from "../components/InicioApp";
-import { useSelector, useDispatch } from "react-redux";
 import PrivateRoutes from "./PrivateRoutes";
 import Registro from "../components/Registro";
-import { logout } from "../redux/actions/loginAction";
 import UpdatePassword from "../components/UpdatePassword";
-import PlantillaRenderCv3 from "../components/PlantillaRenderCv3";
 
 /* const initial= ()=>{
 return{

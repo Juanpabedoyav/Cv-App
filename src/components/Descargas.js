@@ -20,7 +20,7 @@ const Descargas = () => {
   const [placement] = useState("left");
 
   const plantillasD = JSON.parse(localStorage.getItem("plantillas"));
-  console.log(plantillasD);
+  //console.log(plantillasD);
   return (
     <div onClose={onClose}>
       <Drawer placement={placement} isOpen={onOpen}>
@@ -34,8 +34,7 @@ const Descargas = () => {
           </DrawerHeader>
 
           <DrawerBody p={2} className="body-descargas">
-            {
-            plantillasD?.map((el) => (
+            {plantillasD?.map((el) => (
               <LinkReact to={el.url}>
                 <Box className="card" p={4} shadow="lg" borderWidth="2px">
                   <Heading className="header-box" fontSize="xm">
@@ -47,8 +46,7 @@ const Descargas = () => {
                   </Text>
                 </Box>
               </LinkReact>
-            ))
-            }
+            ))}
           </DrawerBody>
 
           <DrawerFooter className="footer">

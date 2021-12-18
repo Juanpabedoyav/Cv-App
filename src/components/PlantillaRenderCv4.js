@@ -1,12 +1,11 @@
-import React, { useEffect } from "react";
-import { useSelector } from "react-redux";
+import React from "react";
 import {
   ContenedorDetalles,
   ContenedorInfoPrincipal,
   MainContainer,
 } from "../styles/PlantillaRenderCv4.styles";
 import Pdf from "react-to-pdf";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const ref = React.createRef();
 
@@ -87,7 +86,7 @@ const PlantillaRenderCv4 = () => {
                   <h4>Idiomas : {language.map((el) => el + " ")}</h4>
                 </section>
                 <section>
-                  <h2 className="tituloHabilidades">Habilidades:</h2>
+                  <h2 className="tituloHabilidades">Conocimientos:</h2>
                   {/* <div className="habilidadBarra"></div> */}
                   {skills.map((el) => {
                     return <p className="textoHabilidades">{el}</p>;
@@ -103,6 +102,22 @@ const PlantillaRenderCv4 = () => {
                     <p className="experiencia">{el}</p>
                   ))}
                 </article>
+                <section>
+                  <h2 className="tituloHabilidades">Cualidades</h2>
+                </section>
+                <article>
+                  {qualities.map((el) => (
+                    <p className="experiencia">{el}</p>
+                  ))}
+                </article>
+                <section>
+                  <h2 className="tituloHabilidades">Interes y Motivaciones</h2>
+                </section>
+                <article>
+                  {motivation.map((el) => (
+                    <p className="experiencia">{el}</p>
+                  ))}
+                </article>
               </div>
             </div>
           </ContenedorDetalles>
@@ -113,7 +128,7 @@ const PlantillaRenderCv4 = () => {
         {({ toPdf }) => (
           <div onClick={handleDescargar}>
             <button onClick={toPdf} className="elegir-imagen">
-              Descargar Plantilla
+              Descargar CV
             </button>
           </div>
         )}

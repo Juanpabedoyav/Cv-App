@@ -68,10 +68,7 @@ const UpdatePassword = () => {
           }}
           onSubmit={async (valores) => {
             // console.log(valores);
-            const resp = await dispatch(
-              loginPhoneAndPassword(valores.phone, valores.password)
-            );
-            setTimeout(() => (resp, 1900));
+            dispatch(loginPhoneAndPassword(valores.phone, valores.password));
             navigate("/login");
             Swal.fire({
               icon: "success",

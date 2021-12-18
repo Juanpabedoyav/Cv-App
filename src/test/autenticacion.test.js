@@ -1,5 +1,4 @@
 import "@testing-library/jest-dom";
-import { login, logout } from "../redux/actions/loginAction";
 import { types } from "../redux/types/types";
 import { loginReducer } from "../redux/reducers/loginReducer";
 describe("pruebas de logue", () => {

@@ -3,7 +3,7 @@ import { FormControl } from "@chakra-ui/form-control";
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faReply } from "@fortawesome/free-solid-svg-icons";
-import { Link as LinkReact, useNavigate } from "react-router-dom";
+import { Link as LinkReact } from "react-router-dom";
 import {
   ContainerLogin,
   ForgotPassword,
@@ -16,14 +16,10 @@ import {
 } from "../styles/Login.style";
 import { useDispatch } from "react-redux";
 import { loginPhoneAndPassword } from "../redux/actions/loginAction";
-import { useForm } from "../hooks/useForm";
-import { Formik, Form, Field, ErrorMessage } from "formik";
-import { Alert, AlertIcon, AlertTitle, CloseButton } from "@chakra-ui/react";
-import Swal from "sweetalert2";
+import { Formik, Form, ErrorMessage } from "formik";
+import { Alert, AlertIcon, AlertTitle } from "@chakra-ui/react";
 
 const Login = () => {
-  const navigate = useNavigate();
-
   const dispatch = useDispatch();
 
   return (
@@ -64,19 +60,8 @@ const Login = () => {
               return fallos;
             }}
             onSubmit={async (valores) => {
-              console.log(valores);
-              const resp = await dispatch(
-                loginPhoneAndPassword(valores.phone, valores.password)
-              );
-              setTimeout(() => (resp, 1900));
-              /* Swal.fire({
-                icon: "success",
-                title: "Bienvenido",
-                showConfirmButton: false,
-                timer: 1500,
-              }); */
-
-              // console.log('enviado')
+              //console.log(valores);
+              dispatch(loginPhoneAndPassword(valores.phone, valores.password));
             }}
           >
             {({ values, errors, handleChange, handleBlur }) => (

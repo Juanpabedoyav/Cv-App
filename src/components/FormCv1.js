@@ -8,28 +8,24 @@ import {
   InputForm,
   TituloForm,
 } from "../styles/FormCv.style";
-import { ErrorMessage, Form, Formik, Field } from "formik";
+import { ErrorMessage, Form, Formik } from "formik";
 import { useNavigate } from "react-router-dom";
 import {
   Alert,
   AlertIcon,
   AlertTitle,
-  CloseButton,
   FormControl,
   Input,
 } from "@chakra-ui/react";
 import ReactTagInput from "@pathofdev/react-tag-input";
 import "@pathofdev/react-tag-input/build/index.css";
 import Swal from "sweetalert2";
-import { useDispatch } from "react-redux";
-import { PdfAction } from "../redux/actions/PdfAction";
 import { faUpload } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { fileUpload } from "../helpers/fileUpload";
 
 const FormCv1 = () => {
   const navegar = useNavigate();
-  const dispatch = useDispatch();
   const [tags, setTags] = useState(["Télefono celular"]);
 
   const elegirImagen = () => document.getElementById("image").click();
@@ -44,7 +40,7 @@ const FormCv1 = () => {
     fileUpload(file)
       .then((url) => {
         img = url;
-        console.log(img);
+        //console.log(img);
       })
       .catch((err) => console.log(err.message));
   };
@@ -112,8 +108,7 @@ const FormCv1 = () => {
             navegar("/formcv2");
             valores.phone = tags;
             valores.image = img;
-            console.log(valores);
-            dispatch(PdfAction(valores));
+            //console.log(valores);
             localStorage.setItem("formcv1", JSON.stringify(valores));
           }
         }}
@@ -256,7 +251,7 @@ const FormCv1 = () => {
               <ReactTagInput
                 tags={tags}
                 onChange={(newTags) => setTags(newTags)}
-                maxTags={3}
+                maxTags={2}
                 removeOnBackspace={true}
                 placeholder="Teléfono de Contacto"
               />

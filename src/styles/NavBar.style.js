@@ -6,6 +6,7 @@ export const NavContainer = styled.nav`
   bottom: 0;
   width: 100%;
   background-color: #eef5f6;
+  z-index: 10;
   .box {
     /* border-top: 1px solid var(--color-principal); */
     display: inline-block;

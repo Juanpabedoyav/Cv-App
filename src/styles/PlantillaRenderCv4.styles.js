@@ -40,7 +40,7 @@ export const ContenedorInfoPrincipal = styled.article`
     margin-top: 1.5rem;
   }
   h1 {
-    font-size: 0.85rem;
+    font-size: 1.2rem;
     font-weight: 600;
     color: white;
     margin-bottom: 5px;
@@ -51,7 +51,7 @@ export const ContenedorInfoPrincipal = styled.article`
     margin-bottom: 5px;
     span {
       font-weight: 600;
-      font-size: 0.7rem;
+      font-size: 1rem;
     }
   }
   div {
@@ -61,7 +61,7 @@ export const ContenedorInfoPrincipal = styled.article`
     align-items: center;
     gap: 0.6rem;
     p {
-      font-size: 0.6rem;
+      font-size: 1rem;
       border-right: 1px solid white;
       padding-right: 0.7rem;
       margin: 0.4rem 0;
@@ -77,7 +77,7 @@ export const ContenedorDetalles = styled.article`
   padding-top: 1.5rem;
   width: 90%;
   h4 {
-    font-size: 0.6rem;
+    font-size: 1rem;
     text-align: left;
     font-weight: 600;
     margin-bottom: 5px;
@@ -90,7 +90,7 @@ export const ContenedorDetalles = styled.article`
     gap: 1rem;
   }
   .tituloHabilidades {
-    font-size: 0.6rem;
+    font-size: 1rem;
     text-align: left;
     font-weight: 900;
     background-color: #d9d9d9;
@@ -98,19 +98,28 @@ export const ContenedorDetalles = styled.article`
   }
   .textoHabilidades {
     text-align: left;
-    font-size: 0.7rem;
+    font-size: 1rem;
+    font-weight: 600;
   }
   .parrafoPerfil {
-    font-size: 0.6rem;
+    font-size: 1rem;
     font-weight: 600;
     text-align: left;
     margin-bottom: 1rem;
   }
   .grid-1 {
     width: 35%;
+    font-weight: 600;
   }
   .grid-2 {
     width: 55%;
+    display: flex;
+    flex-direction: column;
+    font-weight: 600;
+    margin-left: 20px;
+    article {
+      margin-bottom: 10px;
+    }
   }
   .habilidadBarra {
     width: 40px;
@@ -121,17 +130,17 @@ export const ContenedorDetalles = styled.article`
     background-color: #000;
   }
   .tituloExperiencia {
-    font-size: 0.57rem;
+    font-size: 1rem;
     text-align: left;
     font-weight: 800;
   }
   .fechaExperienciaProfesional {
     font-weight: 400;
-    font-size: 0.45rem;
+    font-size: 1rem;
     text-align: left;
   }
   .listasExperiencia {
-    font-size: 0.5rem;
+    font-size: 1rem;
     font-weight: 600;
     text-align: initial;
     margin-left: 0.7rem;

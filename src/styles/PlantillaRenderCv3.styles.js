@@ -42,7 +42,7 @@ export const PlantillaCv3Container = styled.div`
       padding: 10px;
 
       p {
-        font-size: 13px;
+        font-size: 16px;
       }
 
       .sobre-mi {
@@ -52,7 +52,7 @@ export const PlantillaCv3Container = styled.div`
       }
 
       .desc {
-        font-size: 13px;
+        font-size: 16px;
       }
 
       .title-experiencia {

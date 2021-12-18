@@ -5,11 +5,10 @@ import {
   ContenedorPlantillas,
   ContenedorPlantilla,
   ImagenPlantilla,
-  TextoPlantilla,
   ContenedorGrid,
   ContainerAll,
+  ContenedorBotones,
 } from "../styles/Plantillas.style";
-import { ContenedorBotones } from "../styles/FormCv.style";
 import { Field, Formik, Form } from "formik";
 import { useNavigate } from "react-router-dom";
 
@@ -67,9 +66,7 @@ const PlantillasCv = () => {
                     onClick={handleClick}
                   />
                 </ContenedorGrid>
-                <TextoPlantilla>Seleccionar plantilla</TextoPlantilla>
-              </ContenedorPlantilla>{" "}
-              {/* .ContenedorPlantilla */}
+              </ContenedorPlantilla>
               <ContenedorPlantilla>
                 <ContenedorGrid>
                   <ImagenPlantilla src="https://www.hoja-de-vida.co/wp-content/uploads/2021/07/hoja-de-vida-descargar-gratis-word.jpg" />
@@ -82,10 +79,10 @@ const PlantillasCv = () => {
                     onClick={handleClick}
                   />
                 </ContenedorGrid>
+              </ContenedorPlantilla>
+            </ContenedorPlantillas>
 
-                <TextoPlantilla>Seleccionar Plantilla</TextoPlantilla>
-              </ContenedorPlantilla>{" "}
-              {/* .ContenedorPlantilla */}
+            <ContenedorPlantillas>
               <ContenedorPlantilla>
                 <ContenedorGrid>
                   <ImagenPlantilla src="https://www.hoja-de-vida.co/wp-content/uploads/2019/09/96-hoja-de-vida-auxiliar-de-enfermeria.jpg" />
@@ -98,9 +95,8 @@ const PlantillasCv = () => {
                     onClick={handleClick}
                   />
                 </ContenedorGrid>
-                <TextoPlantilla>Seleccionar plantilla</TextoPlantilla>
-              </ContenedorPlantilla>{" "}
-              {/* .ContenedorPlantilla */}
+              </ContenedorPlantilla>
+
               <ContenedorPlantilla>
                 <ContenedorGrid>
                   <ImagenPlantilla src="https://www.hoja-de-vida.co/wp-content/uploads/2021/07/hoja-de-vida-laboral.jpg" />
@@ -113,7 +109,6 @@ const PlantillasCv = () => {
                     onClick={handleClick}
                   />
                 </ContenedorGrid>
-                <TextoPlantilla>Seleccionar plantilla</TextoPlantilla>
               </ContenedorPlantilla>
             </ContenedorPlantillas>
 

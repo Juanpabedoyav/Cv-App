@@ -5,14 +5,12 @@ export const ContainerAll = styled.div`
   color: var(--color-principal);
   height: 100vh;
 
-  .plantillas{
-
+  .plantillas {
     position: relative;
     cursor: pointer;
     left: 2px;
     width: 0px;
     height: 0px;
-    
 
     &:checked:before {
       content: "";
@@ -64,16 +62,19 @@ export const ContainerAll = styled.div`
       top: 5px;
       left: 13px;
     }
-
   }
-
 `;
 
 export const ContenedorPlantillas = styled.div`
   display: flex;
-  flex-wrap: wrap;
+  justify-content: space-around;
   gap: 3rem;
   margin: 1rem 1rem 1rem 3rem;
+  /* border: 1px solid red; */
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 40px;
 `;
 
 export const ContenedorPlantilla = styled.article`
@@ -81,6 +82,8 @@ export const ContenedorPlantilla = styled.article`
   flex-direction: column;
   width: 7rem;
   /* background-color: rgb(229 233 242); */
+  /* border: 1px solid green; */
+  width: 45%;
 `;
 
 export const ImagenPlantilla = styled.img`
@@ -93,4 +96,25 @@ export const TextoPlantilla = styled.p`
 export const ContenedorGrid = styled.div`
   display: grid;
   grid-template-columns: 3fr 1fr;
+  /* border: 1px solid black; */
+`;
+
+export const ContenedorBotones = styled.div`
+  /*  border: 1px solid red; */
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  margin: ${(props) => props.margin};
+  .button {
+    background-color: var(--color-principal);
+    color: var(--color-blanco);
+  }
+  .button:hover {
+    background-color: var(--color-principal);
+    color: var(--color-blanco);
+  }
 `;

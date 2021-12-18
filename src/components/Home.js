@@ -1,5 +1,5 @@
 import { Box, Heading } from "@chakra-ui/layout";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFilePdf,
@@ -25,7 +25,7 @@ const Home = () => {
     }); */
 
     const { value: campo } = await Swal.fire({
-      title: "Escribe tu campo de interes",
+      title: "Ingresa tu campo de interes",
       color: "var(--color-principal)",
       input: "text",
       inputPlaceholder: "Ejemplo: diseño, programación, marketing, etc",

@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import React from "react";
 import {
   ContainerPersonalData,
   ContainerPrincipal,
@@ -82,7 +81,7 @@ const PlantillaRenderCv1 = () => {
               <h3>Ubicacion: {place}</h3>
             </li>
             <li>
-              <h3>Telefono: {phone.map((el) => el + " ")}</h3>
+              <h3>Contacto: {phone.map((el) => el + " ")}</h3>
             </li>
           </ul>
         </ContainerPersonalData>
@@ -104,11 +103,11 @@ const PlantillaRenderCv1 = () => {
             </li>
             <li>
               <h3>
-                Experincias laborales: {jobExperiences.map((el) => el + " ")}
+                Experiencias laborales: {jobExperiences.map((el) => el + " ")}
               </h3>
             </li>
             <li>
-              <h3>Habilidades blandas: {skills.map((el) => el + " ")}</h3>
+              <h3>Conocimientos: {skills.map((el) => el + " ")}</h3>
             </li>
             <li>
               <h3>Idiomas: {language.map((el) => el + " ")}</h3>
@@ -120,7 +119,7 @@ const PlantillaRenderCv1 = () => {
         {({ toPdf }) => (
           <div onClick={handleDescargar}>
             <button onClick={toPdf} className="elegir-imagen">
-              Descargar Plantilla
+              Descargar CV
             </button>
           </div>
         )}

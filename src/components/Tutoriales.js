@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Link as LinkReact } from "react-router-dom";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay } from "@fortawesome/free-solid-svg-icons";
 import { Button } from "@chakra-ui/react";
@@ -21,7 +20,7 @@ import {
 } from "../styles/Tutoriales.style";
 
 const Tutoriales = () => {
-  const [url, setUrl] = useState("");
+  const [url, setUrl] = useState("https://www.youtube.com/embed/wKZTAFvvidM");
 
   return (
     <div>
@@ -41,8 +40,11 @@ const Tutoriales = () => {
            de youtube asi concidira el video presentado con el tutorial
             selecionado "como lo hicimos en block master" */}
 
-          <Tutorial1 onClick={() => setUrl("https://www.youtube.com/embed/wKZTAFvvidM")} className="tutorials-styles">
-            <FontAwesomeIcon icon={faPlay} /> ¿Comó utilizar tu App?
+          <Tutorial1
+            onClick={() => setUrl("https://www.youtube.com/embed/wKZTAFvvidM")}
+            className="tutorials-styles"
+          >
+            <FontAwesomeIcon icon={faPlay} /> Nuestra App
           </Tutorial1>
           <Tutorial2
             onClick={() => setUrl("https://www.youtube.com/embed/qweelAPzWBw")}

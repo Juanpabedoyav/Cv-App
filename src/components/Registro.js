@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { FormControl, Input, Button } from "@chakra-ui/react";
 import { Link as LinkReact, useNavigate } from "react-router-dom";
 import {
@@ -13,10 +13,9 @@ import { faReply, faUpload } from "@fortawesome/free-solid-svg-icons";
 import { useDispatch } from "react-redux";
 import { fileUpload } from "../helpers/fileUpload";
 import { registerAction } from "../redux/actions/registerAction";
-import { useForm } from "../hooks/useForm";
 import { Formik, Form, ErrorMessage } from "formik";
 import Swal from "sweetalert2";
-import { Alert, AlertIcon, AlertTitle, CloseButton } from "@chakra-ui/react";
+import { Alert, AlertIcon, AlertTitle } from "@chakra-ui/react";
 
 const Registro = () => {
   const dispatch = useDispatch();
@@ -39,10 +38,6 @@ const Registro = () => {
       })
       .catch((err) => console.log(err.message));
   };
-
-  useEffect(() => {
-    console.log("renderizado");
-  }, []);
 
   return (
     <StyleRegistro>
