@@ -111,7 +111,9 @@ const PlantillaRenderCv4 = () => {
                   ))}
                 </article>
                 <section>
-                  <h2 className="tituloHabilidades">Interes y Motivaciones</h2>
+                  <h2 className="tituloHabilidades">
+                    Intereses y Motivaciones
+                  </h2>
                 </section>
                 <article>
                   {motivation.map((el) => (
