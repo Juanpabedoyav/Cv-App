@@ -67,7 +67,10 @@ const Inicio = () => {
           variant="solid"
           className="button-google"
         >
-          <img src={btnGoogle} alt="" />
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
+            alt=""
+          />
           <span> Iniciar con Google</span>
         </Button>
       </ButtonContainer>

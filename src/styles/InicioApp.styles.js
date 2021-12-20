@@ -81,11 +81,11 @@ export const ButtonContainer = styled.div`
     background-color: #ffffff;
     color: black;
     border-radius: 2px;
-    box-shadow: 0px 0px 1px 0.2px rgb(0, 0, 0, 0.9);
+    border: 1px solid #34a853;
     padding: 0;
     img {
       position: absolute;
-      left: 9px;
+      left: 20px;
     }
     span {
       /* border:1px solid red; */
