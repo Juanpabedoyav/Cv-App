@@ -1,7 +1,6 @@
 import React from "react";
 import { Button } from "@chakra-ui/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import btnGoogle from "../assets/btnGoogle.png";
 import { faPhoneAlt } from "@fortawesome/free-solid-svg-icons";
 import { Link as LinkReact } from "react-router-dom";
 import { faFacebook } from "@fortawesome/free-brands-svg-icons";
