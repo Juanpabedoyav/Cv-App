@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const StylesContainer = styled.div`
   background-color: #eef5f6;
@@ -16,12 +16,12 @@ export const StylesContainer = styled.div`
     font-size: 1.5rem;
     margin-right: 15px;
   }
-`;
+`
 
 export const ImgContainer = styled.div`
   width: 150px;
   margin: 0 auto;
-`;
+`
 
 export const ImgLogo = styled.img`
   width: 100%;
@@ -30,19 +30,19 @@ export const ImgLogo = styled.img`
   border-radius: 8px;
   border: 2px solid var(--color-blanco);
   box-shadow: 0 0 10px -1px var(--color-blanco);
-`;
+`
 
 export const TextH1 = styled.h1`
   font-size: 28px;
   margin-top: 20px;
   font-weight: 800;
-`;
+`
 
 export const TextH4 = styled.h4`
   font-size: 16px;
   margin-top: 10px;
   font-weight: 600;
-`;
+`
 
 export const ButtonContainer = styled.div`
   /* border: 1px solid red; */
@@ -86,6 +86,7 @@ export const ButtonContainer = styled.div`
     img {
       position: absolute;
       left: 20px;
+      height: 20px;
     }
     span {
       /* border:1px solid red; */
@@ -99,4 +100,4 @@ export const ButtonContainer = styled.div`
   .phone:hover {
     background-color: var(--color-principal);
   }
-`;
+`
